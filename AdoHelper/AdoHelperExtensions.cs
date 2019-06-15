@@ -31,63 +31,32 @@ namespace AdoHelper
             return queryInfo;
         }
 
-        //public static T Execute<T>(this QueryInfo<T> queryInfo)
-        //{
-        //    T model = Activator.CreateInstance<T>();
-        //    Type modelType = typeof(T);
-
-        //    using (IDataReader reader = queryInfo.Command.ExecuteReader())
-        //    {
-        //        if (reader.Read())
-        //        {
-        //            foreach (ModelStructure structure in queryInfo.ModelStructureTable)
-        //            {
-        //                if (structure.isNullable)
-        //                {
-        //                    object value = (reader[structure.fieldName].Equals(System.DBNull.Value)) ?
-        //                        null : reader[structure.fieldName];
-        //                    PropertyInfo property = modelType.GetProperty(structure.propertyName);
-        //                    Type propertyType = property.PropertyType;
-        //                    if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
-        //                    {
-        //                        var targetType = Nullable.GetUnderlyingType(propertyType);
-        //                        value = Convert.ChangeType(value, targetType);
-        //                    }
-        //                    property.SetValue(model, value, null);
-        //                }
-        //                else
-        //                {
-        //                    if (!(reader[structure.fieldName].Equals(System.DBNull.Value)))
-        //                    {
-        //                        object value = reader[structure.fieldName];
-        //                        PropertyInfo property = modelType.GetProperty(structure.propertyName);
-        //                        property.SetValue(model, value, null);
-        //                    }
-        //                    else
-        //                    {
-        //                        throw new ArgumentNullException("Reader trying to pass DbNull value to non-nullable model");
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        else
-        //            return default(T);
-        //    }
-        //    return model;
-        //}
-
         public static T ExecuteScalar<T>(this QueryInfo<T> queryInfo)
         {
-            T value;
+            T model;
+            object value = queryInfo.Command.ExecuteScalar();
+            Type modelType = typeof(T);
+
+            // TODO: What if DbNull ?
+
             try
             {
-                value = (T)Convert.ChangeType(queryInfo.Command.ExecuteScalar(), typeof(T));
+                if (modelType.IsGenericType && modelType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                {
+                    var targetType = Nullable.GetUnderlyingType(modelType);
+                    value = Convert.ChangeType(value, targetType);
+                }
+                else
+                {
+                    value = Convert.ChangeType(value, modelType);
+                }
+                model = (T)value;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return value;
+            return model;
         }
 
         public static void ExecuteNonQuery<T>(this QueryInfo<T> queryInfo)
@@ -125,17 +94,38 @@ namespace AdoHelper
                                 object value = (reader[structure.dbFieldName].Equals(System.DBNull.Value)) ?
                                     null : reader[structure.dbFieldName];
 
-                                PropertyInfo property = modelType.GetProperty(structure.mapFieldName);
+                                MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.mapFieldName), structure);
+                                if (memberInfo == null)
+                                    continue;
 
-                                Convert.ChangeType(value, structure.innerType);
+                                value = Convert.ChangeType(value, structure.innerType);
 
-                                Type propertyType = property.PropertyType;
-                                if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                                Type memberType;
+                                if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
                                 {
-                                    var targetType = Nullable.GetUnderlyingType(propertyType);
+                                    memberType = (memberInfo as FieldInfo).FieldType;
+                                }
+                                else if (structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                {
+                                    memberType = (memberInfo as PropertyInfo).PropertyType;
+                                }
+                                else
+                                    continue;
+
+                                if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                                {
+                                    var targetType = Nullable.GetUnderlyingType(memberType);
                                     value = Convert.ChangeType(value, targetType);
                                 }
-                                property.SetValue(boxedModel, value, null);
+
+                                if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
+                                {
+                                    (memberInfo as FieldInfo).SetValue(boxedModel, value);
+                                }
+                                else if(structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                {
+                                    (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
+                                }
                             }
                             catch (Exception ex)
                             {
@@ -149,8 +139,23 @@ namespace AdoHelper
                                 try
                                 {
                                     object value = reader[structure.dbFieldName];
-                                    PropertyInfo property = modelType.GetProperty(structure.mapFieldName);
-                                    property.SetValue(boxedModel, value, null);
+
+                                    MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.mapFieldName), structure);
+                                    if (memberInfo == null)
+                                        continue;
+
+                                    value = Convert.ChangeType(value, structure.innerType);
+
+                                    if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
+                                    {
+                                        (memberInfo as FieldInfo).SetValue(boxedModel, value);
+                                    }
+                                    else if (structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                    {
+                                        (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
+                                    }
+
+                                    //memberInfo.SetValue(boxedModel, value, null);
                                 }
                                 catch (Exception ex)
                                 {
@@ -169,6 +174,31 @@ namespace AdoHelper
                 }
             }
             return enumerable;
+        }
+
+        private static MemberInfo GetAppropriateMember(MemberInfo[] members, FieldMapInfo structure)
+        {
+            MemberTypes appropriateMemberType;
+            switch (structure.mapFieldType)
+            {
+                case FieldMapInfo.FieldType.Field:
+                    appropriateMemberType = MemberTypes.Field;
+                    break;
+                case FieldMapInfo.FieldType.Property:
+                    appropriateMemberType = MemberTypes.Property;
+                    break;
+                default:
+                    appropriateMemberType = MemberTypes.Property;
+                    break;
+            }
+
+            for (int i = 0; i < members.Length; i++)
+            {
+                if (members[i].MemberType == appropriateMemberType)
+                    return members[i];
+            }
+
+            return null;
         }
     }
 }

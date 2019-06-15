@@ -15,11 +15,6 @@ namespace AdoHelper
         public ExecutionType ExecutorType { get; set; }
         public List<FieldMapInfo> ModelStructureTable { get; set; }
 
-        public enum EntityMapType
-        {
-            
-        }
-
         public enum ExecutionType
         {
             NonQuery,
