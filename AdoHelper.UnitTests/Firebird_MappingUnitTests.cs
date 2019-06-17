@@ -1,12 +1,8 @@
 using AdoHelper.UnitTests.Mapping;
 using FirebirdSql.Data.FirebirdClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
-using System.IO;
 using System.Linq;
 
 namespace AdoHelper.UnitTests
@@ -16,7 +12,7 @@ namespace AdoHelper.UnitTests
     {
         private const string CONNECTION_STRING = "user id=SYSDBA;password=masterkey;initial catalog=testdb.fdb;server type=Embedded";
 
-        private IDbConnection _connection = new FbConnection(CONNECTION_STRING);        
+        private IDbConnection _connection = new FbConnection(CONNECTION_STRING);
 
         [TestMethod]
         public void SimplePropertyMapping()
@@ -184,7 +180,7 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.textField,"Hello");
+            Assert.AreEqual(entity.textField, "Hello");
             Assert.IsTrue(Math.Abs(entity.floatField - 123.123) < 10e-5);
             Assert.AreEqual(entity.numericField, 123);
             Assert.AreEqual(entity.integerField, 123);
@@ -242,6 +238,48 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.IsTrue(scalar > 0);
+        }
+
+        [TestMethod]
+        public void ComplexTransaction()
+        {
+            _connection.Open();
+
+            int defaultCount = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalar();
+
+            var transaction = _connection.BeginTransaction();
+            new AdoHelper<int>(_connection)
+                .Query("INSERT INTO TestTable (id, TextField, FloatField, NumericField, IntegerField) VALUES (@id, @text, @float, @decimal, @int)")
+                .Parameters(
+                ("@id", 5),
+                ("@text", "Test hello"),
+                ("@float", 9.09),
+                ("@decimal", 193.123),
+                ("@int", 85))
+                .Transaction(transaction)
+                .ExecuteNonQuery();
+
+            int addCount = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .Transaction(transaction)
+                .ExecuteScalar();
+            transaction.Commit();
+
+            new AdoHelper<int>(_connection)
+                .Query("DELETE FROM TestTable WHERE TextField = @text")
+                .Parameters(("@text", "Test hello"))
+                .ExecuteNonQuery();
+
+            int count = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalar();
+
+            _connection.Close();
+
+            Assert.IsTrue(addCount > defaultCount);
+            Assert.IsTrue(defaultCount == count);
         }
     }
 }

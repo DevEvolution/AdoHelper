@@ -1,11 +1,8 @@
 using AdoHelper.UnitTests.Mapping;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.IO;
 using System.Linq;
 
 namespace AdoHelper.UnitTests
@@ -241,6 +238,47 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.IsTrue(scalar > 0);
+        }
+
+        [TestMethod]
+        public void ComplexTransaction()
+        {
+            _connection.Open();
+
+            int defaultCount = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalar();
+
+            var transaction = _connection.BeginTransaction();
+            new AdoHelper<int>(_connection)
+                .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
+                .Parameters(
+                ("@text","Test hello"), 
+                ("@float", 9.09), 
+                ("@decimal", 193.123), 
+                ("@int",85))
+                .Transaction(transaction)
+                .ExecuteNonQuery();
+
+            int addCount = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .Transaction(transaction)
+                .ExecuteScalar();
+            transaction.Commit();
+
+            new AdoHelper<int>(_connection)
+                .Query("DELETE FROM TestTable WHERE TextField = @text")
+                .Parameters(("@text", "Test hello"))
+                .ExecuteNonQuery();
+
+            int count = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalar();
+
+            _connection.Close();
+
+            Assert.IsTrue(addCount > defaultCount);
+            Assert.IsTrue(defaultCount == count);
         }
     }
 }

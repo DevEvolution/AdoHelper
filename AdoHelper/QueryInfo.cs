@@ -12,15 +12,15 @@ namespace AdoHelper
         public IDbCommand Command { get; set; }
         public IDbTransaction Transaction { get; set; }
         public List<IDbDataParameter> QueryInfoParameters { get; set; }
-        public ExecutionType ExecutorType { get; set; }
+        public ModelEntityType ModelType { get; set; }
         public List<FieldMapInfo> ModelStructureTable { get; set; }
 
-        public enum ExecutionType
+        public enum ModelEntityType
         {
-            NonQuery,
-            Scalar,
-            Reader,
-            SingleReader
+            Object,
+            Tuple,
+            ValueTuple,
+            GenericObject
         }
     }
 }

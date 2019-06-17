@@ -17,20 +17,25 @@ namespace AdoHelper
 
             _modelType = typeof(T);
 
+
             if (_modelType.GetInterface("IEnumerable") != null)
             {
                 // Enumerable<Model>
-                _queryInfo.ExecutorType = QueryInfo<T>.ExecutionType.Reader;
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.GenericObject;
             }
-            else if (IsSimpleType(_modelType))
+            else if (IsTuple(_modelType)) //if (IsSimpleType(_modelType))
             {
-                // value (Scalar>
-                _queryInfo.ExecutorType = QueryInfo<T>.ExecutionType.Scalar;
+                // value (Scalar
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
+            }
+            else if (IsValueTuple(_modelType))
+            {
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.ValueTuple;
             }
             else
             {
                 // Model
-                _queryInfo.ExecutorType = QueryInfo<T>.ExecutionType.SingleReader;
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Object;
             }
 
             ParseModelStructure(_modelType);
@@ -58,6 +63,30 @@ namespace AdoHelper
               || type.Equals(typeof(string))
               || type.Equals(typeof(decimal));
         }
+
+        bool IsValueTuple(Type _mtype)
+                => _mtype.IsGenericType && (
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,,>) ||
+                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,,,>)
+                );
+
+        bool IsTuple(Type _mtype)
+            => _mtype.IsGenericType && (
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,,>) ||
+            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,,,>)
+            );
 
         void ParseModelStructure(Type modelType)
         {
@@ -88,10 +117,7 @@ namespace AdoHelper
                 // Set field attribute
                 SetPropertyMapName(memberInfo, structure);
 
-                // Set full type
-
-                //structure.fullType = memberInfo.ReflectedType; //.PropertyType;
-
+                // Parse type
                 ParseInnerType(structure);
 
                 // Add to structure

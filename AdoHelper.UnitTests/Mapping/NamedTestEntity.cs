@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AdoHelper.UnitTests.Mapping
+﻿namespace AdoHelper.UnitTests.Mapping
 {
     public class NamedTestEntity
     {
-        [Field(Name ="id")]
+        [Field(Name = "id")]
         public long Test_Id { get; set; }
 
         [Field(Name = "TextField")]
