@@ -149,4 +149,4 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
                 .ExecuteReader();
 ```
 ## License
-The project is published under the license [MIT] (LICENSE.md) and is supplied as is, without any guarantees.
+The project is published under the license [MIT](LICENSE.md) and is supplied as is, without any guarantees.
