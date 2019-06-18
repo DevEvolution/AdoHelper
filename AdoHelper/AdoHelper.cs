@@ -102,7 +102,7 @@ namespace AdoHelper
                     structure.mapFieldType = FieldMapInfo.FieldType.Field;
                     structure.fullType = (memberInfo as FieldInfo).FieldType;
                 }
-                else if (memberInfo.MemberType == MemberTypes.Property)
+                else if (memberInfo.MemberType == MemberTypes.Property && ((memberInfo as PropertyInfo).CanWrite || _queryInfo.ModelType == QueryInfo<T>.ModelEntityType.Tuple))
                 {
                     structure.mapFieldType = FieldMapInfo.FieldType.Property;
                     structure.fullType = (memberInfo as PropertyInfo).PropertyType;
