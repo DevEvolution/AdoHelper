@@ -7,7 +7,7 @@
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Download links
  - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.0.0)
- - [Скачать dll-файл](https://yadi.sk/d/uK6gsNHz2Y2mTw)
+ - [Dowload dll file](https://yadi.sk/d/uK6gsNHz2Y2mTw)
 ## Installation
 To install a project, simply download the nuget package by running the `Install-Package DevEvolution.AdoHelper` command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.
 ## Features
