@@ -4,9 +4,19 @@ using System.Text;
 
 namespace AdoHelper
 {
+    /// <summary>
+    /// AdoHelper query parameter
+    /// </summary>
     public struct AdoParameter
     {
+        /// <summary>
+        /// Parameter name
+        /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Parameter value
+        /// </summary>
         public object Value { get; set; }
 
         public static implicit operator AdoParameter((string name, object value) paramToCast)

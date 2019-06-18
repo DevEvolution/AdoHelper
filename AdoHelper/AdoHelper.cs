@@ -11,6 +11,10 @@ namespace AdoHelper
         QueryInfo<T> _queryInfo;
         Type _modelType;
 
+        /// <summary>
+        /// Starts ADO.NET query
+        /// </summary>
+        /// <param name="connection">ADO.NET Connection</param>
         public AdoHelper(IDbConnection connection)
         {
             _queryInfo = new QueryInfo<T>() { Connection = connection };
@@ -41,7 +45,11 @@ namespace AdoHelper
             ParseModelStructure(_modelType);
         }
 
-
+        /// <summary>
+        /// Sets query text
+        /// </summary>
+        /// <param name="query">Query text</param>
+        /// <returns>Query info</returns>
         public QueryInfo<T> Query(string query)
         {
             _queryInfo.Command = _queryInfo.Connection.CreateCommand();
@@ -114,6 +122,9 @@ namespace AdoHelper
 
                 structure.mapFieldName = memberInfo.Name;
 
+                if (!CheckMappingRights(memberInfo))
+                    continue;
+
                 // Set field attribute
                 SetPropertyMapName(memberInfo, structure);
 
@@ -127,6 +138,10 @@ namespace AdoHelper
             // Parse fields
 
         }
+
+        private bool CheckMappingRights(MemberInfo propertyInfo)
+            => propertyInfo.GetCustomAttribute<NonMappedAttribute>() == null;    
+        
 
         private void SetPropertyMapName(MemberInfo propertyInfo, FieldMapInfo structure)
         {

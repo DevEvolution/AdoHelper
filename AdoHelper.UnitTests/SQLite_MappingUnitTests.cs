@@ -103,6 +103,25 @@ namespace AdoHelper.UnitTests
             Assert.IsTrue(entity.IntegerField == 123);
         }
 
+        [TestMethod]
+        public void SimplePropertyMapping_CombinedParams()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<SimpleTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable WHERE IntegerField = @intParam AND TextField = @textParam AND FloatField = @floatParam")
+                .Parameters(
+                new AdoParameter("@intParam", 123),
+                ("@textParam", "Hello"),
+                new Tuple<string, object>("@floatParam", 123.123))
+                .ExecuteReader()
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.IsTrue(entity.TextField == "Hello");
+            Assert.IsTrue(entity.FloatField == 123.123);
+            Assert.IsTrue(entity.NumericField == 123);
+            Assert.IsTrue(entity.IntegerField == 123);
+        }
 
         [TestMethod]
         public void NamedPropertyMapping()
@@ -119,6 +138,23 @@ namespace AdoHelper.UnitTests
             Assert.IsTrue(entity.Test_FloatField == 123.123);
             Assert.IsTrue(entity.Test_NumericField == 123);
             Assert.IsTrue(entity.Test_IntegerField == 123);
+        }
+
+        [TestMethod]
+        public void ComplexAttributePropertyMapping()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<ExcludedFieldTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable WHERE IntegerField = @intValue")
+                .Parameters(new AdoParameter("@intValue", 123))
+                .ExecuteReader()
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.AreEqual(entity.TextField, null);
+            Assert.AreEqual(entity.FloatField, default(float));
+            Assert.AreEqual(entity.Numeric, 123);
+            Assert.AreEqual(entity.Integer, 123);
         }
 
         [TestMethod]
@@ -279,6 +315,36 @@ namespace AdoHelper.UnitTests
 
             Assert.IsTrue(addCount > defaultCount);
             Assert.IsTrue(defaultCount == count);
+        }
+
+        [TestMethod]
+        public void AreDifferentEntityTypesEqual()
+        {
+            _connection.Open();
+            var classEntity = new AdoHelper<SimpleTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable WHERE id=@id")
+                .Parameters(("@id", 1))
+                .ExecuteReader().First();
+
+            var structEntity = new AdoHelper<StructTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable WHERE id=@id")
+                .Parameters(("@id", 1))
+                .ExecuteReader().First();
+
+            var valueTupleEntity = new AdoHelper<(int id, string text)>(_connection)
+                .Query("SELECT id, TextField FROM TestTable WHERE id=@id")
+                .Parameters(("@id", 1))
+                .ExecuteReader().First();
+
+            var tupleEntity = new AdoHelper<Tuple<int, string>>(_connection)
+                .Query("SELECT id, TextField FROM TestTable WHERE id=@id")
+                .Parameters(("@id", 1))
+                .ExecuteReader().First();
+            _connection.Close();
+
+            Assert.AreEqual(classEntity.TextField, structEntity.TextField);
+            Assert.AreEqual(structEntity.TextField, valueTupleEntity.text);
+            Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
         }
     }
 }

@@ -8,6 +8,15 @@ namespace AdoHelper
 {
     public static partial class AdoHelperExtensions
     {
+        /// <summary>
+        /// <para>Sets the query parameters</para>
+        /// <para>Is optional method</para>
+        /// <para>Params can be Tuple&lt;string,object&gt; or ValueTuple&lt;string,object&gt;</para>
+        /// </summary>
+        /// <typeparam name="T">Return entity type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <param name="parameters">Parameters</param>
+        /// <returns>Query info</returns>
         public static QueryInfo<T> Parameters<T>(this QueryInfo<T> queryInfo, params AdoParameter[] parameters)
         {
             queryInfo.QueryInfoParameters = new List<IDbDataParameter>();
@@ -23,6 +32,14 @@ namespace AdoHelper
             return queryInfo;
         }
 
+        /// <summary>
+        /// <para>Sets the query transaction</para>
+        /// <para>Is optional method</para>
+        /// </summary>
+        /// <typeparam name="T">Return entity type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <param name="transaction">ADO.NET transaction</param>
+        /// <returns>Query info</returns>
         public static QueryInfo<T> Transaction<T>(this QueryInfo<T> queryInfo, IDbTransaction transaction)
         {
             queryInfo.Transaction = transaction;
@@ -31,6 +48,12 @@ namespace AdoHelper
             return queryInfo;
         }
 
+        /// <summary>
+        /// Executes query and returns a single value
+        /// </summary>
+        /// <typeparam name="T">Return entity type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Return value</returns>
         public static T ExecuteScalar<T>(this QueryInfo<T> queryInfo)
         {
             T model;
@@ -59,6 +82,11 @@ namespace AdoHelper
             return model;
         }
 
+        /// <summary>
+        /// Executes query without return value
+        /// </summary>
+        /// <typeparam name="T">Return entity type</typeparam>
+        /// <param name="queryInfo">Query info</param>
         public static void ExecuteNonQuery<T>(this QueryInfo<T> queryInfo)
         {
             try
@@ -71,6 +99,12 @@ namespace AdoHelper
             }
         }
 
+        /// <summary>
+        /// Executes query and return a collection of mapped entities
+        /// </summary>
+        /// <typeparam name="T">Return entity type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Mapped entities collection</returns>
         public static IEnumerable<T> ExecuteReader<T>(this QueryInfo<T> queryInfo)
         {
             Type modelType = typeof(T);
