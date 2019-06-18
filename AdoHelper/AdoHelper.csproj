@@ -1,7 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>DevEvolution</Authors>
+    <Copyright>(c) 2019 DevEvolution</Copyright>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Description>Micro ORM for smarter RDBMS access via ADO NET</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/DevEvolution/AdoHelper</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>DevEvolution.AdoHelper</PackageId>
+    <PackageIconUrl>https://i.ibb.co/ncZFrvH/ADO-Helper-64-icon.png</PackageIconUrl>
+    <Product>AdoHelper</Product>
+    <Title>AdoHelper</Title>
+    <PackageTags>micro-orm, orm, sql</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
