@@ -125,7 +125,7 @@ public class ExcludedFieldTestEntity
 
         [NonMapped]
         public double FloatField { get; set; } // that property is excluded from mapping
-
+		
 		public DateTime DateField { get; } // that property is excluded too because set property is unreachable
 
         [Field(Name = "NumericField")]
