@@ -4,5 +4,5 @@ dotnet: 2.1
 solution: AdoHelper.sln
 script:
   - dotnet restore
-  - dotnet build
+  - ls AdoHelper/AdoHelper.UnitTests/bin/Debug/netcoreapp2.1/
   - dotnet test
