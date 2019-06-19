@@ -3,6 +3,6 @@ mono: none
 dotnet: 2.1
 solution: AdoHelper.sln
 script:
-  - dotnet build
   - dotnet restore
+  - dotnet build
   - dotnet test
