@@ -3,4 +3,7 @@ mono: none
 dotnet: 2.1
 solution: AdoHelper.sln
 script:
-  - ls 
+  - dotnet restore
+  - dotnet test
+  - cd AdoHelper.UnitTests/bin/Debug/netcoreapp2.1/
+  - ls
