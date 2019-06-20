@@ -1,8 +1,8 @@
 os: windows
 language: csharp
 mono: none
-dotnet: 2.1
 solution: AdoHelper.sln
 script:
+  - dotnet --info
   - dotnet restore
   - dotnet test
