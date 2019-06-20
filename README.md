@@ -1,4 +1,5 @@
 ﻿# AdoHelper
+[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper)
 *This page is available in the following languages:*
  - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](README.md)
  - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](README-RU.md)
