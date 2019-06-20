@@ -1,9 +1,9 @@
 ﻿# AdoHelper
-[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper)
 *Эта страница доступна на следующих языках:*
  - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](README.md)
  - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](README-RU.md)
 ---
+[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper) 
 **AdoHelper**  – небольшая ORM (_объектно-реляционное отображение_), построенная поверх технологии ADO.NET  и упрощающая ее использование.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Файлы
