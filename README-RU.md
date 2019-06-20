@@ -3,7 +3,7 @@
  - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](README.md)
  - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](README-RU.md)
 ---
-[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper) 
+[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper) <br/>
 **AdoHelper**  – небольшая ORM (_объектно-реляционное отображение_), построенная поверх технологии ADO.NET  и упрощающая ее использование.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Файлы
@@ -126,7 +126,7 @@ public class ExcludedFieldTestEntity
 
         [NonMapped]
         public double FloatField { get; set; } // that property is excluded from mapping
-		
+
 		public DateTime DateField { get; } // that property is excluded too because set property is unreachable
 
         [Field(Name = "NumericField")]

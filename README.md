@@ -1,9 +1,10 @@
-﻿# AdoHelper
+﻿
+# AdoHelper
 *This page is available in the following languages:*
  - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](README.md)
  - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](README-RU.md)
 ---
-[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper)
+[![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper) <br/>
 **AdoHelper**  – a small ORM (_objective-relational mapping_), built on top of ADO.NET technology and making its use smarter.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Download links
