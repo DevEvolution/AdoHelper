@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdoHelper.TupleParsing;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
@@ -8,54 +9,49 @@ namespace AdoHelper
 {
     public static partial class AdoHelperExtensions
     {
+        //private static List<T> ExecuteValueTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        //{
+        //    List<T> enumerable = new List<T>();
+        //    using (IDataReader reader = queryInfo.Command.ExecuteReader())
+        //    {
+        //        int itemCount = queryInfo.ModelStructureTable.Count;
+
+        //        while (reader.Read())
+        //        {
+        //            T model = ObjectCreator.Create<T>();
+
+        //            object boxedModel = model;
+
+        //            if (reader.FieldCount != itemCount)
+        //                throw new ArgumentException("Number of items in value tuple should be equal to number of fields in query columns");
+
+        //            ValueTupleAccess access = new ValueTupleAccess(boxedModel);
+        //            for (int i = 0; i < queryInfo.ModelStructureTable.Count; i++)
+        //            {
+        //                try
+        //                {
+        //                    FieldMapInfo structure = queryInfo.ModelStructureTable[i];
+        //                    object value = (reader[i].Equals(System.DBNull.Value)) ?
+        //                            null : reader[i];
+
+        //                    value = Convert.ChangeType(value, structure.innerType);
+        //                    access[i] = value;
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    throw ex;
+        //                }
+        //            }
+
+        //            model = (T)boxedModel;
+
+        //            enumerable.Add(model);
+        //        }
+        //    }
+        //    return enumerable;
+        //}
+
         private static List<T> ExecuteValueTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
-        {
-            List<T> enumerable = new List<T>();
-            using (IDataReader reader = queryInfo.Command.ExecuteReader())
-            {
-                int itemCount = queryInfo.ModelStructureTable.Count;
-
-                while (reader.Read())
-                {
-                    T model = ObjectCreator.Create<T>();
-
-                    object boxedModel = model;
-
-                    if (reader.FieldCount != itemCount)
-                        throw new ArgumentException("Number of items in value tuple should be equal to number of fields in query columns");
-
-                    int index = 0;
-
-                    foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
-                    {
-                        try
-                        {
-                            object value = (reader[index].Equals(System.DBNull.Value)) ?
-                                    null : reader[index];
-
-                            FieldInfo fieldInfo = modelType.GetField(structure.mapFieldName);
-                            if (fieldInfo == null)
-                                continue;
-
-                            value = Convert.ChangeType(value, structure.innerType);
-                            fieldInfo.SetValue(boxedModel, value);
-                            index++;
-                        }
-                        catch (Exception ex)
-                        {
-                            throw ex;
-                        }
-                    }
-
-                    model = (T)boxedModel;
-
-                    enumerable.Add(model);
-                }
-            }
-            return enumerable;
-        }
-
-        private static List<T> ExecuteTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
         {
             List<T> enumerable = new List<T>();
             using (IDataReader reader = queryInfo.Command.ExecuteReader())
@@ -78,9 +74,46 @@ namespace AdoHelper
                             object value = (reader[index].Equals(System.DBNull.Value)) ?
                                     null : reader[index];
 
-                            //PropertyInfo propertyInfo = modelType.GetProperty(structure.mapFieldName);
-                            //if (propertyInfo == null)
-                            //    continue;
+                            value = Convert.ChangeType(value, structure.innerType);
+                            parameters.Add(value);
+                            index++;
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+
+                    T model = ObjectCreator.CreateTuple<T>(parameters);
+
+                    enumerable.Add(model);
+                }
+            }
+            return enumerable;
+        }
+
+        private static List<T> ExecuteTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        {
+            List<T> enumerable = new List<T>();
+            using (IDataReader reader = queryInfo.Command.ExecuteReader())
+            {
+                int itemCount = queryInfo.ModelStructureTable.Count;
+
+                while (reader.Read())
+                {
+                    List<object> parameters = new List<object>();
+
+                    if (reader.FieldCount != itemCount)
+                        throw new ArgumentException("Number of items in tuple should be equal to number of fields in query columns");
+
+                    int index = 0;
+
+                    foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
+                    {
+                        try
+                        {
+                            object value = (reader[index].Equals(System.DBNull.Value)) ?
+                                    null : reader[index];
 
                             value = Convert.ChangeType(value, structure.innerType);
                             parameters.Add(value);
@@ -92,7 +125,7 @@ namespace AdoHelper
                         }
                     }
 
-                    T model = ObjectCreator.Create<T>(parameters);
+                    T model = ObjectCreator.CreateTuple<T>(parameters);
 
                     enumerable.Add(model);
                 }

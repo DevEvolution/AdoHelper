@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
+using AdoHelper.TupleParsing;
 
 namespace AdoHelper
 {
@@ -26,23 +27,24 @@ namespace AdoHelper
             {
                 // Enumerable<Model>
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.GenericObject;
+                ParseModelStructure(_modelType);
             }
-            else if (IsTuple(_modelType)) //if (IsSimpleType(_modelType))
+            else if (TupleAccess.IsTuple(_modelType))
             {
-                // value (Scalar
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
+                ParseTupleStructure(_modelType);
+
             }
-            else if (IsValueTuple(_modelType))
+            else if (ValueTupleAccess.IsValueTuple(_modelType))
             {
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.ValueTuple;
+                ParseValueTupleStructure(_modelType);
             }
             else
             {
-                // Model
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Object;
+                ParseModelStructure(_modelType);
             }
-
-            ParseModelStructure(_modelType);
         }
 
         /// <summary>
@@ -72,29 +74,43 @@ namespace AdoHelper
               || type.Equals(typeof(decimal));
         }
 
-        bool IsValueTuple(Type _mtype)
-                => _mtype.IsGenericType && (
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,,>) ||
-                _mtype.GetGenericTypeDefinition() == typeof(System.ValueTuple<,,,,,,,>)
-                );
+        void ParseValueTupleStructure(Type modelType)
+        {
+            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
 
-        bool IsTuple(Type _mtype)
-            => _mtype.IsGenericType && (
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,,>) ||
-            _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<,,,,,,,>)
-            );
+            for (int i = 0; i < ValueTupleAccess.ItemCount(modelType); i++)
+            {
+                FieldMapInfo structure = new FieldMapInfo();
+                structure.mapFieldType = FieldMapInfo.FieldType.Field;
+                structure.fullType = ValueTupleAccess.GetItemType(modelType, i);
+                structure.mapFieldName = String.Empty;
+
+                // Parse type
+                ParseInnerType(structure);
+
+                // Add to structure
+                _queryInfo.ModelStructureTable.Add(structure);
+            }
+        }
+
+        void ParseTupleStructure(Type modelType)
+        {
+            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
+
+            for (int i = 0; i < TupleAccess.ItemCount(modelType); i++)
+            {
+                FieldMapInfo structure = new FieldMapInfo();
+                structure.mapFieldType = FieldMapInfo.FieldType.Property;
+                structure.fullType = TupleAccess.GetItemType(modelType, i);
+                structure.mapFieldName = String.Empty;
+
+                // Parse type
+                ParseInnerType(structure);
+
+                // Add to structure
+                _queryInfo.ModelStructureTable.Add(structure);
+            }
+        }
 
         void ParseModelStructure(Type modelType)
         {
@@ -134,9 +150,6 @@ namespace AdoHelper
                 // Add to structure
                 _queryInfo.ModelStructureTable.Add(structure);
             }
-
-            // Parse fields
-
         }
 
         private bool CheckMappingRights(MemberInfo propertyInfo)

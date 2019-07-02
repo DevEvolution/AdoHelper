@@ -14,6 +14,8 @@ namespace AdoHelper.UnitTests
 
         private IDbConnection _connection = new FbConnection(CONNECTION_STRING);
 
+
+
         [TestMethod]
         public void SimplePropertyMapping()
         {
@@ -25,10 +27,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -42,10 +44,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123f) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -59,10 +61,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.textField, "Hello");
+            Assert.AreEqual("Hello", entity.textField);
             Assert.IsTrue(Math.Abs(entity.floatField - 123.123f) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -78,10 +80,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -97,10 +99,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -117,10 +119,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -134,10 +136,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.Test_TextField, "Hello");
+            Assert.AreEqual("Hello", entity.Test_TextField);
             Assert.IsTrue(Math.Abs(entity.Test_FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.Test_NumericField, 123);
-            Assert.AreEqual(entity.Test_IntegerField, 123);
+            Assert.AreEqual(123, entity.Test_NumericField);
+            Assert.AreEqual(123, entity.Test_IntegerField);
         }
 
         [TestMethod]
@@ -151,10 +153,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, null);
-            Assert.AreEqual(entity.FloatField, default(float));
-            Assert.AreEqual(entity.Numeric, 123);
-            Assert.AreEqual(entity.Integer, 123);
+            Assert.AreEqual(null, entity.TextField);
+            Assert.AreEqual(default(float), entity.FloatField);
+            Assert.AreEqual(123, entity.Numeric);
+            Assert.AreEqual(123, entity.Integer);
         }
 
         [TestMethod]
@@ -168,7 +170,7 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.IsTrue(entity.TextField == "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
         }
 
         [TestMethod]
@@ -182,10 +184,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -199,10 +201,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.TextField, "Hello");
+            Assert.AreEqual("Hello", entity.TextField);
             Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.NumericField, 123);
-            Assert.AreEqual(entity.IntegerField, 123);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
         }
 
         [TestMethod]
@@ -216,10 +218,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.textField, "Hello");
+            Assert.AreEqual("Hello", entity.textField);
             Assert.IsTrue(Math.Abs(entity.floatField - 123.123) < 10e-5);
-            Assert.AreEqual(entity.numericField, 123);
-            Assert.AreEqual(entity.integerField, 123);
+            Assert.AreEqual(123, entity.numericField);
+            Assert.AreEqual(123, entity.integerField);
         }
 
         [TestMethod]
@@ -233,10 +235,10 @@ namespace AdoHelper.UnitTests
                 .FirstOrDefault();
             _connection.Close();
 
-            Assert.AreEqual(entity.Item2, "Hello");
+            Assert.AreEqual("Hello", entity.Item2);
             Assert.IsTrue(Math.Abs(entity.Item3 - 123.123) < 10e-5);
-            Assert.AreEqual(entity.Item4, 123);
-            Assert.AreEqual(entity.Item5, 123);
+            Assert.AreEqual(123, entity.Item4);
+            Assert.AreEqual(123, entity.Item5);
         }
 
         [TestMethod]
@@ -347,6 +349,64 @@ namespace AdoHelper.UnitTests
             Assert.AreEqual(classEntity.TextField, structEntity.TextField);
             Assert.AreEqual(structEntity.TextField, valueTupleEntity.text);
             Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
+        } 
+
+        [TestMethod]
+        public void LongValueTupleMapping()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<(int id, double double_value, DateTime date_value, TimeSpan time_value, string text_fixed, string text_varying, short small_value, byte[] array, int int_value, float float_value)>(_connection)
+                .Query("SELECT * FROM LongTestTable WHERE id = @id")
+                .Parameters(("@id", 2))
+                .ExecuteReader()
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.IsNotNull(entity);
+            Assert.AreEqual(2, entity.id);
+            Assert.AreEqual(999.001001, entity.double_value);
+            Assert.AreEqual(new DateTime(2007,07,07), entity.date_value);
+            Assert.AreEqual(new TimeSpan(08,0,0), entity.time_value);
+            Assert.AreEqual("fixed123", entity.text_fixed);
+            Assert.AreEqual("varyin", entity.text_varying);
+            Assert.AreEqual(1000, entity.small_value);
+            var array = new byte[] { 48, 49, 49, 48 };
+            Assert.AreEqual(entity.array.Length, array.Length);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.AreEqual(array[0], entity.array[0]);
+            }
+            Assert.AreEqual(950, entity.int_value);
+            Assert.IsTrue(Math.Abs(0.451 - entity.float_value) < 10e-5);
+        }
+
+        [TestMethod]
+        public void LongTupleMapping()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<Tuple<int, double, DateTime, TimeSpan, string, string, short, Tuple<byte[], int, float>>>(_connection)
+                .Query("SELECT * FROM LongTestTable WHERE id = @id")
+                .Parameters(("@id", 2))
+                .ExecuteReader()
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.IsNotNull(entity);
+            Assert.AreEqual(2, entity.Item1);
+            Assert.AreEqual(999.001001, entity.Item2);
+            Assert.AreEqual(new DateTime(2007, 07, 07), entity.Item3);
+            Assert.AreEqual(new TimeSpan(08, 0, 0), entity.Item4);
+            Assert.AreEqual("fixed123", entity.Item5);
+            Assert.AreEqual("varyin", entity.Item6);
+            Assert.AreEqual(1000, entity.Item7);
+            var array = new byte[] { 48, 49, 49, 48 };
+            Assert.AreEqual(entity.Rest.Item1.Length, array.Length);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Assert.AreEqual(array[0], entity.Rest.Item1[0]);
+            }
+            Assert.AreEqual(950, entity.Rest.Item2);
+            Assert.IsTrue(Math.Abs(0.451 - entity.Rest.Item3) < 10e-5);
         }
     }
 }
