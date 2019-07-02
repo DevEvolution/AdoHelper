@@ -45,7 +45,6 @@ namespace AdoHelper
         {
             Object,
             Tuple,
-            ValueTuple,
             GenericObject
         }
     }

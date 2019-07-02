@@ -32,13 +32,13 @@ namespace AdoHelper
             else if (TupleAccess.IsTuple(_modelType))
             {
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
-                ParseTupleStructure(_modelType);
+                ParseTupleStructure(_modelType, false);
 
             }
             else if (ValueTupleAccess.IsValueTuple(_modelType))
             {
-                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.ValueTuple;
-                ParseValueTupleStructure(_modelType);
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
+                ParseTupleStructure(_modelType, true);
             }
             else
             {
@@ -60,48 +60,25 @@ namespace AdoHelper
             return _queryInfo;
         }
 
-
-        bool IsSimpleType(Type type)
-        {
-            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
-            {
-                // nullable type, check if the nested type is simple.
-                return IsSimpleType(type.GetGenericArguments()[0]);
-            }
-            return type.IsPrimitive
-              || type.IsEnum
-              || type.Equals(typeof(string))
-              || type.Equals(typeof(decimal));
-        }
-
-        void ParseValueTupleStructure(Type modelType)
+        void ParseTupleStructure(Type modelType, bool isValueTuple)
         {
             _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
 
-            for (int i = 0; i < ValueTupleAccess.ItemCount(modelType); i++)
+            int itemCount = isValueTuple ? ValueTupleAccess.ItemCount(modelType) : TupleAccess.ItemCount(modelType);
+            for (int i = 0; i < itemCount; i++)
             {
                 FieldMapInfo structure = new FieldMapInfo();
-                structure.mapFieldType = FieldMapInfo.FieldType.Field;
-                structure.fullType = ValueTupleAccess.GetItemType(modelType, i);
-                structure.mapFieldName = String.Empty;
-
-                // Parse type
-                ParseInnerType(structure);
-
-                // Add to structure
-                _queryInfo.ModelStructureTable.Add(structure);
-            }
-        }
-
-        void ParseTupleStructure(Type modelType)
-        {
-            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
-
-            for (int i = 0; i < TupleAccess.ItemCount(modelType); i++)
-            {
-                FieldMapInfo structure = new FieldMapInfo();
-                structure.mapFieldType = FieldMapInfo.FieldType.Property;
-                structure.fullType = TupleAccess.GetItemType(modelType, i);
+                if (isValueTuple)
+                {
+                    structure.mapFieldType = FieldMapInfo.FieldType.Field;
+                    structure.fullType = ValueTupleAccess.GetItemType(modelType, i);
+                }
+                else
+                {
+                    structure.mapFieldType = FieldMapInfo.FieldType.Property;
+                    structure.fullType = TupleAccess.GetItemType(modelType, i);
+                }
+                  
                 structure.mapFieldName = String.Empty;
 
                 // Parse type

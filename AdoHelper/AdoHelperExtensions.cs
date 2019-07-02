@@ -115,9 +115,6 @@ namespace AdoHelper
                 case QueryInfo<T>.ModelEntityType.Object:
                     enumerable = ExecuteObjectReader(queryInfo, modelType);
                     break;
-                case QueryInfo<T>.ModelEntityType.ValueTuple:
-                    enumerable = ExecuteValueTupleReader(queryInfo, modelType);
-                    break;
                 case QueryInfo<T>.ModelEntityType.Tuple:
                     enumerable = ExecuteTupleReader(queryInfo, modelType);
                     break;

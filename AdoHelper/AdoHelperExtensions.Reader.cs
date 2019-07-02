@@ -51,46 +51,46 @@ namespace AdoHelper
         //    return enumerable;
         //}
 
-        private static List<T> ExecuteValueTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
-        {
-            List<T> enumerable = new List<T>();
-            using (IDataReader reader = queryInfo.Command.ExecuteReader())
-            {
-                int itemCount = queryInfo.ModelStructureTable.Count;
+        //private static List<T> ExecuteValueTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        //{
+        //    List<T> enumerable = new List<T>();
+        //    using (IDataReader reader = queryInfo.Command.ExecuteReader())
+        //    {
+        //        int itemCount = queryInfo.ModelStructureTable.Count;
 
-                while (reader.Read())
-                {
-                    List<object> parameters = new List<object>();
+        //        while (reader.Read())
+        //        {
+        //            List<object> parameters = new List<object>();
 
-                    if (reader.FieldCount != itemCount)
-                        throw new ArgumentException("Number of items in value tuple should be equal to number of fields in query columns");
+        //            if (reader.FieldCount != itemCount)
+        //                throw new ArgumentException("Number of items in value tuple should be equal to number of fields in query columns");
 
-                    int index = 0;
+        //            int index = 0;
 
-                    foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
-                    {
-                        try
-                        {
-                            object value = (reader[index].Equals(System.DBNull.Value)) ?
-                                    null : reader[index];
+        //            foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
+        //            {
+        //                try
+        //                {
+        //                    object value = (reader[index].Equals(System.DBNull.Value)) ?
+        //                            null : reader[index];
 
-                            value = Convert.ChangeType(value, structure.innerType);
-                            parameters.Add(value);
-                            index++;
-                        }
-                        catch (Exception ex)
-                        {
-                            throw ex;
-                        }
-                    }
+        //                    value = Convert.ChangeType(value, structure.innerType);
+        //                    parameters.Add(value);
+        //                    index++;
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    throw ex;
+        //                }
+        //            }
 
-                    T model = ObjectCreator.CreateTuple<T>(parameters);
+        //            T model = ObjectCreator.CreateTuple<T>(parameters);
 
-                    enumerable.Add(model);
-                }
-            }
-            return enumerable;
-        }
+        //            enumerable.Add(model);
+        //        }
+        //    }
+        //    return enumerable;
+        //}
 
         private static List<T> ExecuteTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
         {
