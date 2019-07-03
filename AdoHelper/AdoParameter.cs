@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Text;
 
 namespace AdoHelper
@@ -18,6 +20,11 @@ namespace AdoHelper
         /// Parameter value
         /// </summary>
         public object Value { get; set; }
+
+        public static explicit operator AdoParameter(DbParameter parameter)
+        {
+            return new AdoParameter(parameter.ParameterName, parameter.Value);
+        }
 
         public static implicit operator AdoParameter((string name, object value) paramToCast)
         {

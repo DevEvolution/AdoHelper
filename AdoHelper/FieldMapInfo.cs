@@ -46,7 +46,7 @@ namespace AdoHelper
         {
             Field,
             Property,
-            TupleItem
+            CollectionItem
         }
     }
 }

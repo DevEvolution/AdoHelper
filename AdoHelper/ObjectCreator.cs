@@ -38,6 +38,24 @@ namespace AdoHelper
             return (T)Activator.CreateInstance(modelType, objParam);
         }
 
+        public static object CreateEnumerable(Type type, List<object> parameters)
+        {
+            if (type.GetInterface("ICollection") != null)
+            {
+                return CreateModelObject(type);
+            }
+            else if (type.GetInterface("IEnumerable") != null)
+            {
+                var listType = typeof(List<>);
+                var genericArgs = type.GetGenericArguments();
+                var concreteType = listType.MakeGenericType(genericArgs);
+                return CreateModelObject(concreteType);
+            }
+
+            throw new NotSupportedException("Collection type must implement an IEnumerable interface");
+        }
+
+
         public static T CreateTuple<T>(List<object> parameters)
         {
             return (T)CreateTuple(typeof(T), parameters);

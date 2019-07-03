@@ -25,6 +25,7 @@ namespace AdoHelper
                 IDbDataParameter param = queryInfo.Command.CreateParameter();
                 param.ParameterName = parameters[i].Name;
                 param.Value = parameters[i].Value;
+                
                 queryInfo.Command.Parameters.Add(param);
                 queryInfo.QueryInfoParameters.Add(param);
             }
@@ -118,7 +119,8 @@ namespace AdoHelper
                 case QueryInfo<T>.ModelEntityType.Tuple:
                     enumerable = ExecuteTupleReader(queryInfo, modelType);
                     break;
-                case QueryInfo<T>.ModelEntityType.GenericObject:
+                case QueryInfo<T>.ModelEntityType.Collection:
+                    enumerable = ExecuteCollectionReader(queryInfo, modelType);
                     break;
             }
 

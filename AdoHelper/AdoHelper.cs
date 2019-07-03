@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using AdoHelper.TupleParsing;
@@ -10,7 +11,6 @@ namespace AdoHelper
     public class AdoHelper<T>
     {
         QueryInfo<T> _queryInfo;
-        Type _modelType;
 
         /// <summary>
         /// Starts ADO.NET query
@@ -20,14 +20,13 @@ namespace AdoHelper
         {
             _queryInfo = new QueryInfo<T>() { Connection = connection };
 
-            _modelType = typeof(T);
+            Type _modelType = typeof(T);
 
-
-            if (_modelType.GetInterface("IEnumerable") != null)
+            if (_modelType.GetInterface("ICollection") != null || _modelType.GetInterface("IEnumerable") != null)
             {
                 // Enumerable<Model>
-                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.GenericObject;
-                ParseModelStructure(_modelType);
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Collection;
+                ParseCollectionStructure(_modelType);
             }
             else if (TupleAccess.IsTuple(_modelType))
             {
@@ -127,6 +126,55 @@ namespace AdoHelper
                 // Add to structure
                 _queryInfo.ModelStructureTable.Add(structure);
             }
+        }
+
+        void ParseCollectionStructure(Type modelType)
+        {
+            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
+
+            FieldMapInfo structure = new FieldMapInfo();
+            structure.mapFieldType = FieldMapInfo.FieldType.CollectionItem;
+            structure.fullType = modelType.GetGenericArguments().First();
+            structure.mapFieldName = String.Empty;
+
+            ParseInnerType(structure);
+
+            _queryInfo.ModelStructureTable.Add(structure);
+
+            // Parse properties
+            //foreach (MemberInfo memberInfo in modelType.GetMembers())
+            //{
+            //    FieldMapInfo structure = new FieldMapInfo();
+
+            //    if (memberInfo.MemberType == MemberTypes.Field)
+            //    {
+            //        structure.mapFieldType = FieldMapInfo.FieldType.Field;
+            //        structure.fullType = (memberInfo as FieldInfo).FieldType;
+            //    }
+            //    else if (memberInfo.MemberType == MemberTypes.Property && ((memberInfo as PropertyInfo).CanWrite || _queryInfo.ModelType == QueryInfo<T>.ModelEntityType.Tuple))
+            //    {
+            //        structure.mapFieldType = FieldMapInfo.FieldType.Property;
+            //        structure.fullType = (memberInfo as PropertyInfo).PropertyType;
+            //    }
+            //    else
+            //    {
+            //        continue;
+            //    }
+
+            //    structure.mapFieldName = memberInfo.Name;
+
+            //    if (!CheckMappingRights(memberInfo))
+            //        continue;
+
+            //    // Set field attribute
+            //    SetPropertyMapName(memberInfo, structure);
+
+            //    // Parse type
+            //    ParseInnerType(structure);
+
+            //    // Add to structure
+            //    _queryInfo.ModelStructureTable.Add(structure);
+            //}
         }
 
         private bool CheckMappingRights(MemberInfo propertyInfo)

@@ -41,11 +41,14 @@ namespace AdoHelper
         /// </summary>
         public List<FieldMapInfo> ModelStructureTable { get; set; }
 
+        /// <summary>
+        /// Shows which entity model type should use mapper 
+        /// </summary>
         public enum ModelEntityType
         {
             Object,
             Tuple,
-            GenericObject
+            Collection
         }
     }
 }

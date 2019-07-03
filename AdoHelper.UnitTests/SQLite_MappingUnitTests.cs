@@ -1,8 +1,10 @@
 using AdoHelper.UnitTests.Mapping;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Globalization;
 using System.Linq;
 
 namespace AdoHelper.UnitTests
@@ -403,6 +405,65 @@ namespace AdoHelper.UnitTests
             }
             Assert.AreEqual(950, entity.Rest.Item2);
             Assert.IsTrue(Math.Abs(0.451 - entity.Rest.Item3) < 10e-5);
+        }
+
+        [TestMethod]
+        public void CollectionMapping_IEnumerable()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<IEnumerable<string>>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader();
+            _connection.Close();
+
+            Assert.AreNotEqual(0, entity.Count());
+
+            var model = entity.First().ToList();
+            Assert.AreEqual(5, model.Count);
+            Assert.AreEqual("Hello", model[1]);
+            Assert.AreEqual("123.123", model[2].Replace(',','.'));
+            Assert.AreEqual("123", model[3]);
+            Assert.AreEqual("123", model[4]);
+        }
+
+        [TestMethod]
+        public void CollectionMapping_List()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<List<string>>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader();
+            _connection.Close();
+
+            Assert.AreNotEqual(0, entity.Count());
+            
+            var model = entity.First();
+            Assert.AreEqual(5, model.Count);
+            Assert.AreEqual("Hello", model[1]);
+            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
+            Assert.AreEqual("123", model[3]);
+            Assert.AreEqual("123", model[4]);
+        }
+
+        [TestMethod]
+        public void CollectionMapping_Collection()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<ICollection<string>>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader();
+            _connection.Close();
+
+            Assert.AreNotEqual(0, entity.Count());
+
+            var model = entity.First().ToList();
+            
+            Assert.AreEqual(5, model.Count);
+
+            Assert.AreEqual("Hello", model[1]);
+            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
+            Assert.AreEqual("123", model[3]);
+            Assert.AreEqual("123", model[4]);
         }
     }
 }
