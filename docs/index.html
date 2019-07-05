@@ -67,7 +67,7 @@
 <img src="https://i.ibb.co/j4HDHTX/ADO-Helper.png" alt="AdoHelper"></p>
 <h2 id="download-links">Download links</h2>
 <ul>
-<li><a href="https://www.nuget.org/packages/DevEvolution.AdoHelper/1.0.0">Nuget-package</a></li>
+<li><a href="https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0">Nuget-package</a></li>
 <li><a href="https://yadi.sk/d/uK6gsNHz2Y2mTw">Dowload dll file</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
@@ -86,7 +86,7 @@ IEnumerable&lt;SimpleTestEntity&gt; entities = new AdoHelper&lt;SimpleTestEntity
 	.Query(&quot;SELECT * FROM TestTable&quot;)
 	.ExecuteReader();
 </code></pre>
-<p>The displayed type can be a class, structure, tuple (<code>System.Tuple</code>) or (<code>System.ValueTuple</code>). Mapping is made on public properties, available for writing (<code>set;</code>) and public fields.</p>
+<p>The displayed type can be a class, structure, tuple (<code>System.Tuple</code>) or (<code>System.ValueTuple</code>) as well as a generic collection (<code>IEnumerable&lt;&gt;</code>) or a list (<code>List&lt;&gt;</code>). Mapping is made on public properties, available for writing (<code>set;</code>) and public fields.</p>
 <pre><code class="lang-csharp">public class ClassEntity 
 {
      public int Id {get; set;}
@@ -119,6 +119,10 @@ var tupleEntity = new AdoHelper&lt;Tuple&lt;int, string&gt;&gt;(_connection)
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
+var enumerableEntity = new AdoHelper&lt;IEnumerable&lt;string&gt;&gt;(_connection)
+     .Query(&quot;SELECT id, text FROM TestTable WHERE id=@id&quot;)
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
 
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
@@ -137,7 +141,7 @@ Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
 </li>
 <li><p><strong><code>DB connection object</code></strong> is an object of type IDbConnection (for example, SqlConnection).</p>
 </li>
-<li><p><strong><code>Params</code></strong> - a collection of parameters that represent a pair (parameter - value). The default type of parameters is <code>AdoParameter</code>. You can also use tuples (<code>ValueTuple&lt;string, object&gt;</code> and <code>Tuple&lt;string, object&gt;</code>) to specify each parameter.</p>
+<li><p><strong><code>Params</code></strong> - a collection of parameters that represent a pair (parameter - value). The default type of parameters is <code>AdoParameter</code>. You can also use tuples (<code>ValueTuple&lt;string, object&gt;</code> and <code>Tuple&lt;string, object&gt;</code>) and <code>DbParameter</code> objects to specify each parameter.</p>
 </li>
 </ul>
 <p>Example code :</p>
@@ -193,7 +197,7 @@ An example of such a class:</p>
         public long Integer { get; set; } // that property is mapped to IntegerField column
     }
 </code></pre>
-<p>Tuples can also be used as an object for matching. However, in this case, the elements of which the tuple consists must go in the same order as in the resulting table.</p>
+<p>Tuples can also be used as an object for matching. However, in this case, the elements of which the tuple consists must go in the same order as in the resulting table. Tuples of any size are fully supported.</p>
 <p><strong>Note.</strong> The names of the <code>ValueTuple</code> elements do not participate in the comparison, as they are only syntactic sugar and are not used in the compiled application.</p>
 <pre><code class="lang-csharp">var entities = new AdoHelper&lt;(int id, string name, int nextId)&gt;(_connection)
                 .Query(&quot;SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’&quot;)
