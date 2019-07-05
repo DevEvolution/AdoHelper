@@ -1,0 +1,1 @@
+{"Name":"faketest.json","Tables":[{"Name":"TestTable","Headers":[{"Name":"id","DbType":0,"Attributes":[]},{"Name":"text_field","DbType":0,"Attributes":[]},{"Name":"double_field","DbType":0,"Attributes":[]},{"Name":"decimal_field","DbType":0,"Attributes":[]},{"Name":"integer_field","DbType":0,"Attributes":[]}],"Rows":[[1,"Hello",123.123,123,123],[2,"World",234.234,234.12,234]]}]}

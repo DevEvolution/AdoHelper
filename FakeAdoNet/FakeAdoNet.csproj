@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AdoHelper.FakeAdoNet</RootNamespace>
+    <AssemblyName>AdoHelper.FakeAdoNet</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FakeAdoNet\FakeCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="FakeAdoNet\FakeConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

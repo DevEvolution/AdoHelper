@@ -21,7 +21,7 @@ namespace AdoHelper
         /// </summary>
         public object Value { get; set; }
 
-        public static explicit operator AdoParameter(DbParameter parameter)
+        public static implicit operator AdoParameter(DbParameter parameter)
         {
             return new AdoParameter(parameter.ParameterName, parameter.Value);
         }
@@ -36,6 +36,11 @@ namespace AdoHelper
             return new AdoParameter(paramToCast.Item1, paramToCast.Item2);
         }
 
+        /// <summary>
+        /// Creates a parameter
+        /// </summary>
+        /// <param name="name">Parameter name</param>
+        /// <param name="value">Parameter value</param>
         public AdoParameter(string name, object value)
         {
             Name = name;

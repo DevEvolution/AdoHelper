@@ -375,7 +375,7 @@ namespace AdoHelper.UnitTests
                 Assert.AreEqual(array[0], entity.array[0]);
             }
             Assert.AreEqual(950, entity.int_value);
-            Assert.IsTrue(Math.Abs(0.451 - entity.float_value) < 10e-5);
+            Assert.AreEqual(0.451, entity.float_value, 10e-5);
         }
 
         [TestMethod]
@@ -404,7 +404,7 @@ namespace AdoHelper.UnitTests
                 Assert.AreEqual(array[0], entity.Rest.Item1[0]);
             }
             Assert.AreEqual(950, entity.Rest.Item2);
-            Assert.IsTrue(Math.Abs(0.451 - entity.Rest.Item3) < 10e-5);
+            Assert.AreEqual(0.451, entity.Rest.Item3, 10e-5);
         }
 
         [TestMethod]

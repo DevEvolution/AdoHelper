@@ -15,8 +15,6 @@ namespace AdoHelper.UnitTests
 
         private IDbConnection _connection = new FbConnection(CONNECTION_STRING);
 
-
-
         [TestMethod]
         public void SimplePropertyMapping()
         {
@@ -29,7 +27,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -46,7 +44,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123f) < 10e-5);
+            Assert.AreEqual(123.123f, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -63,7 +61,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.textField);
-            Assert.IsTrue(Math.Abs(entity.floatField - 123.123f) < 10e-5);
+            Assert.AreEqual(123.123f, entity.floatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -82,7 +80,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -101,7 +99,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -121,7 +119,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -138,7 +136,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.Test_TextField);
-            Assert.IsTrue(Math.Abs(entity.Test_FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.Test_FloatField, 10e-5);
             Assert.AreEqual(123, entity.Test_NumericField);
             Assert.AreEqual(123, entity.Test_IntegerField);
         }
@@ -186,7 +184,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -203,7 +201,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.IsTrue(Math.Abs(entity.FloatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -220,7 +218,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.textField);
-            Assert.IsTrue(Math.Abs(entity.floatField - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.floatField, 10e-5);
             Assert.AreEqual(123, entity.numericField);
             Assert.AreEqual(123, entity.integerField);
         }
@@ -237,7 +235,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.Item2);
-            Assert.IsTrue(Math.Abs(entity.Item3 - 123.123) < 10e-5);
+            Assert.AreEqual(123.123, entity.Item3, 10e-5);
             Assert.AreEqual(123, entity.Item4);
             Assert.AreEqual(123, entity.Item5);
         }
@@ -350,7 +348,7 @@ namespace AdoHelper.UnitTests
             Assert.AreEqual(classEntity.TextField, structEntity.TextField);
             Assert.AreEqual(structEntity.TextField, valueTupleEntity.text);
             Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
-        } 
+        }
 
         [TestMethod]
         public void LongValueTupleMapping()
@@ -366,8 +364,8 @@ namespace AdoHelper.UnitTests
             Assert.IsNotNull(entity);
             Assert.AreEqual(2, entity.id);
             Assert.AreEqual(999.001001, entity.double_value);
-            Assert.AreEqual(new DateTime(2007,07,07), entity.date_value);
-            Assert.AreEqual(new TimeSpan(08,0,0), entity.time_value);
+            Assert.AreEqual(new DateTime(2007, 07, 07), entity.date_value);
+            Assert.AreEqual(new TimeSpan(08, 0, 0), entity.time_value);
             Assert.AreEqual("fixed123", entity.text_fixed);
             Assert.AreEqual("varyin", entity.text_varying);
             Assert.AreEqual(1000, entity.small_value);
@@ -378,7 +376,7 @@ namespace AdoHelper.UnitTests
                 Assert.AreEqual(array[0], entity.array[0]);
             }
             Assert.AreEqual(950, entity.int_value);
-            Assert.IsTrue(Math.Abs(0.451 - entity.float_value) < 10e-5);
+            Assert.AreEqual(0.451, entity.float_value, 10e-5);
         }
 
         [TestMethod]
@@ -407,7 +405,7 @@ namespace AdoHelper.UnitTests
                 Assert.AreEqual(array[0], entity.Rest.Item1[0]);
             }
             Assert.AreEqual(950, entity.Rest.Item2);
-            Assert.IsTrue(Math.Abs(0.451 - entity.Rest.Item3) < 10e-5);
+            Assert.AreEqual(0.451, entity.Rest.Item3, 10e-5);
         }
 
         [TestMethod]
@@ -424,9 +422,9 @@ namespace AdoHelper.UnitTests
             var model = entity.First().ToList();
             Assert.AreEqual(5, model.Count);
             Assert.AreEqual("Hello", model[1]);
-            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
-            Assert.AreEqual("123", model[3]);
-            Assert.AreEqual("123", model[4]);
+            Assert.AreEqual(123.123, double.Parse(model[2]), 10e-5);
+            Assert.AreEqual(123M, decimal.Parse(model[3]));
+            Assert.AreEqual(123, int.Parse(model[4]));
         }
 
         [TestMethod]
@@ -443,9 +441,9 @@ namespace AdoHelper.UnitTests
             var model = entity.First();
             Assert.AreEqual(5, model.Count);
             Assert.AreEqual("Hello", model[1]);
-            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
-            Assert.AreEqual("123", model[3]);
-            Assert.AreEqual("123", model[4]);
+            Assert.AreEqual(123.123, double.Parse(model[2]), 10e-5);
+            Assert.AreEqual(123M, decimal.Parse(model[3]));
+            Assert.AreEqual(123, int.Parse(model[4]));
         }
 
         [TestMethod]
@@ -460,13 +458,11 @@ namespace AdoHelper.UnitTests
             Assert.AreNotEqual(0, entity.Count());
 
             var model = entity.First().ToList();
-
             Assert.AreEqual(5, model.Count);
-
             Assert.AreEqual("Hello", model[1]);
-            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
-            Assert.AreEqual("123", model[3]);
-            Assert.AreEqual("123", model[4]);
+            Assert.AreEqual(123.123, double.Parse(model[2]), 10e-5);
+            Assert.AreEqual(123M, decimal.Parse(model[3]));
+            Assert.AreEqual(123, int.Parse(model[4]));
         }
     }
 }

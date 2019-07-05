@@ -39,7 +39,7 @@ namespace AdoHelper
         /// <summary>
         /// Inner structure of model
         /// </summary>
-        public List<FieldMapInfo> ModelStructureTable { get; set; }
+        public List<MappingInfo> ModelStructureTable { get; set; }
 
         /// <summary>
         /// Shows which entity model type should use mapper 

@@ -61,8 +61,6 @@ namespace AdoHelper
             object value = queryInfo.Command.ExecuteScalar();
             Type modelType = typeof(T);
 
-            // TODO: What if DbNull ?
-
             try
             {
                 if (modelType.IsGenericType && modelType.GetGenericTypeDefinition() == typeof(Nullable<>))
@@ -72,7 +70,10 @@ namespace AdoHelper
                 }
                 else
                 {
-                    value = Convert.ChangeType(value, modelType);
+                    if (value == null)
+                        value = default(T);
+                    else
+                        value = Convert.ChangeType(value, modelType);
                 }
                 model = (T)value;
             }
@@ -108,19 +109,19 @@ namespace AdoHelper
         /// <returns>Mapped entities collection</returns>
         public static IEnumerable<T> ExecuteReader<T>(this QueryInfo<T> queryInfo)
         {
-            Type modelType = typeof(T);
+            //Type modelType = typeof(T);
             List<T> enumerable = new List<T>();
 
             switch (queryInfo.ModelType)
             {
                 case QueryInfo<T>.ModelEntityType.Object:
-                    enumerable = ExecuteObjectReader(queryInfo, modelType);
+                    enumerable = ExecuteObjectReader(queryInfo);
                     break;
                 case QueryInfo<T>.ModelEntityType.Tuple:
-                    enumerable = ExecuteTupleReader(queryInfo, modelType);
+                    enumerable = ExecuteTupleReader(queryInfo);
                     break;
                 case QueryInfo<T>.ModelEntityType.Collection:
-                    enumerable = ExecuteCollectionReader(queryInfo, modelType);
+                    enumerable = ExecuteCollectionReader(queryInfo);
                     break;
             }
 

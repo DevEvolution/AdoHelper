@@ -6,10 +6,20 @@ using System.Text;
 
 namespace AdoHelper.TupleParsing
 {
+    /// <summary>
+    /// Tuple access provider
+    /// </summary>
     public class TupleAccess : TupleAccessBase
     {
+        /// <summary>
+        /// Count of elements in tuple including all inner tuples (TRest)
+        /// </summary>
         public override int Count => ItemCount(_tuple);
 
+        /// <summary>
+        /// Creates tuple access provider
+        /// </summary>
+        /// <param name="tuple">Tuple to access</param>
         public TupleAccess(object tuple)
         {
             if (!IsTuple(tuple.GetType()))
@@ -17,19 +27,37 @@ namespace AdoHelper.TupleParsing
             _tuple = tuple;
         }
 
+        /// <summary>
+        /// Gets the element at specified index not including TRest field
+        /// </summary>
+        /// <param name="index">Index of element</param>
+        /// <returns>Element</returns>
         public object this[int index]
         {
             get => Get(_tuple, index);
         }
 
+        /// <summary>
+        /// Is tuple type match
+        /// </summary>
         public override bool IsTypeMatch => IsTuple(_tuple.GetType());
 
-        public static int ItemCount(object valueTuple)
-            => ItemCount(valueTuple.GetType());
+        /// <summary>
+        /// Count of elements in tuple including all inner tuples (TRest)
+        /// </summary>
+        /// <param name="tuple">Tuple object</param>
+        /// <returns>Count of elements in tuple</returns>
+        public static int ItemCount(object tuple)
+            => ItemCount(tuple.GetType());
 
-        public static int ItemCount(Type valueTupleType)
+        /// <summary>
+        /// Count of elements in tuple including all inner tuples (TRest)
+        /// </summary>
+        /// <param name="tupleType">Tuple type</param>
+        /// <returns>Count of elements in tuple</returns>
+        public static int ItemCount(Type tupleType)
         {
-            Type inner = valueTupleType;
+            Type inner = tupleType;
             int i;
             for (i = 0; inner.GetProperties().Length == 8; i++)
             {
@@ -39,12 +67,18 @@ namespace AdoHelper.TupleParsing
             return i * 7 + inner.GetProperties().Length;
         }
 
-        public static Type GetItemType(Type valueTuple, int index)
+        /// <summary>
+        /// Gets the type of tuple element at specified index
+        /// </summary>
+        /// <param name="tuple">Tuple type</param>
+        /// <param name="index">Index of element</param>
+        /// <returns>Type of tuple element</returns>
+        public static Type GetItemType(Type tuple, int index)
         {
             int restCount = index / 7;
             int innerIndex = index % 7;
 
-            Type inner = valueTuple;
+            Type inner = tuple;
             for (int i = 0; i < restCount; i++)
             {
                 PropertyInfo property = inner.GetProperties().FirstOrDefault(u => u.Name == "Rest");
@@ -61,12 +95,18 @@ namespace AdoHelper.TupleParsing
             return inner.GetProperty($"Item{innerIndex + 1}").PropertyType;
         }
 
-        public static object Get(object valueTuple, int index)
+        /// <summary>
+        /// Gets the tuple element at specified index
+        /// </summary>
+        /// <param name="tuple">Tuple object</param>
+        /// <param name="index">Index of element</param>
+        /// <returns>Tuple element</returns>
+        public static object Get(object tuple, int index)
         {
             int restCount = index / 7;
             int innerIndex = index % 7;
 
-            object inner = valueTuple;
+            object inner = tuple;
             for (int i = 0; i < restCount; i++)
             {
                 PropertyInfo field = inner.GetType().GetProperties().FirstOrDefault(u => u.Name == "Rest");
@@ -84,6 +124,11 @@ namespace AdoHelper.TupleParsing
             return result;
         }
 
+        /// <summary>
+        /// Is type a tuple
+        /// </summary>
+        /// <param name="_mtype">Type</param>
+        /// <returns>Is type a tuple</returns>
         public static bool IsTuple(Type _mtype)
             => _mtype.IsGenericType && (
             _mtype.GetGenericTypeDefinition() == typeof(System.Tuple<>) ||

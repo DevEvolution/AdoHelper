@@ -38,7 +38,24 @@ namespace AdoHelper
             return (T)Activator.CreateInstance(modelType, objParam);
         }
 
-        public static object CreateEnumerable(Type type, List<object> parameters)
+        /// <summary>
+        /// Creates collection instance of specified type
+        /// <para>Collection must implement IEnumerable or ICollection type</para>
+        /// </summary>
+        /// <typeparam name="T">Type of enumerable</typeparam>
+        /// <returns>Instance of collection</returns>
+        public static T CreateEnumerable<T>()
+        {
+            return (T)CreateEnumerable(typeof(T));
+        }
+
+        /// <summary>
+        /// Creates collection instance of specified type
+        /// <para>Collection must implement IEnumerable or ICollection type</para>
+        /// </summary>
+        /// <param name="type">Type of enumerable</param>
+        /// <returns>Instance of collection</returns>
+        public static object CreateEnumerable(Type type)
         {
             if (type.GetInterface("ICollection") != null)
             {
@@ -48,6 +65,8 @@ namespace AdoHelper
             {
                 var listType = typeof(List<>);
                 var genericArgs = type.GetGenericArguments();
+                if (genericArgs.Length == 0)
+                    throw new NotSupportedException("Only generic collections are now supported");
                 var concreteType = listType.MakeGenericType(genericArgs);
                 return CreateModelObject(concreteType);
             }
@@ -55,12 +74,25 @@ namespace AdoHelper
             throw new NotSupportedException("Collection type must implement an IEnumerable interface");
         }
 
-
+        /// <summary>
+        /// Creates tuple instance of specified type
+        /// <para>Supports long (items > 7) tuples</para>
+        /// </summary>
+        /// <typeparam name="T">Type of tuple</typeparam>
+        /// <param name="parameters">List of initial values of tuple</param>
+        /// <returns>Tuple instance</returns>
         public static T CreateTuple<T>(List<object> parameters)
         {
             return (T)CreateTuple(typeof(T), parameters);
         }
 
+        /// <summary>
+        /// Creates tuple instance of specified type
+        /// <para>Supports long (items > 7) tuples</para>
+        /// </summary>
+        /// <param name="tupleType">Type of tuple</param>
+        /// <param name="parameters">List of initial values of tuple</param>
+        /// <returns>Tuple instance</returns>
         public static object CreateTuple(Type tupleType, List<object> parameters)
         {
             bool isValueTuple;
@@ -129,6 +161,11 @@ namespace AdoHelper
             return tuple;
         }
 
+        /// <summary>
+        /// Creates object instance of specified type
+        /// </summary>
+        /// <param name="modelType">Object type</param>
+        /// <returns>Instance of object</returns>
         private static object CreateModelObject(Type modelType)
         {
             object model;
@@ -155,6 +192,11 @@ namespace AdoHelper
             return model;
         }
 
+        /// <summary>
+        /// Gets constructor with the least param count
+        /// </summary>
+        /// <param name="modelType">Type of object</param>
+        /// <returns>Constructor</returns>
         private static List<Type> GetIdealConstructor(Type modelType)
         {
             List<Type> bestConstructor = new List<Type>();

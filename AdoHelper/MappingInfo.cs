@@ -7,41 +7,43 @@ namespace AdoHelper
     /// <summary>
     /// Field mapping information
     /// </summary>
-    public class FieldMapInfo
+    public class MappingInfo
     {
         /// <summary>
         /// Name of field in database
         /// </summary>
-        public string dbFieldName;
+        public string DbFieldName { get; set; }
 
         /// <summary>
         /// Name of field in mapping object
         /// </summary>
-        public string mapFieldName;
+        public string MapFieldName { get; set; }
 
         /// <summary>
         /// <para>Type of mapping field</para>
         /// <para>Influences on how field should be mapped</para>
         /// </summary>
-        public FieldType mapFieldType;
+        public FieldType MapFieldType { get; set; }
 
         /// <summary>
         /// Full type of mapping field
         /// </summary>
-        public Type fullType;
+        public Type FullType { get; set; }
 
         /// <summary>
         /// <para>Inner type of mapping field</para>
         /// <para>Used for mapping</para>
         /// </summary>
-        public Type innerType;
+        public Type InnerType { get; set; }
 
         /// <summary>
         /// Is full type nullable
         /// </summary>
-        public bool isNullable;
+        public bool IsNullable { get; set; }
 
-
+        /// <summary>
+        /// Shows type of field in object
+        /// </summary>
         public enum FieldType
         {
             Field,

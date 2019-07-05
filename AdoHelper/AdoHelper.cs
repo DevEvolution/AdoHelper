@@ -10,7 +10,8 @@ namespace AdoHelper
 {
     public class AdoHelper<T>
     {
-        QueryInfo<T> _queryInfo;
+        // Context
+        protected QueryInfo<T> _queryInfo;
 
         /// <summary>
         /// Starts ADO.NET query
@@ -22,25 +23,28 @@ namespace AdoHelper
 
             Type _modelType = typeof(T);
 
-            if (_modelType.GetInterface("ICollection") != null || _modelType.GetInterface("IEnumerable") != null)
+            if (_modelType.IsGenericType && (_modelType.GetInterface("ICollection") != null || _modelType.GetInterface("IEnumerable") != null))
             {
-                // Enumerable<Model>
+                // Collection
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Collection;
                 ParseCollectionStructure(_modelType);
             }
             else if (TupleAccess.IsTuple(_modelType))
             {
+                // Tuple
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
                 ParseTupleStructure(_modelType, false);
 
             }
             else if (ValueTupleAccess.IsValueTuple(_modelType))
             {
+                // Value tuple
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
                 ParseTupleStructure(_modelType, true);
             }
             else
             {
+                // Class or structure
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Object;
                 ParseModelStructure(_modelType);
             }
@@ -59,26 +63,31 @@ namespace AdoHelper
             return _queryInfo;
         }
 
-        void ParseTupleStructure(Type modelType, bool isValueTuple)
+        /// <summary>
+        /// Parsing the inner structure of tuple
+        /// </summary>
+        /// <param name="modelType">Tuple type</param>
+        /// <param name="isValueTuple">Is value tuple type</param>
+        private void ParseTupleStructure(Type modelType, bool isValueTuple)
         {
-            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
+            _queryInfo.ModelStructureTable = new List<MappingInfo>();
 
             int itemCount = isValueTuple ? ValueTupleAccess.ItemCount(modelType) : TupleAccess.ItemCount(modelType);
             for (int i = 0; i < itemCount; i++)
             {
-                FieldMapInfo structure = new FieldMapInfo();
+                MappingInfo structure = new MappingInfo();
                 if (isValueTuple)
                 {
-                    structure.mapFieldType = FieldMapInfo.FieldType.Field;
-                    structure.fullType = ValueTupleAccess.GetItemType(modelType, i);
+                    structure.MapFieldType = MappingInfo.FieldType.Field;
+                    structure.FullType = ValueTupleAccess.GetItemType(modelType, i);
                 }
                 else
                 {
-                    structure.mapFieldType = FieldMapInfo.FieldType.Property;
-                    structure.fullType = TupleAccess.GetItemType(modelType, i);
+                    structure.MapFieldType = MappingInfo.FieldType.Property;
+                    structure.FullType = TupleAccess.GetItemType(modelType, i);
                 }
                   
-                structure.mapFieldName = String.Empty;
+                structure.MapFieldName = String.Empty;
 
                 // Parse type
                 ParseInnerType(structure);
@@ -88,31 +97,35 @@ namespace AdoHelper
             }
         }
 
-        void ParseModelStructure(Type modelType)
+        /// <summary>
+        /// Parsing the inner structure of object
+        /// </summary>
+        /// <param name="modelType">Object type</param>
+        private void ParseModelStructure(Type modelType)
         {
-            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
+            _queryInfo.ModelStructureTable = new List<MappingInfo>();
 
             // Parse properties
             foreach (MemberInfo memberInfo in modelType.GetMembers())
             {
-                FieldMapInfo structure = new FieldMapInfo();
+                MappingInfo structure = new MappingInfo();
 
                 if (memberInfo.MemberType == MemberTypes.Field)
                 {
-                    structure.mapFieldType = FieldMapInfo.FieldType.Field;
-                    structure.fullType = (memberInfo as FieldInfo).FieldType;
+                    structure.MapFieldType = MappingInfo.FieldType.Field;
+                    structure.FullType = (memberInfo as FieldInfo).FieldType;
                 }
                 else if (memberInfo.MemberType == MemberTypes.Property && ((memberInfo as PropertyInfo).CanWrite || _queryInfo.ModelType == QueryInfo<T>.ModelEntityType.Tuple))
                 {
-                    structure.mapFieldType = FieldMapInfo.FieldType.Property;
-                    structure.fullType = (memberInfo as PropertyInfo).PropertyType;
+                    structure.MapFieldType = MappingInfo.FieldType.Property;
+                    structure.FullType = (memberInfo as PropertyInfo).PropertyType;
                 }
                 else
                 {
                     continue;
                 }
 
-                structure.mapFieldName = memberInfo.Name;
+                structure.MapFieldName = memberInfo.Name;
 
                 if (!CheckMappingRights(memberInfo))
                     continue;
@@ -128,94 +141,78 @@ namespace AdoHelper
             }
         }
 
-        void ParseCollectionStructure(Type modelType)
+        /// <summary>
+        /// Parsing the collection structure
+        /// </summary>
+        /// <param name="modelType">Collection type</param>
+        private void ParseCollectionStructure(Type modelType)
         {
-            _queryInfo.ModelStructureTable = new List<FieldMapInfo>();
+            _queryInfo.ModelStructureTable = new List<MappingInfo>();
 
-            FieldMapInfo structure = new FieldMapInfo();
-            structure.mapFieldType = FieldMapInfo.FieldType.CollectionItem;
-            structure.fullType = modelType.GetGenericArguments().First();
-            structure.mapFieldName = String.Empty;
+            MappingInfo structure = new MappingInfo();
+            structure.MapFieldType = MappingInfo.FieldType.CollectionItem;
+            structure.FullType = modelType.GetGenericArguments().First();
+            structure.MapFieldName = String.Empty;
 
             ParseInnerType(structure);
 
             _queryInfo.ModelStructureTable.Add(structure);
-
-            // Parse properties
-            //foreach (MemberInfo memberInfo in modelType.GetMembers())
-            //{
-            //    FieldMapInfo structure = new FieldMapInfo();
-
-            //    if (memberInfo.MemberType == MemberTypes.Field)
-            //    {
-            //        structure.mapFieldType = FieldMapInfo.FieldType.Field;
-            //        structure.fullType = (memberInfo as FieldInfo).FieldType;
-            //    }
-            //    else if (memberInfo.MemberType == MemberTypes.Property && ((memberInfo as PropertyInfo).CanWrite || _queryInfo.ModelType == QueryInfo<T>.ModelEntityType.Tuple))
-            //    {
-            //        structure.mapFieldType = FieldMapInfo.FieldType.Property;
-            //        structure.fullType = (memberInfo as PropertyInfo).PropertyType;
-            //    }
-            //    else
-            //    {
-            //        continue;
-            //    }
-
-            //    structure.mapFieldName = memberInfo.Name;
-
-            //    if (!CheckMappingRights(memberInfo))
-            //        continue;
-
-            //    // Set field attribute
-            //    SetPropertyMapName(memberInfo, structure);
-
-            //    // Parse type
-            //    ParseInnerType(structure);
-
-            //    // Add to structure
-            //    _queryInfo.ModelStructureTable.Add(structure);
-            //}
         }
 
-        private bool CheckMappingRights(MemberInfo propertyInfo)
-            => propertyInfo.GetCustomAttribute<NonMappedAttribute>() == null;    
+        /// <summary>
+        /// Check NonMapped attibute
+        /// </summary>
+        /// <param name="memberInfo">Member info</param>
+        /// <returns>Is member can be mapped</returns>
+        private bool CheckMappingRights(MemberInfo memberInfo)
+            => memberInfo.GetCustomAttribute<NonMappedAttribute>() == null;    
         
-
-        private void SetPropertyMapName(MemberInfo propertyInfo, FieldMapInfo structure)
+        /// <summary>
+        /// If Field attribute set, maps to its name, else to own name of member
+        /// </summary>
+        /// <param name="memberInfo">Member info</param>
+        /// <param name="structure">Mapping info</param>
+        private void SetPropertyMapName(MemberInfo memberInfo, MappingInfo structure)
         {
-            FieldAttribute attribute = propertyInfo.GetCustomAttribute<FieldAttribute>();
+            FieldAttribute attribute = memberInfo.GetCustomAttribute<FieldAttribute>();
             if (attribute != null && attribute.Name != null)
             {
-                structure.dbFieldName = attribute.Name;
+                structure.DbFieldName = attribute.Name.ToLower();
             }
             else
             {
-                structure.dbFieldName = structure.mapFieldName.ToLower();
+                structure.DbFieldName = structure.MapFieldName.ToLower();
             }
         }
 
-
-        private void ParseInnerType(FieldMapInfo structure)
+        /// <summary>
+        /// Inner structure definition
+        /// </summary>
+        /// <param name="structure">Mapping info</param>
+        private void ParseInnerType(MappingInfo structure)
         {
-            if (structure.fullType.IsGenericType && structure.fullType.GetGenericTypeDefinition() == typeof(Nullable<>))
+            if (structure.FullType.IsGenericType && structure.FullType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                structure.innerType = structure.fullType.GetGenericArguments()[0];
-                structure.isNullable = true;
+                // Nullable type
+                structure.InnerType = structure.FullType.GetGenericArguments()[0];
+                structure.IsNullable = true;
             }
-            else if (structure.fullType.IsClass)
+            else if (structure.FullType.IsClass)
             {
-                structure.innerType = structure.fullType;
-                structure.isNullable = true;
+                // Class
+                structure.InnerType = structure.FullType;
+                structure.IsNullable = true;
             }
-            else if (structure.fullType.IsValueType)
+            else if (structure.FullType.IsValueType)
             {
-                structure.innerType = structure.fullType;
-                structure.isNullable = false;
+                // Value type (structure)
+                structure.InnerType = structure.FullType;
+                structure.IsNullable = false;
             }
             else
             {
-                structure.innerType = structure.fullType;
-                structure.isNullable = false;
+                structure.InnerType = structure.FullType;
+                structure.IsNullable = false;
             }
         }
     }

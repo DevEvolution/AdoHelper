@@ -17,9 +17,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdoHelper\AdoHelper.csproj" />
+    <ProjectReference Include="..\FakeAdoNet\FakeAdoNet.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="faketest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="fbclient.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -9,8 +9,15 @@ namespace AdoHelper
 {
     public static partial class AdoHelperExtensions
     {
-        private static List<T> ExecuteTupleReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        /// <summary>
+        /// Executes a DbDataReader and reads data into tuple collection
+        /// </summary>
+        /// <typeparam name="T">Tuple type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Tuple collection</returns>
+        private static List<T> ExecuteTupleReader<T>(QueryInfo<T> queryInfo)
         {
+            Type modelType = typeof(T);
             List<T> enumerable = new List<T>();
             using (IDataReader reader = queryInfo.Command.ExecuteReader())
             {
@@ -25,14 +32,14 @@ namespace AdoHelper
 
                     int index = 0;
 
-                    foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
+                    foreach (MappingInfo structure in queryInfo.ModelStructureTable)
                     {
                         try
                         {
                             object value = (reader[index].Equals(System.DBNull.Value)) ?
                                     null : reader[index];
 
-                            value = Convert.ChangeType(value, structure.innerType);
+                            value = Convert.ChangeType(value, structure.InnerType);
                             parameters.Add(value);
                             index++;
                         }
@@ -50,8 +57,15 @@ namespace AdoHelper
             return enumerable;
         }
 
-        private static List<T> ExecuteObjectReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        /// <summary>
+        /// Executes a DbDataReader and reads data into object collection
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Object collection</returns>
+        private static List<T> ExecuteObjectReader<T>(QueryInfo<T> queryInfo)
         {
+            Type modelType = typeof(T);
             List<T> enumerable = new List<T>();
 
             using (IDataReader reader = queryInfo.Command.ExecuteReader())
@@ -63,27 +77,27 @@ namespace AdoHelper
                     // For struct support
                     object boxedModel = model;
 
-                    foreach (FieldMapInfo structure in queryInfo.ModelStructureTable)
+                    foreach (MappingInfo structure in queryInfo.ModelStructureTable)
                     {
-                        if (structure.isNullable)
+                        if (structure.IsNullable)
                         {
                             try
                             {
-                                object value = (reader[structure.dbFieldName].Equals(System.DBNull.Value)) ?
-                                    null : reader[structure.dbFieldName];
+                                object value = (reader[structure.DbFieldName].Equals(System.DBNull.Value)) ?
+                                    null : reader[structure.DbFieldName];
 
-                                MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.mapFieldName), structure);
+                                MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
                                 if (memberInfo == null)
                                     continue;
 
-                                value = Convert.ChangeType(value, structure.innerType);
+                                value = Convert.ChangeType(value, structure.InnerType);
 
                                 Type memberType;
-                                if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
+                                if (structure.MapFieldType == MappingInfo.FieldType.Field)
                                 {
                                     memberType = (memberInfo as FieldInfo).FieldType;
                                 }
-                                else if (structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                else if (structure.MapFieldType == MappingInfo.FieldType.Property)
                                 {
                                     memberType = (memberInfo as PropertyInfo).PropertyType;
                                 }
@@ -96,11 +110,11 @@ namespace AdoHelper
                                     value = Convert.ChangeType(value, targetType);
                                 }
 
-                                if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
+                                if (structure.MapFieldType == MappingInfo.FieldType.Field)
                                 {
                                     (memberInfo as FieldInfo).SetValue(boxedModel, value);
                                 }
-                                else if (structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                else if (structure.MapFieldType == MappingInfo.FieldType.Property)
                                 {
                                     (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
                                 }
@@ -112,23 +126,23 @@ namespace AdoHelper
                         }
                         else
                         {
-                            if (!(reader[structure.dbFieldName].Equals(System.DBNull.Value)))
+                            if (!(reader[structure.DbFieldName].Equals(System.DBNull.Value)))
                             {
                                 try
                                 {
-                                    object value = reader[structure.dbFieldName];
+                                    object value = reader[structure.DbFieldName];
 
-                                    MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.mapFieldName), structure);
+                                    MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
                                     if (memberInfo == null)
                                         continue;
 
-                                    value = Convert.ChangeType(value, structure.innerType);
+                                    value = Convert.ChangeType(value, structure.InnerType);
 
-                                    if (structure.mapFieldType == FieldMapInfo.FieldType.Field)
+                                    if (structure.MapFieldType == MappingInfo.FieldType.Field)
                                     {
                                         (memberInfo as FieldInfo).SetValue(boxedModel, value);
                                     }
-                                    else if (structure.mapFieldType == FieldMapInfo.FieldType.Property)
+                                    else if (structure.MapFieldType == MappingInfo.FieldType.Property)
                                     {
                                         (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
                                     }
@@ -152,19 +166,25 @@ namespace AdoHelper
             return enumerable;
         }
 
-
-        private static List<T> ExecuteCollectionReader<T>(QueryInfo<T> queryInfo, Type modelType)
+        /// <summary>
+        /// Executes a DbDataReader and reads data into collection of collections
+        /// </summary>
+        /// <typeparam name="T">Collection type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Collection of collections</returns>
+        private static List<T> ExecuteCollectionReader<T>(QueryInfo<T> queryInfo)
         {
+            Type modelType = typeof(T);
             List<T> enumerable = new List<T>();
             using (IDataReader reader = queryInfo.Command.ExecuteReader())
             {
-                FieldMapInfo structure = queryInfo.ModelStructureTable[0];
+                MappingInfo structure = queryInfo.ModelStructureTable[0];
 
                 while (reader.Read())
                 {
                     List<object> parameters = new List<object>();
 
-                    object collection = ObjectCreator.CreateEnumerable(modelType, new List<object>());
+                    object collection = ObjectCreator.CreateEnumerable(modelType);
                     MethodInfo addMethod = collection.GetType().GetMethod("Add");
                     if (addMethod == null)
                         throw new NotSupportedException("Collection should implement 'void Add(object value)' method");
@@ -174,7 +194,7 @@ namespace AdoHelper
                         object value = (reader[i].Equals(System.DBNull.Value)) ?
                                     null : reader[i];
 
-                        value = Convert.ChangeType(value, structure.innerType);
+                        value = Convert.ChangeType(value, structure.InnerType);
                         addMethod.Invoke(collection, new object[] { value });
                     }
 
@@ -184,15 +204,21 @@ namespace AdoHelper
             return enumerable;
         }
 
-        private static MemberInfo GetAppropriateMember(MemberInfo[] members, FieldMapInfo structure)
+        /// <summary>
+        /// Gets member of appropriate type
+        /// </summary>
+        /// <param name="members">Members collection</param>
+        /// <param name="structure">Info of mapping fields</param>
+        /// <returns>Appropriate member</returns>
+        private static MemberInfo GetAppropriateMember(MemberInfo[] members, MappingInfo structure)
         {
             MemberTypes appropriateMemberType;
-            switch (structure.mapFieldType)
+            switch (structure.MapFieldType)
             {
-                case FieldMapInfo.FieldType.Field:
+                case MappingInfo.FieldType.Field:
                     appropriateMemberType = MemberTypes.Field;
                     break;
-                case FieldMapInfo.FieldType.Property:
+                case MappingInfo.FieldType.Property:
                     appropriateMemberType = MemberTypes.Property;
                     break;
                 default:
