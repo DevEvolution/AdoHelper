@@ -1,0 +1,314 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/VirtualFX/Source/Repos/AdoHelper/DocFX Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.AdoHelper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.AdoHelper-1.html",
+          "hash": "4GJApFNWlv84Id5KMPge2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.AdoHelperExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.AdoHelperExtensions.html",
+          "hash": "iO43SpIRqrvawOUHfv1ZTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.AdoParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.AdoParameter.html",
+          "hash": "vk2lz0Dt+HyeUcVtqz9I6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.FieldAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.FieldAttribute.html",
+          "hash": "KlmBul07l9ceRP37BlPlag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.MappingInfo.FieldType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.MappingInfo.FieldType.html",
+          "hash": "WDpdbsXwfatgTHL1jIhN4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.MappingInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.MappingInfo.html",
+          "hash": "a8pIjv5a3IzNM+3Rz7o/OA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.NonMappedAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.NonMappedAttribute.html",
+          "hash": "BhEERZvYMyR7gxum9TBEJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.ObjectCreator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.ObjectCreator.html",
+          "hash": "8JUPUYwrIFMmYFR0xZE4Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.QueryInfo-1.ModelEntityType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.QueryInfo-1.ModelEntityType.html",
+          "hash": "DkAEu8m2jGq0wxsuOoTdyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.QueryInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.QueryInfo-1.html",
+          "hash": "WvxtI9jObovCQx2je/TqUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.TupleParsing.TupleAccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.TupleParsing.TupleAccess.html",
+          "hash": "faBV8z2WKlC6hF/DKZlIEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.TupleParsing.TupleAccessBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.TupleParsing.TupleAccessBase.html",
+          "hash": "JjIkojHfOK9HaTZI2HEOfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.TupleParsing.ValueTupleAccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.TupleParsing.ValueTupleAccess.html",
+          "hash": "2dGc7FcXjFVFeJ0bsvl+8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.TupleParsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.TupleParsing.html",
+          "hash": "IahYAOGW18260IICf/Ag0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.html",
+          "hash": "sPohIKSKKOYl9FLSZpZ25w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "XRCqdw3ed9yRNZ975Q52nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "E1oayobGZnVLWsQG4VhCWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "HKNGii/BgtCur9scmrsi7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "IkC4l2CAToJtRNW2QtR17Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "97QTKIPrwOKSg/oFgeYOlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 15,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

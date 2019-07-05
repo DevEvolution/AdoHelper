@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AdoHelper </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="AdoHelper ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adohelper">AdoHelper</h1>
+
+<p><em>This page is available in the following languages:</em></p>
+<ul>
+<li><a href="README.md">English <img src="https://i.ibb.co/LRZcgYS/united-kingdom.png" alt="English"></a></li>
+<li><a href="README-RU.md">Русский <img src="https://i.ibb.co/frNGG0z/russia-1.png" alt="Русский"></a></li>
+</ul>
+<hr>
+<p><a href="https://travis-ci.org/DevEvolution/AdoHelper"><img src="https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master" alt="Build Status"></a> <br>
+<strong>AdoHelper</strong>  – a small ORM (<em>objective-relational mapping</em>), built on top of ADO.NET technology and making its use smarter.
+<img src="https://i.ibb.co/j4HDHTX/ADO-Helper.png" alt="AdoHelper"></p>
+<h2 id="download-links">Download links</h2>
+<ul>
+<li><a href="https://www.nuget.org/packages/DevEvolution.AdoHelper/1.0.0">Nuget-package</a></li>
+<li><a href="https://yadi.sk/d/uK6gsNHz2Y2mTw">Dowload dll file</a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>To install a project, simply download the nuget package by running the <code>Install-Package DevEvolution.AdoHelper</code> command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.</p>
+<h2 id="features">Features</h2>
+<p>Automatic mapping query results to a collection of instances of the specified type:</p>
+<pre><code class="lang-csharp">public  class  SimpleTestEntity
+    {
+    public  long Id { get; set; }
+    public  string TextField { get; set; }
+    public  double FloatField { get; set; }
+    public  decimal NumericField { get; set; }
+    public  long IntegerField { get; set; }
+    }
+IEnumerable&lt;SimpleTestEntity&gt; entities = new AdoHelper&lt;SimpleTestEntity&gt;(_connection)
+	.Query(&quot;SELECT * FROM TestTable&quot;)
+	.ExecuteReader();
+</code></pre>
+<p>The displayed type can be a class, structure, tuple (<code>System.Tuple</code>) or (<code>System.ValueTuple</code>). Mapping is made on public properties, available for writing (<code>set;</code>) and public fields.</p>
+<pre><code class="lang-csharp">public class ClassEntity 
+{
+     public int Id {get; set;}
+     public string text;
+}
+public struct StructEntity 
+{
+     public int id;
+     public string Text {get; set;}
+}
+
+_connection.Open();
+var classEntity = new AdoHelper&lt;ClassEntity&gt;(_connection)
+     .Query(&quot;SELECT * FROM TestTable WHERE id=@id&quot;)
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
+
+var structEntity = new AdoHelper&lt;StructEntity&gt;(_connection)
+     .Query(&quot;SELECT * FROM TestTable WHERE id=@id&quot;)
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
+
+var valueTupleEntity = new AdoHelper&lt;(int id, string text)&gt;(_connection)
+     .Query(&quot;SELECT id, text FROM TestTable WHERE id=@id&quot;)
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
+
+var tupleEntity = new AdoHelper&lt;Tuple&lt;int, string&gt;&gt;(_connection)
+     .Query(&quot;SELECT id, text FROM TestTable WHERE id=@id&quot;)
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
+
+
+Assert.AreEqual(classEntity.text, structEntity.Text);
+Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
+Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
+</code></pre>
+<h2 id="usage-instruction">Usage instruction</h2>
+<p>The query to the database (DB) is as follows:</p>
+<pre><code class="lang-csharp">[var  Return value] = new  AdoHelper&lt;Return value type&gt;(DB connection object)
+[.Parameters(Params)]
+[.Transaction(Transaction object)]
+.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader()
+</code></pre>
+<ul>
+<li><p><strong><code>Return value</code></strong> is the value that will be returned as a result of the query. Depending on the type of request, it can be a collection of objects, a single value, and the value may not be returned at all.
+<strong>Important!</strong> The number of elements specified in <code>ValueTuple</code> or <code>Tuple</code> of the <code>return value</code>, the order of declaration and the type of element must match the number of columns and the order of elements in the resulting query table.</p>
+</li>
+<li><p><strong><code>DB connection object</code></strong> is an object of type IDbConnection (for example, SqlConnection).</p>
+</li>
+<li><p><strong><code>Params</code></strong> - a collection of parameters that represent a pair (parameter - value). The default type of parameters is <code>AdoParameter</code>. You can also use tuples (<code>ValueTuple&lt;string, object&gt;</code> and <code>Tuple&lt;string, object&gt;</code>) to specify each parameter.</p>
+</li>
+</ul>
+<p>Example code :</p>
+<pre><code class="lang-csharp">var entity = new AdoHelper&lt;SimpleTestEntity&gt;(_connection)
+                .Query(&quot;SELECT * FROM TestTable WHERE IntegerField = @intParam AND TextField = @textParam&quot; +
+                &quot;AND FloatField = @floatParam&quot;)
+                .Parameters(
+                new AdoParameter(&quot;@intParam&quot;, 123), // AdoHelper param
+                (&quot;@textParam&quot;, &quot;Hello&quot;), // ValueTuple param
+                new Tuple&lt;string, object&gt;(&quot;@floatParam&quot;, 123.123f)) // Tuple param
+                .ExecuteReader()
+                .FirstOrDefault();
+</code></pre>
+<ul>
+<li><strong><code>Transaction object</code></strong> is an object of type <code>IDbTransaction</code> (for example, <code>SqlTransaction</code>).</li>
+</ul>
+<p>The result of the query (<code>return value</code>) may be as follows:</p>
+<ul>
+<li>A collection of rows of the resulting table in the form <code>IEnumerable&lt;T&gt;</code>. To get this return value, you must use the <code>ExecuteReader()</code> command.</li>
+<li>A single value in the form of object of type <code>T</code>. To get a single value, you must run the final command <code>ExecuteScalar()</code>.</li>
+<li>Do not return value. For this, there is the <code>ExecuteNonQuery()</code> method.</li>
+</ul>
+<h2 id="mapped-objects">Mapped objects</h2>
+<p>AdoHelper can independently match the names of class / structure members and columns of the resulting table, and the order of the columns does not matter. The comparison is not case sensitive.
+Example:</p>
+<pre><code class="lang-csharp">public struct TestEntity
+    {
+        public int id { get; set; }
+        public DateTime DeliverDate;
+        public double longitude { get; set; }
+        public double LATITUDE { get; set; }
+        public int customerId;
+    }
+</code></pre>
+<p>However, in some situations it makes sense to give the members of the mapping class names that differ from the column names of the resulting table. In this case, you should use the attributes <code>[Field(Name=&quot;Name of the column in the table&quot;)]</code>. There are also cases in which it is necessary to abandon the mapping of some class members with table columns. For this there is an attribute <code>[NonMapped]</code>.
+An example of such a class:</p>
+<pre><code class="lang-csharp">public class ExcludedFieldTestEntity
+    {
+        public int Id { get; set; }
+
+        [NonMapped]
+        public string TextField { get; set; } // that property is excluded from mapping
+
+        [NonMapped]
+        public double FloatField { get; set; } // that property is excluded from mapping
+		
+		public DateTime DateField { get; } // that property is excluded too because set property is unreachable
+
+        [Field(Name = &quot;NumericField&quot;)]
+        public decimal Numeric { get; set; } // that property is mapped to NumericField column
+
+        [Field(Name = &quot;IntegerField&quot;)]
+        public long Integer { get; set; } // that property is mapped to IntegerField column
+    }
+</code></pre>
+<p>Tuples can also be used as an object for matching. However, in this case, the elements of which the tuple consists must go in the same order as in the resulting table.</p>
+<p><strong>Note.</strong> The names of the <code>ValueTuple</code> elements do not participate in the comparison, as they are only syntactic sugar and are not used in the compiled application.</p>
+<pre><code class="lang-csharp">var entities = new AdoHelper&lt;(int id, string name, int nextId)&gt;(_connection)
+                .Query(&quot;SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’&quot;)
+                .ExecuteReader();
+</code></pre>
+<p>Equals to:</p>
+<pre><code class="lang-csharp">var entities = new AdoHelper&lt;Tuple&lt;int, string, int&gt;&gt;(_connection)
+                .Query(&quot;SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’&quot;)
+                .ExecuteReader();
+</code></pre>
+<h2 id="license">License</h2>
+<p>The project is published under the license <a href="LICENSE.md">MIT</a> and is supplied as is, without any guarantees.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/DocFX Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

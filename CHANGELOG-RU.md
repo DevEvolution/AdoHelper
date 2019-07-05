@@ -1,4 +1,7 @@
 ﻿# Список изменений
+*Эта страница доступна на следующих языках:*
+ - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](CHANGELOG.md)
+ - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](CHANGELOG-RU.md)
 
  - ## 1.1.0
 	 - Добавлена поддержка кортежей любой длины.

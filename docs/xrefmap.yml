@@ -1,0 +1,891 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: AdoHelper
+  name: AdoHelper
+  href: api/AdoHelper.html
+  commentId: N:AdoHelper
+  fullName: AdoHelper
+  nameWithType: AdoHelper
+- uid: AdoHelper.AdoHelper`1
+  name: AdoHelper<T>
+  href: api/AdoHelper.AdoHelper-1.html
+  commentId: T:AdoHelper.AdoHelper`1
+  name.vb: AdoHelper(Of T)
+  fullName: AdoHelper.AdoHelper<T>
+  fullName.vb: AdoHelper.AdoHelper(Of T)
+  nameWithType: AdoHelper<T>
+  nameWithType.vb: AdoHelper(Of T)
+- uid: AdoHelper.AdoHelper`1.#ctor(System.Data.IDbConnection)
+  name: AdoHelper(IDbConnection)
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__ctor_System_Data_IDbConnection_
+  commentId: M:AdoHelper.AdoHelper`1.#ctor(System.Data.IDbConnection)
+  fullName: AdoHelper.AdoHelper<T>.AdoHelper(System.Data.IDbConnection)
+  fullName.vb: AdoHelper.AdoHelper(Of T).AdoHelper(System.Data.IDbConnection)
+  nameWithType: AdoHelper<T>.AdoHelper(IDbConnection)
+  nameWithType.vb: AdoHelper(Of T).AdoHelper(IDbConnection)
+- uid: AdoHelper.AdoHelper`1.#ctor*
+  name: AdoHelper
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__ctor_
+  commentId: Overload:AdoHelper.AdoHelper`1.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelper<T>.AdoHelper
+  fullName.vb: AdoHelper.AdoHelper(Of T).AdoHelper
+  nameWithType: AdoHelper<T>.AdoHelper
+  nameWithType.vb: AdoHelper(Of T).AdoHelper
+- uid: AdoHelper.AdoHelper`1._queryInfo
+  name: _queryInfo
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__queryInfo
+  commentId: F:AdoHelper.AdoHelper`1._queryInfo
+  fullName: AdoHelper.AdoHelper<T>._queryInfo
+  fullName.vb: AdoHelper.AdoHelper(Of T)._queryInfo
+  nameWithType: AdoHelper<T>._queryInfo
+  nameWithType.vb: AdoHelper(Of T)._queryInfo
+- uid: AdoHelper.AdoHelper`1.Query(System.String)
+  name: Query(String)
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1_Query_System_String_
+  commentId: M:AdoHelper.AdoHelper`1.Query(System.String)
+  fullName: AdoHelper.AdoHelper<T>.Query(System.String)
+  fullName.vb: AdoHelper.AdoHelper(Of T).Query(System.String)
+  nameWithType: AdoHelper<T>.Query(String)
+  nameWithType.vb: AdoHelper(Of T).Query(String)
+- uid: AdoHelper.AdoHelper`1.Query*
+  name: Query
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1_Query_
+  commentId: Overload:AdoHelper.AdoHelper`1.Query
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelper<T>.Query
+  fullName.vb: AdoHelper.AdoHelper(Of T).Query
+  nameWithType: AdoHelper<T>.Query
+  nameWithType.vb: AdoHelper(Of T).Query
+- uid: AdoHelper.AdoHelperExtensions
+  name: AdoHelperExtensions
+  href: api/AdoHelper.AdoHelperExtensions.html
+  commentId: T:AdoHelper.AdoHelperExtensions
+  fullName: AdoHelper.AdoHelperExtensions
+  nameWithType: AdoHelperExtensions
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQuery*
+  name: ExecuteNonQuery
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQuery_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteNonQuery
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQuery
+  nameWithType: AdoHelperExtensions.ExecuteNonQuery
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQuery``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteNonQuery<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQuery__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteNonQuery``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteNonQuery(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQuery<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteNonQuery(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteNonQuery<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteNonQuery(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReader*
+  name: ExecuteReader
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReader_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteReader
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReader
+  nameWithType: AdoHelperExtensions.ExecuteReader
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReader``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteReader<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReader__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteReader``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteReader(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReader<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteReader(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteReader<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteReader(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalar*
+  name: ExecuteScalar
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalar_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteScalar
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalar
+  nameWithType: AdoHelperExtensions.ExecuteScalar
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalar``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteScalar<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalar__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteScalar``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteScalar(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalar<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteScalar(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteScalar<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteScalar(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.Parameters*
+  name: Parameters
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Parameters_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.Parameters
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.Parameters
+  nameWithType: AdoHelperExtensions.Parameters
+- uid: AdoHelper.AdoHelperExtensions.Parameters``1(AdoHelper.QueryInfo{``0},AdoHelper.AdoParameter[])
+  name: Parameters<T>(QueryInfo<T>, AdoParameter[])
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Parameters__1_AdoHelper_QueryInfo___0__AdoHelper_AdoParameter___
+  commentId: M:AdoHelper.AdoHelperExtensions.Parameters``1(AdoHelper.QueryInfo{``0},AdoHelper.AdoParameter[])
+  name.vb: Parameters(Of T)(QueryInfo(Of T), AdoParameter())
+  fullName: AdoHelper.AdoHelperExtensions.Parameters<T>(AdoHelper.QueryInfo<T>, AdoHelper.AdoParameter[])
+  fullName.vb: AdoHelper.AdoHelperExtensions.Parameters(Of T)(AdoHelper.QueryInfo(Of T), AdoHelper.AdoParameter())
+  nameWithType: AdoHelperExtensions.Parameters<T>(QueryInfo<T>, AdoParameter[])
+  nameWithType.vb: AdoHelperExtensions.Parameters(Of T)(QueryInfo(Of T), AdoParameter())
+- uid: AdoHelper.AdoHelperExtensions.Transaction*
+  name: Transaction
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Transaction_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.Transaction
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.Transaction
+  nameWithType: AdoHelperExtensions.Transaction
+- uid: AdoHelper.AdoHelperExtensions.Transaction``1(AdoHelper.QueryInfo{``0},System.Data.IDbTransaction)
+  name: Transaction<T>(QueryInfo<T>, IDbTransaction)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Transaction__1_AdoHelper_QueryInfo___0__System_Data_IDbTransaction_
+  commentId: M:AdoHelper.AdoHelperExtensions.Transaction``1(AdoHelper.QueryInfo{``0},System.Data.IDbTransaction)
+  name.vb: Transaction(Of T)(QueryInfo(Of T), IDbTransaction)
+  fullName: AdoHelper.AdoHelperExtensions.Transaction<T>(AdoHelper.QueryInfo<T>, System.Data.IDbTransaction)
+  fullName.vb: AdoHelper.AdoHelperExtensions.Transaction(Of T)(AdoHelper.QueryInfo(Of T), System.Data.IDbTransaction)
+  nameWithType: AdoHelperExtensions.Transaction<T>(QueryInfo<T>, IDbTransaction)
+  nameWithType.vb: AdoHelperExtensions.Transaction(Of T)(QueryInfo(Of T), IDbTransaction)
+- uid: AdoHelper.AdoParameter
+  name: AdoParameter
+  href: api/AdoHelper.AdoParameter.html
+  commentId: T:AdoHelper.AdoParameter
+  fullName: AdoHelper.AdoParameter
+  nameWithType: AdoParameter
+- uid: AdoHelper.AdoParameter.#ctor(System.String,System.Object)
+  name: AdoParameter(String, Object)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter__ctor_System_String_System_Object_
+  commentId: M:AdoHelper.AdoParameter.#ctor(System.String,System.Object)
+  fullName: AdoHelper.AdoParameter.AdoParameter(System.String, System.Object)
+  nameWithType: AdoParameter.AdoParameter(String, Object)
+- uid: AdoHelper.AdoParameter.#ctor*
+  name: AdoParameter
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter__ctor_
+  commentId: Overload:AdoHelper.AdoParameter.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.AdoParameter
+  nameWithType: AdoParameter.AdoParameter
+- uid: AdoHelper.AdoParameter.Name
+  name: Name
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Name
+  commentId: P:AdoHelper.AdoParameter.Name
+  fullName: AdoHelper.AdoParameter.Name
+  nameWithType: AdoParameter.Name
+- uid: AdoHelper.AdoParameter.Name*
+  name: Name
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Name_
+  commentId: Overload:AdoHelper.AdoParameter.Name
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.Name
+  nameWithType: AdoParameter.Name
+- uid: AdoHelper.AdoParameter.op_Implicit(System.Data.Common.DbParameter)~AdoHelper.AdoParameter
+  name: Implicit(DbParameter to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_Data_Common_DbParameter__AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.Data.Common.DbParameter)~AdoHelper.AdoParameter
+  name.vb: Widening(DbParameter to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.Data.Common.DbParameter to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.Data.Common.DbParameter to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit(DbParameter to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening(DbParameter to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit(System.Tuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name: Implicit(Tuple<String, Object> to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_Tuple_System_String_System_Object___AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.Tuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name.vb: Widening(Tuple(Of String, Object) to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.Tuple<System.String, System.Object> to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.Tuple(Of System.String, System.Object) to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit(Tuple<String, Object> to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening(Tuple(Of String, Object) to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit(System.ValueTuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name: Implicit((String name, Object value) to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_ValueTuple_System_String_System_Object___AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.ValueTuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name.vb: Widening((name As String, value As Object) to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.ValueTuple<System.String, System.Object> to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.ValueTuple(Of System.String, System.Object) to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit((String name, Object value) to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening((name As String, value As Object) to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit*
+  name: Implicit
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_
+  commentId: Overload:AdoHelper.AdoParameter.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: AdoHelper.AdoParameter.Implicit
+  fullName.vb: AdoHelper.AdoParameter.Widening
+  nameWithType: AdoParameter.Implicit
+  nameWithType.vb: AdoParameter.Widening
+- uid: AdoHelper.AdoParameter.Value
+  name: Value
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Value
+  commentId: P:AdoHelper.AdoParameter.Value
+  fullName: AdoHelper.AdoParameter.Value
+  nameWithType: AdoParameter.Value
+- uid: AdoHelper.AdoParameter.Value*
+  name: Value
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Value_
+  commentId: Overload:AdoHelper.AdoParameter.Value
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.Value
+  nameWithType: AdoParameter.Value
+- uid: AdoHelper.FieldAttribute
+  name: FieldAttribute
+  href: api/AdoHelper.FieldAttribute.html
+  commentId: T:AdoHelper.FieldAttribute
+  fullName: AdoHelper.FieldAttribute
+  nameWithType: FieldAttribute
+- uid: AdoHelper.FieldAttribute.Name
+  name: Name
+  href: api/AdoHelper.FieldAttribute.html#AdoHelper_FieldAttribute_Name
+  commentId: P:AdoHelper.FieldAttribute.Name
+  fullName: AdoHelper.FieldAttribute.Name
+  nameWithType: FieldAttribute.Name
+- uid: AdoHelper.FieldAttribute.Name*
+  name: Name
+  href: api/AdoHelper.FieldAttribute.html#AdoHelper_FieldAttribute_Name_
+  commentId: Overload:AdoHelper.FieldAttribute.Name
+  isSpec: "True"
+  fullName: AdoHelper.FieldAttribute.Name
+  nameWithType: FieldAttribute.Name
+- uid: AdoHelper.MappingInfo
+  name: MappingInfo
+  href: api/AdoHelper.MappingInfo.html
+  commentId: T:AdoHelper.MappingInfo
+  fullName: AdoHelper.MappingInfo
+  nameWithType: MappingInfo
+- uid: AdoHelper.MappingInfo.DbFieldName
+  name: DbFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_DbFieldName
+  commentId: P:AdoHelper.MappingInfo.DbFieldName
+  fullName: AdoHelper.MappingInfo.DbFieldName
+  nameWithType: MappingInfo.DbFieldName
+- uid: AdoHelper.MappingInfo.DbFieldName*
+  name: DbFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_DbFieldName_
+  commentId: Overload:AdoHelper.MappingInfo.DbFieldName
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.DbFieldName
+  nameWithType: MappingInfo.DbFieldName
+- uid: AdoHelper.MappingInfo.FieldType
+  name: MappingInfo.FieldType
+  href: api/AdoHelper.MappingInfo.FieldType.html
+  commentId: T:AdoHelper.MappingInfo.FieldType
+  fullName: AdoHelper.MappingInfo.FieldType
+  nameWithType: MappingInfo.FieldType
+- uid: AdoHelper.MappingInfo.FieldType.CollectionItem
+  name: CollectionItem
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_CollectionItem
+  commentId: F:AdoHelper.MappingInfo.FieldType.CollectionItem
+  fullName: AdoHelper.MappingInfo.FieldType.CollectionItem
+  nameWithType: MappingInfo.FieldType.CollectionItem
+- uid: AdoHelper.MappingInfo.FieldType.Field
+  name: Field
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_Field
+  commentId: F:AdoHelper.MappingInfo.FieldType.Field
+  fullName: AdoHelper.MappingInfo.FieldType.Field
+  nameWithType: MappingInfo.FieldType.Field
+- uid: AdoHelper.MappingInfo.FieldType.Property
+  name: Property
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_Property
+  commentId: F:AdoHelper.MappingInfo.FieldType.Property
+  fullName: AdoHelper.MappingInfo.FieldType.Property
+  nameWithType: MappingInfo.FieldType.Property
+- uid: AdoHelper.MappingInfo.FullType
+  name: FullType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_FullType
+  commentId: P:AdoHelper.MappingInfo.FullType
+  fullName: AdoHelper.MappingInfo.FullType
+  nameWithType: MappingInfo.FullType
+- uid: AdoHelper.MappingInfo.FullType*
+  name: FullType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_FullType_
+  commentId: Overload:AdoHelper.MappingInfo.FullType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.FullType
+  nameWithType: MappingInfo.FullType
+- uid: AdoHelper.MappingInfo.InnerType
+  name: InnerType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_InnerType
+  commentId: P:AdoHelper.MappingInfo.InnerType
+  fullName: AdoHelper.MappingInfo.InnerType
+  nameWithType: MappingInfo.InnerType
+- uid: AdoHelper.MappingInfo.InnerType*
+  name: InnerType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_InnerType_
+  commentId: Overload:AdoHelper.MappingInfo.InnerType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.InnerType
+  nameWithType: MappingInfo.InnerType
+- uid: AdoHelper.MappingInfo.IsNullable
+  name: IsNullable
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_IsNullable
+  commentId: P:AdoHelper.MappingInfo.IsNullable
+  fullName: AdoHelper.MappingInfo.IsNullable
+  nameWithType: MappingInfo.IsNullable
+- uid: AdoHelper.MappingInfo.IsNullable*
+  name: IsNullable
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_IsNullable_
+  commentId: Overload:AdoHelper.MappingInfo.IsNullable
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.IsNullable
+  nameWithType: MappingInfo.IsNullable
+- uid: AdoHelper.MappingInfo.MapFieldName
+  name: MapFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldName
+  commentId: P:AdoHelper.MappingInfo.MapFieldName
+  fullName: AdoHelper.MappingInfo.MapFieldName
+  nameWithType: MappingInfo.MapFieldName
+- uid: AdoHelper.MappingInfo.MapFieldName*
+  name: MapFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldName_
+  commentId: Overload:AdoHelper.MappingInfo.MapFieldName
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.MapFieldName
+  nameWithType: MappingInfo.MapFieldName
+- uid: AdoHelper.MappingInfo.MapFieldType
+  name: MapFieldType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldType
+  commentId: P:AdoHelper.MappingInfo.MapFieldType
+  fullName: AdoHelper.MappingInfo.MapFieldType
+  nameWithType: MappingInfo.MapFieldType
+- uid: AdoHelper.MappingInfo.MapFieldType*
+  name: MapFieldType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldType_
+  commentId: Overload:AdoHelper.MappingInfo.MapFieldType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.MapFieldType
+  nameWithType: MappingInfo.MapFieldType
+- uid: AdoHelper.NonMappedAttribute
+  name: NonMappedAttribute
+  href: api/AdoHelper.NonMappedAttribute.html
+  commentId: T:AdoHelper.NonMappedAttribute
+  fullName: AdoHelper.NonMappedAttribute
+  nameWithType: NonMappedAttribute
+- uid: AdoHelper.ObjectCreator
+  name: ObjectCreator
+  href: api/AdoHelper.ObjectCreator.html
+  commentId: T:AdoHelper.ObjectCreator
+  fullName: AdoHelper.ObjectCreator
+  nameWithType: ObjectCreator
+- uid: AdoHelper.ObjectCreator.Create*
+  name: Create
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create_
+  commentId: Overload:AdoHelper.ObjectCreator.Create
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.Create
+  nameWithType: ObjectCreator.Create
+- uid: AdoHelper.ObjectCreator.Create``1
+  name: Create<T>()
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create__1
+  commentId: M:AdoHelper.ObjectCreator.Create``1
+  name.vb: Create(Of T)()
+  fullName: AdoHelper.ObjectCreator.Create<T>()
+  fullName.vb: AdoHelper.ObjectCreator.Create(Of T)()
+  nameWithType: ObjectCreator.Create<T>()
+  nameWithType.vb: ObjectCreator.Create(Of T)()
+- uid: AdoHelper.ObjectCreator.Create``1(System.Collections.Generic.List{System.Object})
+  name: Create<T>(List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create__1_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.Create``1(System.Collections.Generic.List{System.Object})
+  name.vb: Create(Of T)(List(Of Object))
+  fullName: AdoHelper.ObjectCreator.Create<T>(System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.Create(Of T)(System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.Create<T>(List<Object>)
+  nameWithType.vb: ObjectCreator.Create(Of T)(List(Of Object))
+- uid: AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  name: CreateEnumerable(Type)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable_System_Type_
+  commentId: M:AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  nameWithType: ObjectCreator.CreateEnumerable(Type)
+- uid: AdoHelper.ObjectCreator.CreateEnumerable*
+  name: CreateEnumerable
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable_
+  commentId: Overload:AdoHelper.ObjectCreator.CreateEnumerable
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable
+  nameWithType: ObjectCreator.CreateEnumerable
+- uid: AdoHelper.ObjectCreator.CreateEnumerable``1
+  name: CreateEnumerable<T>()
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable__1
+  commentId: M:AdoHelper.ObjectCreator.CreateEnumerable``1
+  name.vb: CreateEnumerable(Of T)()
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable<T>()
+  fullName.vb: AdoHelper.ObjectCreator.CreateEnumerable(Of T)()
+  nameWithType: ObjectCreator.CreateEnumerable<T>()
+  nameWithType.vb: ObjectCreator.CreateEnumerable(Of T)()
+- uid: AdoHelper.ObjectCreator.CreateTuple(System.Type,System.Collections.Generic.List{System.Object})
+  name: CreateTuple(Type, List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple_System_Type_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.CreateTuple(System.Type,System.Collections.Generic.List{System.Object})
+  name.vb: CreateTuple(Type, List(Of Object))
+  fullName: AdoHelper.ObjectCreator.CreateTuple(System.Type, System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.CreateTuple(System.Type, System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.CreateTuple(Type, List<Object>)
+  nameWithType.vb: ObjectCreator.CreateTuple(Type, List(Of Object))
+- uid: AdoHelper.ObjectCreator.CreateTuple*
+  name: CreateTuple
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple_
+  commentId: Overload:AdoHelper.ObjectCreator.CreateTuple
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.CreateTuple
+  nameWithType: ObjectCreator.CreateTuple
+- uid: AdoHelper.ObjectCreator.CreateTuple``1(System.Collections.Generic.List{System.Object})
+  name: CreateTuple<T>(List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple__1_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.CreateTuple``1(System.Collections.Generic.List{System.Object})
+  name.vb: CreateTuple(Of T)(List(Of Object))
+  fullName: AdoHelper.ObjectCreator.CreateTuple<T>(System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.CreateTuple(Of T)(System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.CreateTuple<T>(List<Object>)
+  nameWithType.vb: ObjectCreator.CreateTuple(Of T)(List(Of Object))
+- uid: AdoHelper.QueryInfo`1
+  name: QueryInfo<T>
+  href: api/AdoHelper.QueryInfo-1.html
+  commentId: T:AdoHelper.QueryInfo`1
+  name.vb: QueryInfo(Of T)
+  fullName: AdoHelper.QueryInfo<T>
+  fullName.vb: AdoHelper.QueryInfo(Of T)
+  nameWithType: QueryInfo<T>
+  nameWithType.vb: QueryInfo(Of T)
+- uid: AdoHelper.QueryInfo`1.Command
+  name: Command
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Command
+  commentId: P:AdoHelper.QueryInfo`1.Command
+  fullName: AdoHelper.QueryInfo<T>.Command
+  fullName.vb: AdoHelper.QueryInfo(Of T).Command
+  nameWithType: QueryInfo<T>.Command
+  nameWithType.vb: QueryInfo(Of T).Command
+- uid: AdoHelper.QueryInfo`1.Command*
+  name: Command
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Command_
+  commentId: Overload:AdoHelper.QueryInfo`1.Command
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Command
+  fullName.vb: AdoHelper.QueryInfo(Of T).Command
+  nameWithType: QueryInfo<T>.Command
+  nameWithType.vb: QueryInfo(Of T).Command
+- uid: AdoHelper.QueryInfo`1.Connection
+  name: Connection
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Connection
+  commentId: P:AdoHelper.QueryInfo`1.Connection
+  fullName: AdoHelper.QueryInfo<T>.Connection
+  fullName.vb: AdoHelper.QueryInfo(Of T).Connection
+  nameWithType: QueryInfo<T>.Connection
+  nameWithType.vb: QueryInfo(Of T).Connection
+- uid: AdoHelper.QueryInfo`1.Connection*
+  name: Connection
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Connection_
+  commentId: Overload:AdoHelper.QueryInfo`1.Connection
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Connection
+  fullName.vb: AdoHelper.QueryInfo(Of T).Connection
+  nameWithType: QueryInfo<T>.Connection
+  nameWithType.vb: QueryInfo(Of T).Connection
+- uid: AdoHelper.QueryInfo`1.ModelEntityType
+  name: QueryInfo<T>.ModelEntityType
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html
+  commentId: T:AdoHelper.QueryInfo`1.ModelEntityType
+  name.vb: QueryInfo(Of T).ModelEntityType
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType
+  nameWithType: QueryInfo<T>.ModelEntityType
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Collection
+  name: Collection
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Collection
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Collection
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Collection
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Collection
+  nameWithType: QueryInfo<T>.ModelEntityType.Collection
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Collection
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Object
+  name: Object
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Object
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Object
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Object
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Object
+  nameWithType: QueryInfo<T>.ModelEntityType.Object
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Object
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Tuple
+  name: Tuple
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Tuple
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Tuple
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Tuple
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Tuple
+  nameWithType: QueryInfo<T>.ModelEntityType.Tuple
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Tuple
+- uid: AdoHelper.QueryInfo`1.ModelStructureTable
+  name: ModelStructureTable
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelStructureTable
+  commentId: P:AdoHelper.QueryInfo`1.ModelStructureTable
+  fullName: AdoHelper.QueryInfo<T>.ModelStructureTable
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelStructureTable
+  nameWithType: QueryInfo<T>.ModelStructureTable
+  nameWithType.vb: QueryInfo(Of T).ModelStructureTable
+- uid: AdoHelper.QueryInfo`1.ModelStructureTable*
+  name: ModelStructureTable
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelStructureTable_
+  commentId: Overload:AdoHelper.QueryInfo`1.ModelStructureTable
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.ModelStructureTable
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelStructureTable
+  nameWithType: QueryInfo<T>.ModelStructureTable
+  nameWithType.vb: QueryInfo(Of T).ModelStructureTable
+- uid: AdoHelper.QueryInfo`1.ModelType
+  name: ModelType
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelType
+  commentId: P:AdoHelper.QueryInfo`1.ModelType
+  fullName: AdoHelper.QueryInfo<T>.ModelType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelType
+  nameWithType: QueryInfo<T>.ModelType
+  nameWithType.vb: QueryInfo(Of T).ModelType
+- uid: AdoHelper.QueryInfo`1.ModelType*
+  name: ModelType
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelType_
+  commentId: Overload:AdoHelper.QueryInfo`1.ModelType
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.ModelType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelType
+  nameWithType: QueryInfo<T>.ModelType
+  nameWithType.vb: QueryInfo(Of T).ModelType
+- uid: AdoHelper.QueryInfo`1.QueryInfoParameters
+  name: QueryInfoParameters
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_QueryInfoParameters
+  commentId: P:AdoHelper.QueryInfo`1.QueryInfoParameters
+  fullName: AdoHelper.QueryInfo<T>.QueryInfoParameters
+  fullName.vb: AdoHelper.QueryInfo(Of T).QueryInfoParameters
+  nameWithType: QueryInfo<T>.QueryInfoParameters
+  nameWithType.vb: QueryInfo(Of T).QueryInfoParameters
+- uid: AdoHelper.QueryInfo`1.QueryInfoParameters*
+  name: QueryInfoParameters
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_QueryInfoParameters_
+  commentId: Overload:AdoHelper.QueryInfo`1.QueryInfoParameters
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.QueryInfoParameters
+  fullName.vb: AdoHelper.QueryInfo(Of T).QueryInfoParameters
+  nameWithType: QueryInfo<T>.QueryInfoParameters
+  nameWithType.vb: QueryInfo(Of T).QueryInfoParameters
+- uid: AdoHelper.QueryInfo`1.Transaction
+  name: Transaction
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Transaction
+  commentId: P:AdoHelper.QueryInfo`1.Transaction
+  fullName: AdoHelper.QueryInfo<T>.Transaction
+  fullName.vb: AdoHelper.QueryInfo(Of T).Transaction
+  nameWithType: QueryInfo<T>.Transaction
+  nameWithType.vb: QueryInfo(Of T).Transaction
+- uid: AdoHelper.QueryInfo`1.Transaction*
+  name: Transaction
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Transaction_
+  commentId: Overload:AdoHelper.QueryInfo`1.Transaction
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Transaction
+  fullName.vb: AdoHelper.QueryInfo(Of T).Transaction
+  nameWithType: QueryInfo<T>.Transaction
+  nameWithType.vb: QueryInfo(Of T).Transaction
+- uid: AdoHelper.TupleParsing
+  name: AdoHelper.TupleParsing
+  href: api/AdoHelper.TupleParsing.html
+  commentId: N:AdoHelper.TupleParsing
+  fullName: AdoHelper.TupleParsing
+  nameWithType: AdoHelper.TupleParsing
+- uid: AdoHelper.TupleParsing.TupleAccess
+  name: TupleAccess
+  href: api/AdoHelper.TupleParsing.TupleAccess.html
+  commentId: T:AdoHelper.TupleParsing.TupleAccess
+  fullName: AdoHelper.TupleParsing.TupleAccess
+  nameWithType: TupleAccess
+- uid: AdoHelper.TupleParsing.TupleAccess.#ctor(System.Object)
+  name: TupleAccess(Object)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess__ctor_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.#ctor(System.Object)
+  fullName: AdoHelper.TupleParsing.TupleAccess.TupleAccess(System.Object)
+  nameWithType: TupleAccess.TupleAccess(Object)
+- uid: AdoHelper.TupleParsing.TupleAccess.#ctor*
+  name: TupleAccess
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess__ctor_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.TupleAccess
+  nameWithType: TupleAccess.TupleAccess
+- uid: AdoHelper.TupleParsing.TupleAccess.Count
+  name: Count
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Count
+  commentId: P:AdoHelper.TupleParsing.TupleAccess.Count
+  fullName: AdoHelper.TupleParsing.TupleAccess.Count
+  nameWithType: TupleAccess.Count
+- uid: AdoHelper.TupleParsing.TupleAccess.Count*
+  name: Count
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Count_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.Count
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.Count
+  nameWithType: TupleAccess.Count
+- uid: AdoHelper.TupleParsing.TupleAccess.Get(System.Object,System.Int32)
+  name: Get(Object, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Get_System_Object_System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.Get(System.Object,System.Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccess.Get(System.Object, System.Int32)
+  nameWithType: TupleAccess.Get(Object, Int32)
+- uid: AdoHelper.TupleParsing.TupleAccess.Get*
+  name: Get
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Get_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.Get
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.Get
+  nameWithType: TupleAccess.Get
+- uid: AdoHelper.TupleParsing.TupleAccess.GetItemType(System.Type,System.Int32)
+  name: GetItemType(Type, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_GetItemType_System_Type_System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.GetItemType(System.Type,System.Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccess.GetItemType(System.Type, System.Int32)
+  nameWithType: TupleAccess.GetItemType(Type, Int32)
+- uid: AdoHelper.TupleParsing.TupleAccess.GetItemType*
+  name: GetItemType
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_GetItemType_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.GetItemType
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.GetItemType
+  nameWithType: TupleAccess.GetItemType
+- uid: AdoHelper.TupleParsing.TupleAccess.IsTuple(System.Type)
+  name: IsTuple(Type)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_IsTuple_System_Type_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.IsTuple(System.Type)
+  fullName: AdoHelper.TupleParsing.TupleAccess.IsTuple(System.Type)
+  nameWithType: TupleAccess.IsTuple(Type)
+- uid: AdoHelper.TupleParsing.TupleAccess.IsTuple*
+  name: IsTuple
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_IsTuple_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.IsTuple
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.IsTuple
+  nameWithType: TupleAccess.IsTuple
+- uid: AdoHelper.TupleParsing.TupleAccess.IsTypeMatch
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_IsTypeMatch
+  commentId: P:AdoHelper.TupleParsing.TupleAccess.IsTypeMatch
+  fullName: AdoHelper.TupleParsing.TupleAccess.IsTypeMatch
+  nameWithType: TupleAccess.IsTypeMatch
+- uid: AdoHelper.TupleParsing.TupleAccess.IsTypeMatch*
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_IsTypeMatch_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.IsTypeMatch
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.IsTypeMatch
+  nameWithType: TupleAccess.IsTypeMatch
+- uid: AdoHelper.TupleParsing.TupleAccess.Item(System.Int32)
+  name: Item[Int32]
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Item_System_Int32_
+  commentId: P:AdoHelper.TupleParsing.TupleAccess.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccess.Item[System.Int32]
+  fullName.vb: AdoHelper.TupleParsing.TupleAccess.Item(System.Int32)
+  nameWithType: TupleAccess.Item[Int32]
+  nameWithType.vb: TupleAccess.Item(Int32)
+- uid: AdoHelper.TupleParsing.TupleAccess.Item*
+  name: Item
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_Item_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.Item
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.Item
+  nameWithType: TupleAccess.Item
+- uid: AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Object)
+  name: ItemCount(Object)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_ItemCount_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Object)
+  fullName: AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Object)
+  nameWithType: TupleAccess.ItemCount(Object)
+- uid: AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Type)
+  name: ItemCount(Type)
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_ItemCount_System_Type_
+  commentId: M:AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Type)
+  fullName: AdoHelper.TupleParsing.TupleAccess.ItemCount(System.Type)
+  nameWithType: TupleAccess.ItemCount(Type)
+- uid: AdoHelper.TupleParsing.TupleAccess.ItemCount*
+  name: ItemCount
+  href: api/AdoHelper.TupleParsing.TupleAccess.html#AdoHelper_TupleParsing_TupleAccess_ItemCount_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccess.ItemCount
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccess.ItemCount
+  nameWithType: TupleAccess.ItemCount
+- uid: AdoHelper.TupleParsing.TupleAccessBase
+  name: TupleAccessBase
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html
+  commentId: T:AdoHelper.TupleParsing.TupleAccessBase
+  fullName: AdoHelper.TupleParsing.TupleAccessBase
+  nameWithType: TupleAccessBase
+- uid: AdoHelper.TupleParsing.TupleAccessBase._tuple
+  name: _tuple
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase__tuple
+  commentId: F:AdoHelper.TupleParsing.TupleAccessBase._tuple
+  fullName: AdoHelper.TupleParsing.TupleAccessBase._tuple
+  nameWithType: TupleAccessBase._tuple
+- uid: AdoHelper.TupleParsing.TupleAccessBase.Count
+  name: Count
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_Count
+  commentId: P:AdoHelper.TupleParsing.TupleAccessBase.Count
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.Count
+  nameWithType: TupleAccessBase.Count
+- uid: AdoHelper.TupleParsing.TupleAccessBase.Count*
+  name: Count
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_Count_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessBase.Count
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.Count
+  nameWithType: TupleAccessBase.Count
+- uid: AdoHelper.TupleParsing.TupleAccessBase.InnerTuple
+  name: InnerTuple
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_InnerTuple
+  commentId: P:AdoHelper.TupleParsing.TupleAccessBase.InnerTuple
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.InnerTuple
+  nameWithType: TupleAccessBase.InnerTuple
+- uid: AdoHelper.TupleParsing.TupleAccessBase.InnerTuple*
+  name: InnerTuple
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_InnerTuple_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessBase.InnerTuple
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.InnerTuple
+  nameWithType: TupleAccessBase.InnerTuple
+- uid: AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_IsTypeMatch
+  commentId: P:AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch
+  nameWithType: TupleAccessBase.IsTypeMatch
+- uid: AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch*
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.TupleAccessBase.html#AdoHelper_TupleParsing_TupleAccessBase_IsTypeMatch_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessBase.IsTypeMatch
+  nameWithType: TupleAccessBase.IsTypeMatch
+- uid: AdoHelper.TupleParsing.ValueTupleAccess
+  name: ValueTupleAccess
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html
+  commentId: T:AdoHelper.TupleParsing.ValueTupleAccess
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess
+  nameWithType: ValueTupleAccess
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.#ctor(System.Object)
+  name: ValueTupleAccess(Object)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess__ctor_System_Object_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.#ctor(System.Object)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.ValueTupleAccess(System.Object)
+  nameWithType: ValueTupleAccess.ValueTupleAccess(Object)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.#ctor*
+  name: ValueTupleAccess
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess__ctor_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.ValueTupleAccess
+  nameWithType: ValueTupleAccess.ValueTupleAccess
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Count
+  name: Count
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Count
+  commentId: P:AdoHelper.TupleParsing.ValueTupleAccess.Count
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Count
+  nameWithType: ValueTupleAccess.Count
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Count*
+  name: Count
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Count_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.Count
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Count
+  nameWithType: ValueTupleAccess.Count
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Get(System.Object,System.Int32)
+  name: Get(Object, Int32)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Get_System_Object_System_Int32_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.Get(System.Object,System.Int32)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Get(System.Object, System.Int32)
+  nameWithType: ValueTupleAccess.Get(Object, Int32)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Get*
+  name: Get
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Get_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.Get
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Get
+  nameWithType: ValueTupleAccess.Get
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.GetItemType(System.Type,System.Int32)
+  name: GetItemType(Type, Int32)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_GetItemType_System_Type_System_Int32_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.GetItemType(System.Type,System.Int32)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.GetItemType(System.Type, System.Int32)
+  nameWithType: ValueTupleAccess.GetItemType(Type, Int32)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.GetItemType*
+  name: GetItemType
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_GetItemType_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.GetItemType
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.GetItemType
+  nameWithType: ValueTupleAccess.GetItemType
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_IsTypeMatch
+  commentId: P:AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch
+  nameWithType: ValueTupleAccess.IsTypeMatch
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch*
+  name: IsTypeMatch
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_IsTypeMatch_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.IsTypeMatch
+  nameWithType: ValueTupleAccess.IsTypeMatch
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple(System.Type)
+  name: IsValueTuple(Type)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_IsValueTuple_System_Type_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple(System.Type)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple(System.Type)
+  nameWithType: ValueTupleAccess.IsValueTuple(Type)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple*
+  name: IsValueTuple
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_IsValueTuple_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.IsValueTuple
+  nameWithType: ValueTupleAccess.IsValueTuple
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Item(System.Int32)
+  name: Item[Int32]
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Item_System_Int32_
+  commentId: P:AdoHelper.TupleParsing.ValueTupleAccess.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Item[System.Int32]
+  fullName.vb: AdoHelper.TupleParsing.ValueTupleAccess.Item(System.Int32)
+  nameWithType: ValueTupleAccess.Item[Int32]
+  nameWithType.vb: ValueTupleAccess.Item(Int32)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Item*
+  name: Item
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Item_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.Item
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Item
+  nameWithType: ValueTupleAccess.Item
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Object)
+  name: ItemCount(Object)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_ItemCount_System_Object_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Object)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Object)
+  nameWithType: ValueTupleAccess.ItemCount(Object)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Type)
+  name: ItemCount(Type)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_ItemCount_System_Type_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Type)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount(System.Type)
+  nameWithType: ValueTupleAccess.ItemCount(Type)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount*
+  name: ItemCount
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_ItemCount_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.ItemCount
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.ItemCount
+  nameWithType: ValueTupleAccess.ItemCount
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Set(System.Object,System.Int32,System.Object)
+  name: Set(Object, Int32, Object)
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Set_System_Object_System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.ValueTupleAccess.Set(System.Object,System.Int32,System.Object)
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Set(System.Object, System.Int32, System.Object)
+  nameWithType: ValueTupleAccess.Set(Object, Int32, Object)
+- uid: AdoHelper.TupleParsing.ValueTupleAccess.Set*
+  name: Set
+  href: api/AdoHelper.TupleParsing.ValueTupleAccess.html#AdoHelper_TupleParsing_ValueTupleAccess_Set_
+  commentId: Overload:AdoHelper.TupleParsing.ValueTupleAccess.Set
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.ValueTupleAccess.Set
+  nameWithType: ValueTupleAccess.Set

@@ -1,4 +1,9 @@
-﻿# Changelog
+﻿
+# Changelog
+*This page is available in the following languages:*
+ - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](CHANGELOG.md)
+ - [Русский ![Русский](https://i.ibb.co/frNGG0z/russia-1.png)](CHANGELOG-RU.md)
+
 
  - ## 1.1.0
 	 - Added support for tuples of any length.
