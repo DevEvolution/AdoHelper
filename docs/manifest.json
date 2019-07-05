@@ -240,22 +240,19 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "IkC4l2CAToJtRNW2QtR17Q=="
+          "hash": "gZlyPJaTIyK8Ly8WVwWoXQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "97QTKIPrwOKSg/oFgeYOlQ=="
+          "hash": "xbzDcEea8xUTkf5bIj9byA=="
         }
       },
       "is_incremental": false,
