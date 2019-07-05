@@ -1,5 +1,5 @@
 - name: Home
-  href: ../Readme.md
+  href: index.md
 - name: Api Documentation
   href: api/
   homepage: api/index.md

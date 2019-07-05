@@ -14,7 +14,7 @@
 или установить зависимости вручную, добавив dll файл в графу зависимостей проекта в VisualStudio.
 ## Документация
  - [Список изменений](CHANGELOG-RU.md)
- - [Api reference](docs/api/index.html)
+ - [Api reference](https://devevolution.github.io/AdoHelper/docs/api/index.html)
 ## Возможности
 Автоматическое отображение результатов запроса в коллекцию экземпляров указанного типа:
 ```csharp
