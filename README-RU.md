@@ -7,11 +7,14 @@
 **AdoHelper**  – небольшая ORM (_объектно-реляционное отображение_), построенная поверх технологии ADO.NET  и упрощающая ее использование.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Файлы
- - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.0.0)
+ - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0)
  - [Скачать dll-файл](https://yadi.sk/d/uK6gsNHz2Y2mTw)
 ## Установка
 Для установки в проект достаточно скачать nuget пакет, выполнив в Nuget packet manager команду `Install-Package  DevEvolution.AdoHelper` 
 или установить зависимости вручную, добавив dll файл в графу зависимостей проекта в VisualStudio.
+## Документация
+ - [Список изменений](CHANGELOG-RU.md)
+ - [Api reference](DocFX%20Documentation/_site/api/index.html )
 ## Возможности
 Автоматическое отображение результатов запроса в коллекцию экземпляров указанного типа:
 ```csharp
@@ -27,7 +30,7 @@ IEnumerable<SimpleTestEntity> entities = new AdoHelper<SimpleTestEntity>(_connec
 	.Query("SELECT * FROM TestTable")
 	.ExecuteReader();
 ``` 
-Отображаемый тип может быть классом, структурой, кортежем (`System.Tuple`) или (`System.ValueTuple`). Отображение производится по публичным свойствам, доступным для записи (`set;`) и полям.
+Отображаемый тип может быть классом, структурой, кортежем (`System.Tuple`) или (`System.ValueTuple`), а также обобщенной  коллекцией (`IEnumerable<>`) или списком (`List<>`). Отображение производится по публичным свойствам, доступным для записи (`set;`) и полям.
 ```csharp
 public class ClassEntity 
 {
@@ -61,6 +64,10 @@ var tupleEntity = new AdoHelper<Tuple<int, string>>(_connection)
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
+var enumerableEntity = new AdoHelper<IEnumerable<string>>(_connection)
+     .Query("SELECT id, text FROM TestTable WHERE id=@id")
+     .Parameters((“@id”, 1))
+     .ExecuteReader().First();
 
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
@@ -80,7 +87,7 @@ Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
 
 - **`Объект подключения к БД`** – обьект типа `IDbConnection` (например, `SqlConnection`).
 
-- **`Параметры`** – коллекция параметров, представляющих собой пару (параметр - значение). Тип параметров – `AdoParameter`. Также можно использовать кортежи (`ValueTuple<string, object>` и `Tuple<string, object>`) для задания каждого параметра.
+- **`Параметры`** – коллекция параметров, представляющих собой пару (параметр - значение). Тип параметров – `AdoParameter`. Также можно использовать кортежи (`ValueTuple<string, object>` и `Tuple<string, object>`) и объекты `DbParameter` для задания каждого параметра.
 
 Пример :
 ```csharp
@@ -136,7 +143,7 @@ public class ExcludedFieldTestEntity
         public long Integer { get; set; } // that property is mapped to IntegerField column
     }
 ```
-Также в качестве объекта для сопоставления могут использоваться кортежи. Однако в этом случае элементы из которых состоит кортеж должны идти в том же порядке, что и в результирующей таблице.
+Также в качестве объекта для сопоставления могут использоваться кортежи. Однако в этом случае элементы из которых состоит кортеж должны идти в том же порядке, что и в результирующей таблице. Полностью поддерживаются кортежи любых размеров.
 
 **Примечание.** Имена элементов `ValueTuple`  не участвуют в сопоставлении, так как являются лишь синтаксическим сахаром и не используются в скомпилированном приложении.
 ```csharp
@@ -150,5 +157,12 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
                 .Query("SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’")
                 .ExecuteReader();
 ```
+Для сопоставления можно использовать коллекции `IEnumerable` и `List`, в таком случае результат будет содержать таблицу из элементов типа, указанного в обобщенном параметре коллекции.
+```csharp
+IEnumerable<IEnumerable<string>> entities = new AdoHelper<IEnumerable<string>>(_connection)
+                .Query("SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’")
+                .ExecuteReader();
+```
+
 ## Лицензия
 Проект опубликован под лицензией [MIT](LICENSE.md) и поставляется как есть, без каких либо гарантий.

@@ -1,4 +1,4 @@
-﻿
+
 # AdoHelper
 *This page is available in the following languages:*
  - [English ![English](https://i.ibb.co/LRZcgYS/united-kingdom.png)](README.md)
@@ -8,13 +8,10 @@
 **AdoHelper**  – a small ORM (_objective-relational mapping_), built on top of ADO.NET technology and making its use smarter.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Download links
- - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0)
+ - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.0.0)
  - [Dowload dll file](https://yadi.sk/d/uK6gsNHz2Y2mTw)
 ## Installation
 To install a project, simply download the nuget package by running the `Install-Package DevEvolution.AdoHelper` command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.
-## Documentation
- - [Changelog](CHANGELOG.md)
- - [Api reference](DocFX%20Documentation/_site/api/index.html )
 ## Features
 Automatic mapping query results to a collection of instances of the specified type:
 ```csharp
@@ -30,7 +27,7 @@ IEnumerable<SimpleTestEntity> entities = new AdoHelper<SimpleTestEntity>(_connec
 	.Query("SELECT * FROM TestTable")
 	.ExecuteReader();
 ``` 
-The displayed type can be a class, structure, tuple (`System.Tuple`) or (`System.ValueTuple`) as well as a generic collection (`IEnumerable<>`) or a list (`List<>`). Mapping is made on public properties, available for writing (`set;`) and public fields.
+The displayed type can be a class, structure, tuple (`System.Tuple`) or (`System.ValueTuple`). Mapping is made on public properties, available for writing (`set;`) and public fields.
 ```csharp
 public class ClassEntity 
 {
@@ -64,10 +61,6 @@ var tupleEntity = new AdoHelper<Tuple<int, string>>(_connection)
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
-var enumerableEntity = new AdoHelper<IEnumerable<string>>(_connection)
-     .Query("SELECT id, text FROM TestTable WHERE id=@id")
-     .Parameters((“@id”, 1))
-     .ExecuteReader().First();
 
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
@@ -87,7 +80,7 @@ The query to the database (DB) is as follows:
 
 - **`DB connection object`** is an object of type IDbConnection (for example, SqlConnection).
 
-- **`Params`** - a collection of parameters that represent a pair (parameter - value). The default type of parameters is `AdoParameter`. You can also use tuples (`ValueTuple<string, object>` and `Tuple<string, object>`) and `DbParameter` objects to specify each parameter.
+- **`Params`** - a collection of parameters that represent a pair (parameter - value). The default type of parameters is `AdoParameter`. You can also use tuples (`ValueTuple<string, object>` and `Tuple<string, object>`) to specify each parameter.
 
 Example code :
 ```csharp
@@ -143,7 +136,7 @@ public class ExcludedFieldTestEntity
         public long Integer { get; set; } // that property is mapped to IntegerField column
     }
 ```
-Tuples can also be used as an object for matching. However, in this case, the elements of which the tuple consists must go in the same order as in the resulting table. Tuples of any size are fully supported.
+Tuples can also be used as an object for matching. However, in this case, the elements of which the tuple consists must go in the same order as in the resulting table.
 
 **Note.** The names of the `ValueTuple` elements do not participate in the comparison, as they are only syntactic sugar and are not used in the compiled application.
 ```csharp
@@ -159,4 +152,3 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
 ```
 ## License
 The project is published under the license [MIT](LICENSE.md) and is supplied as is, without any guarantees.
-
