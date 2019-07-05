@@ -83,41 +83,7 @@ namespace AdoHelper
                         {
                             try
                             {
-                                object value = (reader[structure.DbFieldName].Equals(System.DBNull.Value)) ?
-                                    null : reader[structure.DbFieldName];
-
-                                MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
-                                if (memberInfo == null)
-                                    continue;
-
-                                value = Convert.ChangeType(value, structure.InnerType);
-
-                                Type memberType;
-                                if (structure.MapFieldType == MappingInfo.FieldType.Field)
-                                {
-                                    memberType = (memberInfo as FieldInfo).FieldType;
-                                }
-                                else if (structure.MapFieldType == MappingInfo.FieldType.Property)
-                                {
-                                    memberType = (memberInfo as PropertyInfo).PropertyType;
-                                }
-                                else
-                                    continue;
-
-                                if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>))
-                                {
-                                    var targetType = Nullable.GetUnderlyingType(memberType);
-                                    value = Convert.ChangeType(value, targetType);
-                                }
-
-                                if (structure.MapFieldType == MappingInfo.FieldType.Field)
-                                {
-                                    (memberInfo as FieldInfo).SetValue(boxedModel, value);
-                                }
-                                else if (structure.MapFieldType == MappingInfo.FieldType.Property)
-                                {
-                                    (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
-                                }
+                                ReadNullableField(reader, structure, modelType, boxedModel);
                             }
                             catch (Exception ex)
                             {
@@ -126,35 +92,16 @@ namespace AdoHelper
                         }
                         else
                         {
-                            if (!(reader[structure.DbFieldName].Equals(System.DBNull.Value)))
-                            {
-                                try
-                                {
-                                    object value = reader[structure.DbFieldName];
-
-                                    MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
-                                    if (memberInfo == null)
-                                        continue;
-
-                                    value = Convert.ChangeType(value, structure.InnerType);
-
-                                    if (structure.MapFieldType == MappingInfo.FieldType.Field)
-                                    {
-                                        (memberInfo as FieldInfo).SetValue(boxedModel, value);
-                                    }
-                                    else if (structure.MapFieldType == MappingInfo.FieldType.Property)
-                                    {
-                                        (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    throw ex;
-                                }
-                            }
-                            else
-                            {
+                            if ((reader[structure.DbFieldName].Equals(System.DBNull.Value)))
                                 throw new ArgumentNullException("Reader trying to pass DbNull value to non-nullable model");
+
+                            try
+                            {
+                                ReadNonNullableField(reader, structure, modelType, boxedModel);
+                            }
+                            catch (Exception ex)
+                            {
+                                throw ex;
                             }
                         }
                     }
@@ -164,6 +111,86 @@ namespace AdoHelper
                 }
             }
             return enumerable;
+        }
+
+        /// <summary>
+        /// Tries to read non nullable field
+        /// </summary>
+        /// <param name="reader">DB data reader</param>
+        /// <param name="structure">Field mapping info</param>
+        /// <param name="modelType">Mapping model type</param>
+        /// <param name="boxedModel">Boxed model object</param>
+        private static void ReadNonNullableField(IDataReader reader, MappingInfo structure, Type modelType, object boxedModel)
+        {
+            object value = reader[structure.DbFieldName];
+
+            MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
+            if (memberInfo == null)
+                return;
+
+            value = Convert.ChangeType(value, structure.InnerType);
+
+            switch (structure.MapFieldType)
+            {
+                case MappingInfo.FieldType.Field:
+                    (memberInfo as FieldInfo).SetValue(boxedModel, value);
+                    break;
+
+                case MappingInfo.FieldType.Property:
+                    (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Tries to read nullable field
+        /// </summary>
+        /// <param name="reader">DB data reader</param>
+        /// <param name="structure">Field mapping info</param>
+        /// <param name="modelType">Mapping model type</param>
+        /// <param name="boxedModel">Boxed model object</param>
+        private static void ReadNullableField(IDataReader reader, MappingInfo structure, Type modelType, object boxedModel)
+        {
+            object value = (reader[structure.DbFieldName].Equals(System.DBNull.Value)) ?
+                                    null : reader[structure.DbFieldName];
+
+            MemberInfo memberInfo = GetAppropriateMember(modelType.GetMember(structure.MapFieldName), structure);
+            if (memberInfo == null)
+                return;
+
+            value = Convert.ChangeType(value, structure.InnerType);
+
+            Type memberType;
+            switch (structure.MapFieldType)
+            {
+                case MappingInfo.FieldType.Field:
+                    memberType = (memberInfo as FieldInfo).FieldType;
+                    break;
+
+                case MappingInfo.FieldType.Property:
+                    memberType = (memberInfo as PropertyInfo).PropertyType;
+                    break;
+
+                default:
+                    return;
+            }
+
+            if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>))
+            {
+                var targetType = Nullable.GetUnderlyingType(memberType);
+                value = Convert.ChangeType(value, targetType);
+            }
+
+            switch (structure.MapFieldType)
+            {
+                case MappingInfo.FieldType.Field:
+                    (memberInfo as FieldInfo).SetValue(boxedModel, value);
+                    break;
+
+                case MappingInfo.FieldType.Property:
+                    (memberInfo as PropertyInfo).SetValue(boxedModel, value, null);
+                    break;
+            }
         }
 
         /// <summary>
