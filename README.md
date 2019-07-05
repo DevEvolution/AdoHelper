@@ -14,7 +14,7 @@
 To install a project, simply download the nuget package by running the `Install-Package DevEvolution.AdoHelper` command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.
 ## Documentation
  - [Changelog](CHANGELOG.md)
- - [Api reference](https://devevolution.github.io/AdoHelper/docs/api/index.html)
+ - [Api reference](https://devevolution.github.io/AdoHelper/api/index.html)
 ## Features
 Automatic mapping query results to a collection of instances of the specified type:
 ```csharp
