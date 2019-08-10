@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeAdoNet", "FakeAdoNet\FakeAdoNet.csproj", "{AF0E1B69-029D-44B4-8597-44D70075F2A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFX Documentation", "DocFX Documentation\DocFX Documentation.csproj", "{EF391C91-B421-4434-9401-95E201DCE554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFX Documentation", "DocFX Documentation\DocFX Documentation.csproj", "{EF391C91-B421-4434-9401-95E201DCE554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

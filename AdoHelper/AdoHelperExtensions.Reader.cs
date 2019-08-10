@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Reflection;
 using System.Text;
 
@@ -128,7 +129,14 @@ namespace AdoHelper
             if (memberInfo == null)
                 return;
 
-            value = Convert.ChangeType(value, structure.InnerType);
+            try
+            {
+                value = Convert.ChangeType(value, structure.InnerType);
+            }
+            catch (FormatException ex)
+            {
+                value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+            }
 
             switch (structure.MapFieldType)
             {
@@ -158,7 +166,14 @@ namespace AdoHelper
             if (memberInfo == null)
                 return;
 
-            value = Convert.ChangeType(value, structure.InnerType);
+            try
+            {
+                value = Convert.ChangeType(value, structure.InnerType);
+            }
+            catch (FormatException ex)
+            {
+                value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+            }
 
             Type memberType;
             switch (structure.MapFieldType)
