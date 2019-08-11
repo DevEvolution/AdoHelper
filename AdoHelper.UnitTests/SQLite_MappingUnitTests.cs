@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AdoHelper.UnitTests
 {
@@ -31,6 +33,37 @@ namespace AdoHelper.UnitTests
             Assert.AreEqual(123.123, entity.FloatField);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
+        }
+
+        [TestMethod]
+        public async Task AsyncReaderMapping()
+        {
+            _connection.Open();
+            var entity = (await new AdoHelper<SimpleTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable WHERE IntegerField = @intValue")
+                .Parameters(new AdoParameter("@intValue", 123))
+                .ExecuteReaderAsync())
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.AreEqual("Hello", entity.TextField);
+            Assert.AreEqual(123.123, entity.FloatField);
+            Assert.AreEqual(123, entity.NumericField);
+            Assert.AreEqual(123, entity.IntegerField);
+        }
+
+        [TestMethod]
+        public async Task AsyncReaderMapping_Cancel()
+        {
+            _connection.Open();
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+            source.Cancel();
+            await Assert.ThrowsExceptionAsync<TaskCanceledException>(async () => await new AdoHelper<SimpleTestEntity>(_connection)
+               .Query("SELECT * FROM TestTable WHERE IntegerField = @intValue")
+               .Parameters(new AdoParameter("@intValue", 123))
+               .ExecuteReaderAsync(token));
+            _connection.Close();
         }
 
         [TestMethod]
@@ -66,6 +99,7 @@ namespace AdoHelper.UnitTests
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
+
 
         [TestMethod]
         public void SimplePropertyMapping_ValueTupleParams()
@@ -254,6 +288,34 @@ namespace AdoHelper.UnitTests
         }
 
         [TestMethod]
+        public async Task AsyncScalarQuery()
+        {
+            _connection.Open();
+            var scalar = await new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalarAsync();
+            _connection.Close();
+
+            Assert.IsTrue(scalar > 0);
+        }
+
+        [TestMethod]
+        public async Task AsyncScalarQuery_Cancel()
+        {
+            _connection.Open();
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+
+            source.Cancel();
+            Task<int> task = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalarAsync(token);
+
+            await Assert.ThrowsExceptionAsync<TaskCanceledException>(async () => { await task; });
+            _connection.Close();
+        }
+
+        [TestMethod]
         public void NullableIntScalarQuery()
         {
             _connection.Open();
@@ -291,10 +353,10 @@ namespace AdoHelper.UnitTests
             new AdoHelper<int>(_connection)
                 .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
                 .Parameters(
-                ("@text","Test hello"), 
-                ("@float", 9.09), 
-                ("@decimal", 193.123), 
-                ("@int",85))
+                ("@text", "Test hello"),
+                ("@float", 9.09),
+                ("@decimal", 193.123),
+                ("@int", 85))
                 .Transaction(transaction)
                 .ExecuteNonQuery();
 
@@ -317,6 +379,82 @@ namespace AdoHelper.UnitTests
 
             Assert.IsTrue(addCount > defaultCount);
             Assert.IsTrue(defaultCount == count);
+        }
+
+        [TestMethod]
+        public async Task AsyncComplexTransaction()
+        {
+            _connection.Open();
+
+            int defaultCount = await new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalarAsync();
+
+            var transaction = _connection.BeginTransaction();
+            await new AdoHelper<int>(_connection)
+                .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
+                .Parameters(
+                ("@text", "Test hello"),
+                ("@float", 9.09),
+                ("@decimal", 193.123),
+                ("@int", 85))
+                .Transaction(transaction)
+                .ExecuteNonQueryAsync();
+
+            int addCount = await new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .Transaction(transaction)
+                .ExecuteScalarAsync();
+            transaction.Commit();
+
+            await new AdoHelper<int>(_connection)
+                .Query("DELETE FROM TestTable WHERE TextField = @text")
+                .Parameters(("@text", "Test hello"))
+                .ExecuteNonQueryAsync();
+
+            int count = await new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalarAsync();
+
+            _connection.Close();
+
+            Assert.IsTrue(addCount > defaultCount);
+            Assert.IsTrue(defaultCount == count);
+        }
+
+        public async Task AsyncComplexTransaction_Cancel()
+        {
+            _connection.Open();
+
+            int defaultCount = new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .ExecuteScalar();
+
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+
+            source.Cancel();
+            var transaction = _connection.BeginTransaction();
+            await Assert.ThrowsExceptionAsync<TaskCanceledException>(async () => await new AdoHelper<int>(_connection)
+                .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
+                .Parameters(
+                ("@text", "Test hello"),
+                ("@float", 9.09),
+                ("@decimal", 193.123),
+                ("@int", 85))
+                .Transaction(transaction)
+                .ExecuteNonQueryAsync(token));
+
+            transaction.Rollback();
+
+            int addCount = await new AdoHelper<int>(_connection)
+                .Query("SELECT COUNT(*) FROM TestTable")
+                .Transaction(transaction)
+                .ExecuteScalarAsync();
+
+            _connection.Close();
+
+            Assert.IsTrue(addCount == defaultCount);
         }
 
         [TestMethod]
@@ -421,7 +559,7 @@ namespace AdoHelper.UnitTests
             var model = entity.First().ToList();
             Assert.AreEqual(5, model.Count);
             Assert.AreEqual("Hello", model[1]);
-            Assert.AreEqual("123.123", model[2].Replace(',','.'));
+            Assert.AreEqual("123.123", model[2].Replace(',', '.'));
             Assert.AreEqual("123", model[3]);
             Assert.AreEqual("123", model[4]);
         }
@@ -436,7 +574,7 @@ namespace AdoHelper.UnitTests
             _connection.Close();
 
             Assert.AreNotEqual(0, entity.Count());
-            
+
             var model = entity.First();
             Assert.AreEqual(5, model.Count);
             Assert.AreEqual("Hello", model[1]);
@@ -457,7 +595,7 @@ namespace AdoHelper.UnitTests
             Assert.AreNotEqual(0, entity.Count());
 
             var model = entity.First().ToList();
-            
+
             Assert.AreEqual(5, model.Count);
 
             Assert.AreEqual("Hello", model[1]);
