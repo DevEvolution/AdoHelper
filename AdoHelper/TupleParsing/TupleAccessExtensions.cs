@@ -133,6 +133,34 @@ namespace AdoHelper.TupleParsing
         }
 
         /// <summary>
+        /// Gets the type of value tuple element at specified index
+        /// </summary>
+        /// <param name="valueTuple">Value tuple type</param>
+        /// <param name="index">Index of element</param>
+        /// <returns>Type of value tuple element</returns>
+        public static Type GetValueTupleItemType(this Type valueTuple, int index)
+        {
+            int restCount = index / 7;
+            int innerIndex = index % 7;
+
+            Type inner = valueTuple;
+            for (int i = 0; i < restCount; i++)
+            {
+                FieldInfo field = inner.GetFields().FirstOrDefault(u => u.Name == "Rest");
+                if (field != null)
+                    inner = field.FieldType;
+                else
+                    throw new IndexOutOfRangeException("Specified index is out of value tuple range");
+            }
+
+            FieldInfo[] fields = inner.GetFields();
+            if (fields.Length < innerIndex + 1)
+                throw new IndexOutOfRangeException("Specified index is out of value tuple range");
+
+            return inner.GetField($"Item{innerIndex + 1}").FieldType;
+        }
+
+        /// <summary>
         /// Gets the value tuple element at specified index
         /// </summary>
         /// <param name="valueTuple">Value tuple object</param>
