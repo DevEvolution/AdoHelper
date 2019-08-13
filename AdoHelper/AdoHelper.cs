@@ -29,14 +29,14 @@ namespace AdoHelper
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Collection;
                 ParseCollectionStructure(_modelType);
             }
-            else if (TupleAccess.IsTuple(_modelType))
+            else if (_modelType.IsTuple())
             {
                 // Tuple
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
                 ParseTupleStructure(_modelType, false);
 
             }
-            else if (ValueTupleAccess.IsValueTuple(_modelType))
+            else if (_modelType.IsValueTuple())
             {
                 // Value tuple
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
@@ -72,7 +72,7 @@ namespace AdoHelper
         {
             _queryInfo.ModelStructureTable = new List<MappingInfo>();
 
-            int itemCount = isValueTuple ? ValueTupleAccess.ItemCount(modelType) : TupleAccess.ItemCount(modelType);
+            int itemCount = isValueTuple ? modelType.ValueTupleItemCount() : modelType.TupleItemCount();
             for (int i = 0; i < itemCount; i++)
             {
                 MappingInfo structure = new MappingInfo();

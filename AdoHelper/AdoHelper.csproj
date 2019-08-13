@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>DevEvolution</Authors>
     <Copyright>(c) 2019 DevEvolution</Copyright>
-    <AssemblyVersion>1.1.0.2</AssemblyVersion>
-    <FileVersion>1.1.0.2</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <Description>Micro ORM for smarter RDBMS access via ADO NET</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/DevEvolution/AdoHelper</RepositoryUrl>
@@ -15,7 +15,7 @@
     <Product>AdoHelper</Product>
     <Title>AdoHelper</Title>
     <PackageTags>micro-orm, orm, sql</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
