@@ -7,7 +7,7 @@ using System.Text;
 namespace AdoHelper.UnitTests
 {
     [TestClass]
-    public class TupleAccessUnitTests
+    public class TupleExtensionsUnitTests
     {
         [TestMethod]
         public void Tuple_Single_Count()
@@ -40,6 +40,16 @@ namespace AdoHelper.UnitTests
         }
 
         [TestMethod]
+        public void Tuple_Simple_GetType()
+        {
+            Tuple<int, string> tuple1 = new Tuple<int, string>(10, "Hello");
+            Tuple<int, int, int, int, int, int> tuple2 = new Tuple<int, int, int, int, int, int>(1, 2, 3, 4, 5, 6);
+
+            Assert.AreEqual(typeof(string), tuple1.GetType().GetTupleItemType(1));
+            Assert.AreEqual(typeof(int), tuple2.GetType().GetTupleItemType(4));
+        }
+
+        [TestMethod]
         public void ValueTuple_Simple_Get()
         {
             (int, string) tuple1 = (10, "Hello");
@@ -47,6 +57,16 @@ namespace AdoHelper.UnitTests
 
             Assert.AreEqual("Hello", tuple1.Get(1));
             Assert.AreEqual(5, tuple2.Get(4));
+        }
+
+        [TestMethod]
+        public void ValueTuple_Simple_GetType()
+        {
+            (int, string) tuple1 = (10, "Hello");
+            (int, int, int, int, int, int) tuple2 = (1, 2, 3, 4, 5, 6);
+
+            Assert.AreEqual(typeof(string), tuple1.GetType().GetTupleItemType(1));
+            Assert.AreEqual(typeof(int), tuple2.GetType().GetTupleItemType(4));
         }
 
         [TestMethod]
@@ -182,19 +202,40 @@ namespace AdoHelper.UnitTests
         [TestMethod]
         public void Tuple_NotTuple_Exception()
         {
-            Assert.ThrowsException<ArgumentException>(() => new TupleAccess("Hi"));
-            Assert.ThrowsException<ArgumentException>(() => new TupleAccess(123.123));
-            Assert.ThrowsException<ArgumentException>(() => new TupleAccess(new List<char>() { 'a', 'b' }));
-            Assert.ThrowsException<ArgumentException>(() => new TupleAccess(new byte[] { 11, 51 }));
+            Assert.ThrowsException<ArgumentException>(() => typeof(string).TupleItemCount());
+            Assert.ThrowsException<ArgumentException>(() => typeof(object).TupleItemCount());
+
+            Assert.ThrowsException<ArgumentException>(() => typeof(DateTime).GetTupleItemType(0));
+            Assert.ThrowsException<ArgumentException>(() => typeof(ulong).GetTupleItemType(0));
         }
 
         [TestMethod]
-        public void ValueTuple_NotTuple_Exception()
+        public void Tuple_OutOfBounds_Exception()
         {
-            Assert.ThrowsException<ArgumentException>(() => new ValueTupleAccess("Hi"));
-            Assert.ThrowsException<ArgumentException>(() => new ValueTupleAccess(123.123));
-            Assert.ThrowsException<ArgumentException>(() => new ValueTupleAccess(new List<char>() { 'a', 'b' }));
-            Assert.ThrowsException<ArgumentException>(() => new ValueTupleAccess(new byte[] { 11, 51 }));
+            Tuple<int, int, int> tuple1 = new Tuple<int, int, int>(1, 2, 3);
+            (int, int, int) tuple2 = (1, 2, 3);
+
+            Assert.ThrowsException<IndexOutOfRangeException>(() => tuple1.Get(5));
+            Assert.ThrowsException<IndexOutOfRangeException>(() => tuple2.Get(5));
+
+            Assert.ThrowsException<IndexOutOfRangeException>(() => tuple1.Set(5, 0));
+            Assert.ThrowsException<IndexOutOfRangeException>(() => tuple2.Set(5, 0));
+        }
+
+        [TestMethod]
+        public void Tuple_IncorrectSetType_Exception()
+        {
+            Tuple<int, int, int> tuple1 = new Tuple<int, int, int>(1, 2, 3);
+            (int, int, int) tuple2 = (1, 2, 3);
+
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple1.Set(2, "hello"));
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple2.Set(2, "hello"));
+
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple1.Set(1, DateTime.Now));
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple2.Set(1, DateTime.Now));
+
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple1.Set(0, new object()));
+            Assert.ThrowsException<ArrayTypeMismatchException>(() => tuple2.Set(0, new object()));
         }
 
         [TestMethod]

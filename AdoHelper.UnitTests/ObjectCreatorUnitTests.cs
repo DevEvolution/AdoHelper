@@ -64,12 +64,11 @@ namespace AdoHelper.UnitTests
                 parameters.Add(i * 100);
             }
             var tuple = ObjectCreator.CreateTuple<Tuple<int, int, int, int, int, int, int, Tuple<int, int, int, int, int, int, int, Tuple<int, int, int, int, int, int, int, Tuple<int, int, int, int, int, int, int>>>>>(parameters);
-            TupleAccess access = new TupleAccess(tuple);
-
-            Assert.AreEqual(28, access.Count);
+            
+            Assert.AreEqual(28, tuple.Count());
             for (int i = 0; i < 28; i++)
             {
-                Assert.AreEqual(i * 100, access[i]);
+                Assert.AreEqual(i * 100, tuple.Get(i));
             }
         }
 
@@ -91,12 +90,11 @@ namespace AdoHelper.UnitTests
                 parameters.Add(i * 100);
             }
             var tuple = ObjectCreator.CreateTuple<(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int)>(parameters);
-            ValueTupleAccess access = new ValueTupleAccess(tuple);
 
-            Assert.AreEqual(100, access.Count);
+            Assert.AreEqual(100, tuple.Count());
             for (int i = 0; i < 100; i++)
             {
-                Assert.AreEqual(i * 100, access[i]);
+                Assert.AreEqual(i * 100, tuple.Get(i));
             }
         }
 

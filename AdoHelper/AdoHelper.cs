@@ -72,19 +72,19 @@ namespace AdoHelper
         {
             _queryInfo.ModelStructureTable = new List<MappingInfo>();
 
-            int itemCount = isValueTuple ? modelType.ValueTupleItemCount() : modelType.TupleItemCount();
+            int itemCount = modelType.TupleItemCount();
             for (int i = 0; i < itemCount; i++)
             {
                 MappingInfo structure = new MappingInfo();
                 if (isValueTuple)
                 {
                     structure.MapFieldType = MappingInfo.FieldType.Field;
-                    structure.FullType = ValueTupleAccess.GetItemType(modelType, i);
+                    structure.FullType = modelType.GetTupleItemType(i);
                 }
                 else
                 {
                     structure.MapFieldType = MappingInfo.FieldType.Property;
-                    structure.FullType = TupleAccess.GetItemType(modelType, i);
+                    structure.FullType = modelType.GetTupleItemType(i);
                 }
                   
                 structure.MapFieldName = String.Empty;

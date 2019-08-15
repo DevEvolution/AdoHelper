@@ -97,8 +97,8 @@ namespace AdoHelper
         {
             bool isValueTuple;
 
-            if (ValueTupleAccess.IsValueTuple(tupleType)) isValueTuple = true;
-            else if (TupleAccess.IsTuple(tupleType)) isValueTuple = false;
+            if (tupleType.IsValueTuple()) isValueTuple = true;
+            else if (tupleType.IsTuple()) isValueTuple = false;
             else
                 throw new ArgumentException("This method supports only System.Tuple or System.ValueTuple types");
 
