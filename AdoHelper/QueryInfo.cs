@@ -48,7 +48,8 @@ namespace AdoHelper
         {
             Object,
             Tuple,
-            Collection
+            Collection,
+            Dynamic
         }
     }
 }

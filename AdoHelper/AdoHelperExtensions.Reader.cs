@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Dynamic;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
@@ -13,6 +14,62 @@ namespace AdoHelper
 {
     public static partial class AdoHelperExtensions
     {
+        private static List<T> ExecuteDynamicReader<T>(QueryInfo<T> queryInfo)
+        {
+            List<T> enumerable = new List<T>();
+            using (IDataReader reader = queryInfo.Command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    IDictionary<String, Object> model = new ExpandoObject();
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        try
+                        {
+                            object value = (reader[i].Equals(System.DBNull.Value)) ?
+                                    null : reader[i];
+
+                            model.Add(reader.GetName(i), value);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+                    enumerable.Add((T)model);
+                }
+            }
+            return enumerable;
+        }
+
+        private async static Task<List<T>> ExecuteDynamicReaderAsync<T>(QueryInfo<T> queryInfo, CancellationToken? cancellationToken = null)
+        {
+            List<T> enumerable = new List<T>();
+            using (IDataReader reader = await GetReaderAsync(queryInfo, cancellationToken))
+            {
+                while (reader.Read())
+                {
+                    IDictionary<String, Object> model = new ExpandoObject();
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        try
+                        {
+                            object value = (reader[i].Equals(System.DBNull.Value)) ?
+                                    null : reader[i];
+
+                            model.Add(reader.GetName(i), value);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+                    enumerable.Add((T)model);
+                }
+            }
+            return enumerable;
+        }
+
         /// <summary>
         /// Executes a DbDataReader and reads data into tuple collection
         /// </summary>
@@ -243,7 +300,7 @@ namespace AdoHelper
             return enumerable;
         }
 
-        
+
 
         /// <summary>
         /// Executes a DbDataReader and reads data into collection of collections

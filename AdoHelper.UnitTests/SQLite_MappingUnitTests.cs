@@ -603,5 +603,58 @@ namespace AdoHelper.UnitTests
             Assert.AreEqual("123", model[3]);
             Assert.AreEqual("123", model[4]);
         }
+
+        [TestMethod]
+        public void DynamicMapping()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<dynamic>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader();
+            _connection.Close();
+
+            var model = entity.First();
+
+            Assert.AreEqual(5, ((IDictionary<String, Object>)model).Count);
+
+            Assert.AreEqual("Hello", model.TextField);
+            Assert.AreEqual(123.123, model.FloatField);
+            Assert.AreEqual(123, model.NumericField);
+            Assert.AreEqual(123, model.IntegerField);
+        }
+
+        [TestMethod]
+        public async Task AsyncDynamicMapping()
+        {
+            _connection.Open();
+            var entity = await new AdoHelper<dynamic>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReaderAsync();
+            _connection.Close();
+
+            var model = entity.First();
+
+            Assert.AreEqual(5, ((IDictionary<String, Object>)model).Count);
+
+            Assert.AreEqual("Hello", model.TextField);
+            Assert.AreEqual(123.123, model.FloatField);
+            Assert.AreEqual(123, model.NumericField);
+            Assert.AreEqual(123, model.IntegerField);
+        }
+
+        [TestMethod]
+        public async Task AsyncDynamicMapping_Cancel()
+        {
+            _connection.Open();
+            CancellationTokenSource source = new CancellationTokenSource();
+            CancellationToken token = source.Token;
+            source.Cancel();
+
+            await Assert.ThrowsExceptionAsync<TaskCanceledException>(async () => await new AdoHelper<dynamic>(_connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReaderAsync(token)
+            );
+            _connection.Close();
+        }
     }
 }

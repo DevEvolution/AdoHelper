@@ -42,11 +42,16 @@ namespace AdoHelper
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Tuple;
                 ParseTupleStructure(_modelType, true);
             }
-            else
+            else if (_modelType != typeof(object))
             {
                 // Class or structure
                 _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Object;
                 ParseModelStructure(_modelType);
+            }
+            else
+            {
+                // Dynamic
+                _queryInfo.ModelType = QueryInfo<T>.ModelEntityType.Dynamic;
             }
         }
 

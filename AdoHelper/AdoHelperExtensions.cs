@@ -210,6 +210,9 @@ namespace AdoHelper
                 case QueryInfo<T>.ModelEntityType.Collection:
                     enumerable = ExecuteCollectionReader(queryInfo);
                     break;
+                case QueryInfo<T>.ModelEntityType.Dynamic:
+                    enumerable = ExecuteDynamicReader(queryInfo);
+                    break;
             }
 
             return enumerable;
@@ -238,6 +241,9 @@ namespace AdoHelper
                         break;
                     case QueryInfo<T>.ModelEntityType.Collection:
                         enumerable = await ExecuteCollectionReaderAsync(queryInfo, cancellationToken);
+                        break;
+                    case QueryInfo<T>.ModelEntityType.Dynamic:
+                        enumerable = await ExecuteDynamicReaderAsync(queryInfo, cancellationToken);
                         break;
                 }
             }
