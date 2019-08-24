@@ -127,7 +127,7 @@ namespace AdoHelper.UnitTests.SQLite.Mapping.Reader
         }
 
         [TestMethod]
-        public void StructProperty()
+        public void Struct()
         {
             _connection.Open();
             var entity = new AdoHelper<StructTestEntity>(_connection)

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AdoHelper.UnitTests.SQLite.QueryStructure
+namespace AdoHelper.UnitTests.Firebird.QueryStructure
 {
     [TestClass]
-    public class QueryParamsUnitTests : SQLiteDbConfig
+    public class QueryParamsUnitTests : FirebirdDbConfig
     {
         [TestMethod]
         public void ValueTupleParams()
@@ -24,7 +24,7 @@ namespace AdoHelper.UnitTests.SQLite.QueryStructure
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.AreEqual(123.123, entity.FloatField);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -43,7 +43,7 @@ namespace AdoHelper.UnitTests.SQLite.QueryStructure
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.AreEqual(123.123, entity.FloatField);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }
@@ -57,13 +57,13 @@ namespace AdoHelper.UnitTests.SQLite.QueryStructure
                 .Parameters(
                 new AdoParameter("@intParam", 123),
                 ("@textParam", "Hello"),
-                new Tuple<string, object>("@floatParam", 123.123))
+                new Tuple<string, object>("@floatParam", 123.123f))
                 .ExecuteReader()
                 .FirstOrDefault();
             _connection.Close();
 
             Assert.AreEqual("Hello", entity.TextField);
-            Assert.AreEqual(123.123, entity.FloatField);
+            Assert.AreEqual(123.123, entity.FloatField, 10e-5);
             Assert.AreEqual(123, entity.NumericField);
             Assert.AreEqual(123, entity.IntegerField);
         }

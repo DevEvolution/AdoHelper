@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AdoHelper.UnitTests.SQLite.Mapping.NonQuery
+namespace AdoHelper.UnitTests.Firebird.Mapping.NonQuery
 {
     [TestClass]
-    public class AsyncNonQueryUnitTests : SQLiteDbConfig
+    public class AsyncNonQueryUnitTests : FirebirdDbConfig
     {
         [TestMethod]
         public async Task ComplexTransaction()
@@ -21,8 +21,9 @@ namespace AdoHelper.UnitTests.SQLite.Mapping.NonQuery
 
             var transaction = _connection.BeginTransaction();
             await new AdoHelper<int>(_connection)
-                .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
+                .Query("INSERT INTO TestTable (id, TextField, FloatField, NumericField, IntegerField) VALUES (@id, @text, @float, @decimal, @int)")
                 .Parameters(
+                ("@id", 5),
                 ("@text", "Test hello"),
                 ("@float", 9.09),
                 ("@decimal", 193.123),
@@ -66,8 +67,9 @@ namespace AdoHelper.UnitTests.SQLite.Mapping.NonQuery
             source.Cancel();
             var transaction = _connection.BeginTransaction();
             await Assert.ThrowsExceptionAsync<TaskCanceledException>(async () => await new AdoHelper<int>(_connection)
-                .Query("INSERT INTO TestTable (TextField, FloatField, NumericField, IntegerField) VALUES (@text, @float, @decimal, @int)")
+                .Query("INSERT INTO TestTable (id, TextField, FloatField, NumericField, IntegerField) VALUES (@id, @text, @float, @decimal, @int)")
                 .Parameters(
+                ("@id", 5),
                 ("@text", "Test hello"),
                 ("@float", 9.09),
                 ("@decimal", 193.123),
