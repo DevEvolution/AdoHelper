@@ -1,4 +1,5 @@
-﻿using AdoHelper.TupleParsing;
+﻿using AdoHelper.Exceptions;
+using AdoHelper.TupleParsing;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -89,7 +90,7 @@ namespace AdoHelper
                     List<object> parameters = new List<object>();
 
                     if (reader.FieldCount != itemCount)
-                        throw new ArgumentException("Number of items in tuple should be equal to number of fields in query columns");
+                        throw new AdoHelperException("Number of items in tuple should be equal to number of fields in query columns");
 
                     int index = 0;
 
@@ -140,7 +141,7 @@ namespace AdoHelper
                         List<object> parameters = new List<object>();
 
                         if (reader.FieldCount != itemCount)
-                            throw new ArgumentException("Number of items in tuple should be equal to number of fields in query columns");
+                            throw new AdoHelperException("Number of items in tuple should be equal to number of fields in query columns");
 
                         int index = 0;
 
@@ -211,7 +212,7 @@ namespace AdoHelper
                         else
                         {
                             if ((reader[structure.DbFieldName].Equals(System.DBNull.Value)))
-                                throw new ArgumentNullException("Reader trying to pass DbNull value to non-nullable model");
+                                throw new AdoHelperException("Reader trying to pass DbNull value to non-nullable model");
 
                             try
                             {
@@ -275,7 +276,7 @@ namespace AdoHelper
                             else
                             {
                                 if ((reader[structure.DbFieldName].Equals(System.DBNull.Value)))
-                                    throw new ArgumentNullException("Reader trying to pass DbNull value to non-nullable model");
+                                    throw new AdoHelperException("Reader trying to pass DbNull value to non-nullable model");
 
                                 try
                                 {
@@ -442,7 +443,18 @@ namespace AdoHelper
             }
             catch (FormatException ex)
             {
-                value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+                try
+                {
+                    value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+                }
+                catch (FormatException)
+                {
+                    throw new AdoHelperMappingException(reader.GetName(reader.GetOrdinal(structure.DbFieldName)), reader[structure.DbFieldName].GetType(), structure.MapFieldName, structure.InnerType);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             switch (structure.MapFieldType)
@@ -479,7 +491,18 @@ namespace AdoHelper
             }
             catch (FormatException ex)
             {
-                value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+                try
+                {
+                    value = Convert.ChangeType(value, structure.InnerType, CultureInfo.InvariantCulture);
+                }
+                catch (FormatException)
+                {
+                    throw new AdoHelperMappingException(reader.GetName(reader.GetOrdinal(structure.DbFieldName)), reader[structure.DbFieldName].GetType(), structure.MapFieldName, structure.InnerType);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
 
             Type memberType;
@@ -544,6 +567,32 @@ namespace AdoHelper
             }
 
             return null;
+        }
+
+        private static List<MemberInfo> GetAppropriateMembers(MemberInfo[] members, MappingInfo structure)
+        {
+            List<MemberInfo> rezult = new List<MemberInfo>();
+            MemberTypes appropriateMemberType;
+            switch (structure.MapFieldType)
+            {
+                case MappingInfo.FieldType.Field:
+                    appropriateMemberType = MemberTypes.Field;
+                    break;
+                case MappingInfo.FieldType.Property:
+                    appropriateMemberType = MemberTypes.Property;
+                    break;
+                default:
+                    appropriateMemberType = MemberTypes.Property;
+                    break;
+            }
+
+            for (int i = 0; i < members.Length; i++)
+            {
+                if (members[i].MemberType == appropriateMemberType)
+                    rezult.Add(members[i]);
+            }
+
+            return rezult;
         }
     }
 }

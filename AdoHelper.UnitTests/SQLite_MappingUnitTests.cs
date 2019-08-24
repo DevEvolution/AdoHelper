@@ -656,5 +656,21 @@ namespace AdoHelper.UnitTests
             );
             _connection.Close();
         }
+
+        [TestMethod]
+        public void OverloadingMethodsTest()
+        {
+            _connection.Open();
+            var entity = new AdoHelper<OverloadedTestEntity>(_connection)
+                .Query("SELECT * FROM TestTable ORDER BY id")
+                .ExecuteReader()
+                .FirstOrDefault();
+            _connection.Close();
+
+            Assert.AreEqual(1, entity.Id);
+            Assert.AreEqual(1f, entity.id);
+            Assert.AreEqual("Hello", entity.TextField);
+            Assert.AreEqual("Hello", entity.textField);
+        }
     }
 }
