@@ -15,6 +15,12 @@ namespace AdoHelper
 {
     public static partial class AdoHelperExtensions
     {
+        /// <summary>
+        /// Executes a DbDataReader and reads data into dynamic object
+        /// </summary>
+        /// <typeparam name="T">Dynamic object type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <returns>Collection of ExpandoObject</returns>
         private static List<T> ExecuteDynamicReader<T>(QueryInfo<T> queryInfo)
         {
             List<T> enumerable = new List<T>();
@@ -43,6 +49,13 @@ namespace AdoHelper
             return enumerable;
         }
 
+        /// <summary>
+        /// Asynchronously executes a DbDataReader and reads data into dynamic object
+        /// </summary>
+        /// <typeparam name="T">Dynamic object type</typeparam>
+        /// <param name="queryInfo">Query info</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>Collection of ExpandoObject</returns>
         private async static Task<List<T>> ExecuteDynamicReaderAsync<T>(QueryInfo<T> queryInfo, CancellationToken? cancellationToken = null)
         {
             List<T> enumerable = new List<T>();
@@ -567,32 +580,6 @@ namespace AdoHelper
             }
 
             return null;
-        }
-
-        private static List<MemberInfo> GetAppropriateMembers(MemberInfo[] members, MappingInfo structure)
-        {
-            List<MemberInfo> rezult = new List<MemberInfo>();
-            MemberTypes appropriateMemberType;
-            switch (structure.MapFieldType)
-            {
-                case MappingInfo.FieldType.Field:
-                    appropriateMemberType = MemberTypes.Field;
-                    break;
-                case MappingInfo.FieldType.Property:
-                    appropriateMemberType = MemberTypes.Property;
-                    break;
-                default:
-                    appropriateMemberType = MemberTypes.Property;
-                    break;
-            }
-
-            for (int i = 0; i < members.Length; i++)
-            {
-                if (members[i].MemberType == appropriateMemberType)
-                    rezult.Add(members[i]);
-            }
-
-            return rezult;
         }
     }
 }
