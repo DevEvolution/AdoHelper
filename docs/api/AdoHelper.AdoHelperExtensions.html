@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AdoHelperExtensions
    ">
-    <meta name="generator" content="docfx 2.43.2.0">
+    <meta name="generator" content="docfx 2.44.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -117,16 +117,16 @@
     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteNonQuery__1_AdoHelper_QueryInfo___0__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteNonQuery%60%601(AdoHelper.QueryInfo%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L92">View Source</a>
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L144">View Source</a>
   </span>
   <a id="AdoHelper_AdoHelperExtensions_ExecuteNonQuery_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteNonQuery*"></a>
   <h4 id="AdoHelper_AdoHelperExtensions_ExecuteNonQuery__1_AdoHelper_QueryInfo___0__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteNonQuery``1(AdoHelper.QueryInfo{``0})">ExecuteNonQuery&lt;T&gt;(QueryInfo&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"><p>Executes query without return value</p>
+  <div class="markdown level1 summary"><p>Executes query and returns number of changed rows</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ExecuteNonQuery&lt;T&gt;(this QueryInfo&lt;T&gt; queryInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int ExecuteNonQuery&lt;T&gt;(this QueryInfo&lt;T&gt; queryInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,6 +142,94 @@
         <td><a class="xref" href="AdoHelper.QueryInfo-1.html">QueryInfo</a>&lt;T&gt;</td>
         <td><span class="parametername">queryInfo</span></td>
         <td><p>Query info</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Count of changed rows</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Return entity type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteNonQueryAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync%60%601(AdoHelper.QueryInfo%7B%60%600%7D%2CSystem.Nullable%7BSystem.Threading.CancellationToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L166">View Source</a>
+  </span>
+  <a id="AdoHelper_AdoHelperExtensions_ExecuteNonQueryAsync_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync*"></a>
+  <h4 id="AdoHelper_AdoHelperExtensions_ExecuteNonQueryAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})">ExecuteNonQueryAsync&lt;T&gt;(QueryInfo&lt;T&gt;, Nullable&lt;CancellationToken&gt;)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously executes query and returns number of changed rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;int&gt; ExecuteNonQueryAsync&lt;T&gt;(this QueryInfo&lt;T&gt; queryInfo, CancellationToken? cancellationToken = default(CancellationToken? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AdoHelper.QueryInfo-1.html">QueryInfo</a>&lt;T&gt;</td>
+        <td><span class="parametername">queryInfo</span></td>
+        <td><p>Query info</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Threading.CancellationToken</span>&gt;</td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>Count of changed rows</p>
 </td>
       </tr>
     </tbody>
@@ -167,7 +255,7 @@
     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteReader__1_AdoHelper_QueryInfo___0__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteReader%60%601(AdoHelper.QueryInfo%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L110">View Source</a>
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L198">View Source</a>
   </span>
   <a id="AdoHelper_AdoHelperExtensions_ExecuteReader_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteReader*"></a>
   <h4 id="AdoHelper_AdoHelperExtensions_ExecuteReader__1_AdoHelper_QueryInfo___0__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteReader``1(AdoHelper.QueryInfo{``0})">ExecuteReader&lt;T&gt;(QueryInfo&lt;T&gt;)</h4>
@@ -230,10 +318,82 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteReaderAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteReaderAsync%60%601(AdoHelper.QueryInfo%7B%60%600%7D%2CSystem.Nullable%7BSystem.Threading.CancellationToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L228">View Source</a>
+  </span>
+  <a id="AdoHelper_AdoHelperExtensions_ExecuteReaderAsync_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteReaderAsync*"></a>
+  <h4 id="AdoHelper_AdoHelperExtensions_ExecuteReaderAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteReaderAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})">ExecuteReaderAsync&lt;T&gt;(QueryInfo&lt;T&gt;, Nullable&lt;CancellationToken&gt;)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously executes query and return a collection of mapped entities</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;IEnumerable&lt;T&gt;&gt; ExecuteReaderAsync&lt;T&gt;(this QueryInfo&lt;T&gt; queryInfo, CancellationToken? cancellationToken = default(CancellationToken? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AdoHelper.QueryInfo-1.html">QueryInfo</a>&lt;T&gt;</td>
+        <td><span class="parametername">queryInfo</span></td>
+        <td><p>Query info</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Threading.CancellationToken</span>&gt;</td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><p>Mapped entities collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Return entity type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteScalar__1_AdoHelper_QueryInfo___0__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteScalar%60%601(AdoHelper.QueryInfo%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L58">View Source</a>
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L61">View Source</a>
   </span>
   <a id="AdoHelper_AdoHelperExtensions_ExecuteScalar_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteScalar*"></a>
   <h4 id="AdoHelper_AdoHelperExtensions_ExecuteScalar__1_AdoHelper_QueryInfo___0__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteScalar``1(AdoHelper.QueryInfo{``0})">ExecuteScalar&lt;T&gt;(QueryInfo&lt;T&gt;)</h4>
@@ -296,10 +456,82 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_ExecuteScalarAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.ExecuteScalarAsync%60%601(AdoHelper.QueryInfo%7B%60%600%7D%2CSystem.Nullable%7BSystem.Threading.CancellationToken%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L97">View Source</a>
+  </span>
+  <a id="AdoHelper_AdoHelperExtensions_ExecuteScalarAsync_" data-uid="AdoHelper.AdoHelperExtensions.ExecuteScalarAsync*"></a>
+  <h4 id="AdoHelper_AdoHelperExtensions_ExecuteScalarAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__" data-uid="AdoHelper.AdoHelperExtensions.ExecuteScalarAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})">ExecuteScalarAsync&lt;T&gt;(QueryInfo&lt;T&gt;, Nullable&lt;CancellationToken&gt;)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously executes query and returns a single value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;T&gt; ExecuteScalarAsync&lt;T&gt;(this QueryInfo&lt;T&gt; queryInfo, CancellationToken? cancellationToken = default(CancellationToken? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AdoHelper.QueryInfo-1.html">QueryInfo</a>&lt;T&gt;</td>
+        <td><span class="parametername">queryInfo</span></td>
+        <td><p>Query info</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Threading.CancellationToken</span>&gt;</td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Return value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Return entity type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_Parameters__1_AdoHelper_QueryInfo___0__AdoHelper_AdoParameter___.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.Parameters%60%601(AdoHelper.QueryInfo%7B%60%600%7D%2CAdoHelper.AdoParameter%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L20">View Source</a>
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L23">View Source</a>
   </span>
   <a id="AdoHelper_AdoHelperExtensions_Parameters_" data-uid="AdoHelper.AdoHelperExtensions.Parameters*"></a>
   <h4 id="AdoHelper_AdoHelperExtensions_Parameters__1_AdoHelper_QueryInfo___0__AdoHelper_AdoParameter___" data-uid="AdoHelper.AdoHelperExtensions.Parameters``1(AdoHelper.QueryInfo{``0},AdoHelper.AdoParameter[])">Parameters&lt;T&gt;(QueryInfo&lt;T&gt;, AdoParameter[])</h4>
@@ -373,7 +605,7 @@
     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions_Transaction__1_AdoHelper_QueryInfo___0__System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions.Transaction%60%601(AdoHelper.QueryInfo%7B%60%600%7D%2CSystem.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L44">View Source</a>
+    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.cs/#L47">View Source</a>
   </span>
   <a id="AdoHelper_AdoHelperExtensions_Transaction_" data-uid="AdoHelper.AdoHelperExtensions.Transaction*"></a>
   <h4 id="AdoHelper_AdoHelperExtensions_Transaction__1_AdoHelper_QueryInfo___0__System_Data_IDbTransaction_" data-uid="AdoHelper.AdoHelperExtensions.Transaction``1(AdoHelper.QueryInfo{``0},System.Data.IDbTransaction)">Transaction&lt;T&gt;(QueryInfo&lt;T&gt;, IDbTransaction)</h4>
@@ -452,7 +684,7 @@
                     <a href="https://github.com/DevEvolution/AdoHelper/new/master/apiSpec/new?filename=AdoHelper_AdoHelperExtensions.md&amp;value=---%0Auid%3A%20AdoHelper.AdoHelperExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.Reader.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DevEvolution/AdoHelper/blob/master/AdoHelper/AdoHelperExtensions.Reader.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

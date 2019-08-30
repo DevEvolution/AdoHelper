@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.AdoHelper-1.html",
-          "hash": "4GJApFNWlv84Id5KMPge2g=="
+          "hash": "yXqgulTRHMiFoc3TalHp3Q=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.AdoHelperExtensions.html",
-          "hash": "iO43SpIRqrvawOUHfv1ZTw=="
+          "hash": "QoVXlR2bQdnP4vHA12aXnA=="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,43 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.AdoParameter.html",
-          "hash": "vk2lz0Dt+HyeUcVtqz9I6w=="
+          "hash": "R/bA58LuHodx61Houoh+Lw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.Exceptions.AdoHelperException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.Exceptions.AdoHelperException.html",
+          "hash": "6gsv1J3yHgALQRfvoqnXZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.Exceptions.AdoHelperMappingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.Exceptions.AdoHelperMappingException.html",
+          "hash": "DJRdlYY0UQROW6QVAWQ51A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AdoHelper.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AdoHelper.Exceptions.html",
+          "hash": "1rP3S9787w7F2M7hiTvZ8w=="
         }
       },
       "is_incremental": true,
@@ -45,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.FieldAttribute.html",
-          "hash": "KlmBul07l9ceRP37BlPlag=="
+          "hash": "SB6/0F55q04HV95L0gckeA=="
         }
       },
       "is_incremental": true,
@@ -57,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.MappingInfo.FieldType.html",
-          "hash": "WDpdbsXwfatgTHL1jIhN4A=="
+          "hash": "kDb25VXfZiBat0SgsW/WoA=="
         }
       },
       "is_incremental": true,
@@ -69,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.MappingInfo.html",
-          "hash": "a8pIjv5a3IzNM+3Rz7o/OA=="
+          "hash": "/8u7jMXF2AQ7qnDwUOG2FQ=="
         }
       },
       "is_incremental": true,
@@ -81,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.NonMappedAttribute.html",
-          "hash": "BhEERZvYMyR7gxum9TBEJQ=="
+          "hash": "3Sh31iczxBV6VW8Flusijw=="
         }
       },
       "is_incremental": true,
@@ -93,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.ObjectCreator.html",
-          "hash": "8JUPUYwrIFMmYFR0xZE4Lw=="
+          "hash": "brWsrx18iZhqKbXcroSGqQ=="
         }
       },
       "is_incremental": true,
@@ -105,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.QueryInfo-1.ModelEntityType.html",
-          "hash": "DkAEu8m2jGq0wxsuOoTdyA=="
+          "hash": "TIxPzYpUALMD6zLXf58iVg=="
         }
       },
       "is_incremental": true,
@@ -117,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.QueryInfo-1.html",
-          "hash": "WvxtI9jObovCQx2je/TqUw=="
+          "hash": "uPNqP6lKI9nr8itvsGS2eQ=="
         }
       },
       "is_incremental": true,
@@ -125,35 +161,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/AdoHelper.TupleParsing.TupleAccess.yml",
+      "source_relative_path": "api/AdoHelper.TupleParsing.TupleAccessExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/AdoHelper.TupleParsing.TupleAccess.html",
-          "hash": "faBV8z2WKlC6hF/DKZlIEA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AdoHelper.TupleParsing.TupleAccessBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AdoHelper.TupleParsing.TupleAccessBase.html",
-          "hash": "JjIkojHfOK9HaTZI2HEOfg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AdoHelper.TupleParsing.ValueTupleAccess.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AdoHelper.TupleParsing.ValueTupleAccess.html",
-          "hash": "2dGc7FcXjFVFeJ0bsvl+8g=="
+          "relative_path": "api/AdoHelper.TupleParsing.TupleAccessExtensions.html",
+          "hash": "JwNt2KaKX5iNaBupOyK1ew=="
         }
       },
       "is_incremental": true,
@@ -165,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.TupleParsing.html",
-          "hash": "IahYAOGW18260IICf/Ag0A=="
+          "hash": "Gp3hN2NgUIW8PYzSNed2Hg=="
         }
       },
       "is_incremental": true,
@@ -177,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AdoHelper.html",
-          "hash": "sPohIKSKKOYl9FLSZpZ25w=="
+          "hash": "TtlEpbDPvx8bRHKRLzCZoA=="
         }
       },
       "is_incremental": true,
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "XRCqdw3ed9yRNZ975Q52nA=="
+          "hash": "hqVVAr+R2SNvm888IQiuVg=="
         }
       },
       "is_incremental": true,
@@ -201,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "E1oayobGZnVLWsQG4VhCWQ=="
+          "hash": "G9MXiqHSft/mx+94gggYkw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "HKNGii/BgtCur9scmrsi7Q=="
+          "hash": "RPU0Ogr9+yg2Nb36CssUuA=="
         }
       },
       "is_incremental": true,
@@ -240,7 +252,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "tP/ESUPa+pNswMbWal3h7Q=="
+          "hash": "eJsXXT0t9g46MiuKhwzI0A=="
         }
       },
       "is_incremental": true,
@@ -275,17 +287,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 16,
+          "skipped_file_count": 16
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
           "skipped_file_count": 3
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 15,
-          "skipped_file_count": 15
         }
       }
     },
