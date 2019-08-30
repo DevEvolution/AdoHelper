@@ -1,0 +1,1258 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: AdoHelper
+  name: AdoHelper
+  href: api/AdoHelper.html
+  commentId: N:AdoHelper
+  fullName: AdoHelper
+  nameWithType: AdoHelper
+- uid: AdoHelper.AdoHelper`1
+  name: AdoHelper<T>
+  href: api/AdoHelper.AdoHelper-1.html
+  commentId: T:AdoHelper.AdoHelper`1
+  name.vb: AdoHelper(Of T)
+  fullName: AdoHelper.AdoHelper<T>
+  fullName.vb: AdoHelper.AdoHelper(Of T)
+  nameWithType: AdoHelper<T>
+  nameWithType.vb: AdoHelper(Of T)
+- uid: AdoHelper.AdoHelper`1.#ctor(System.Data.IDbConnection)
+  name: AdoHelper(IDbConnection)
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__ctor_System_Data_IDbConnection_
+  commentId: M:AdoHelper.AdoHelper`1.#ctor(System.Data.IDbConnection)
+  fullName: AdoHelper.AdoHelper<T>.AdoHelper(System.Data.IDbConnection)
+  fullName.vb: AdoHelper.AdoHelper(Of T).AdoHelper(System.Data.IDbConnection)
+  nameWithType: AdoHelper<T>.AdoHelper(IDbConnection)
+  nameWithType.vb: AdoHelper(Of T).AdoHelper(IDbConnection)
+- uid: AdoHelper.AdoHelper`1.#ctor*
+  name: AdoHelper
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__ctor_
+  commentId: Overload:AdoHelper.AdoHelper`1.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelper<T>.AdoHelper
+  fullName.vb: AdoHelper.AdoHelper(Of T).AdoHelper
+  nameWithType: AdoHelper<T>.AdoHelper
+  nameWithType.vb: AdoHelper(Of T).AdoHelper
+- uid: AdoHelper.AdoHelper`1._queryInfo
+  name: _queryInfo
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1__queryInfo
+  commentId: F:AdoHelper.AdoHelper`1._queryInfo
+  fullName: AdoHelper.AdoHelper<T>._queryInfo
+  fullName.vb: AdoHelper.AdoHelper(Of T)._queryInfo
+  nameWithType: AdoHelper<T>._queryInfo
+  nameWithType.vb: AdoHelper(Of T)._queryInfo
+- uid: AdoHelper.AdoHelper`1.Query(System.String)
+  name: Query(String)
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1_Query_System_String_
+  commentId: M:AdoHelper.AdoHelper`1.Query(System.String)
+  fullName: AdoHelper.AdoHelper<T>.Query(System.String)
+  fullName.vb: AdoHelper.AdoHelper(Of T).Query(System.String)
+  nameWithType: AdoHelper<T>.Query(String)
+  nameWithType.vb: AdoHelper(Of T).Query(String)
+- uid: AdoHelper.AdoHelper`1.Query*
+  name: Query
+  href: api/AdoHelper.AdoHelper-1.html#AdoHelper_AdoHelper_1_Query_
+  commentId: Overload:AdoHelper.AdoHelper`1.Query
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelper<T>.Query
+  fullName.vb: AdoHelper.AdoHelper(Of T).Query
+  nameWithType: AdoHelper<T>.Query
+  nameWithType.vb: AdoHelper(Of T).Query
+- uid: AdoHelper.AdoHelperExtensions
+  name: AdoHelperExtensions
+  href: api/AdoHelper.AdoHelperExtensions.html
+  commentId: T:AdoHelper.AdoHelperExtensions
+  fullName: AdoHelper.AdoHelperExtensions
+  nameWithType: AdoHelperExtensions
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQuery*
+  name: ExecuteNonQuery
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQuery_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteNonQuery
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQuery
+  nameWithType: AdoHelperExtensions.ExecuteNonQuery
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQuery``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteNonQuery<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQuery__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteNonQuery``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteNonQuery(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQuery<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteNonQuery(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteNonQuery<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteNonQuery(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync*
+  name: ExecuteNonQueryAsync
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQueryAsync_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync
+  nameWithType: AdoHelperExtensions.ExecuteNonQueryAsync
+- uid: AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name: ExecuteNonQueryAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteNonQueryAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name.vb: ExecuteNonQueryAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync<T>(AdoHelper.QueryInfo<T>, System.Nullable<System.Threading.CancellationToken>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteNonQueryAsync(Of T)(AdoHelper.QueryInfo(Of T), System.Nullable(Of System.Threading.CancellationToken))
+  nameWithType: AdoHelperExtensions.ExecuteNonQueryAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteNonQueryAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReader*
+  name: ExecuteReader
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReader_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteReader
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReader
+  nameWithType: AdoHelperExtensions.ExecuteReader
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReader``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteReader<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReader__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteReader``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteReader(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReader<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteReader(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteReader<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteReader(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReaderAsync*
+  name: ExecuteReaderAsync
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReaderAsync_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteReaderAsync
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReaderAsync
+  nameWithType: AdoHelperExtensions.ExecuteReaderAsync
+- uid: AdoHelper.AdoHelperExtensions.ExecuteReaderAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name: ExecuteReaderAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteReaderAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteReaderAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name.vb: ExecuteReaderAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteReaderAsync<T>(AdoHelper.QueryInfo<T>, System.Nullable<System.Threading.CancellationToken>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteReaderAsync(Of T)(AdoHelper.QueryInfo(Of T), System.Nullable(Of System.Threading.CancellationToken))
+  nameWithType: AdoHelperExtensions.ExecuteReaderAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteReaderAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalar*
+  name: ExecuteScalar
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalar_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteScalar
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalar
+  nameWithType: AdoHelperExtensions.ExecuteScalar
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalar``1(AdoHelper.QueryInfo{``0})
+  name: ExecuteScalar<T>(QueryInfo<T>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalar__1_AdoHelper_QueryInfo___0__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteScalar``1(AdoHelper.QueryInfo{``0})
+  name.vb: ExecuteScalar(Of T)(QueryInfo(Of T))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalar<T>(AdoHelper.QueryInfo<T>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteScalar(Of T)(AdoHelper.QueryInfo(Of T))
+  nameWithType: AdoHelperExtensions.ExecuteScalar<T>(QueryInfo<T>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteScalar(Of T)(QueryInfo(Of T))
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalarAsync*
+  name: ExecuteScalarAsync
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalarAsync_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.ExecuteScalarAsync
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalarAsync
+  nameWithType: AdoHelperExtensions.ExecuteScalarAsync
+- uid: AdoHelper.AdoHelperExtensions.ExecuteScalarAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name: ExecuteScalarAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_ExecuteScalarAsync__1_AdoHelper_QueryInfo___0__System_Nullable_System_Threading_CancellationToken__
+  commentId: M:AdoHelper.AdoHelperExtensions.ExecuteScalarAsync``1(AdoHelper.QueryInfo{``0},System.Nullable{System.Threading.CancellationToken})
+  name.vb: ExecuteScalarAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+  fullName: AdoHelper.AdoHelperExtensions.ExecuteScalarAsync<T>(AdoHelper.QueryInfo<T>, System.Nullable<System.Threading.CancellationToken>)
+  fullName.vb: AdoHelper.AdoHelperExtensions.ExecuteScalarAsync(Of T)(AdoHelper.QueryInfo(Of T), System.Nullable(Of System.Threading.CancellationToken))
+  nameWithType: AdoHelperExtensions.ExecuteScalarAsync<T>(QueryInfo<T>, Nullable<CancellationToken>)
+  nameWithType.vb: AdoHelperExtensions.ExecuteScalarAsync(Of T)(QueryInfo(Of T), Nullable(Of CancellationToken))
+- uid: AdoHelper.AdoHelperExtensions.Parameters*
+  name: Parameters
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Parameters_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.Parameters
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.Parameters
+  nameWithType: AdoHelperExtensions.Parameters
+- uid: AdoHelper.AdoHelperExtensions.Parameters``1(AdoHelper.QueryInfo{``0},AdoHelper.AdoParameter[])
+  name: Parameters<T>(QueryInfo<T>, AdoParameter[])
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Parameters__1_AdoHelper_QueryInfo___0__AdoHelper_AdoParameter___
+  commentId: M:AdoHelper.AdoHelperExtensions.Parameters``1(AdoHelper.QueryInfo{``0},AdoHelper.AdoParameter[])
+  name.vb: Parameters(Of T)(QueryInfo(Of T), AdoParameter())
+  fullName: AdoHelper.AdoHelperExtensions.Parameters<T>(AdoHelper.QueryInfo<T>, AdoHelper.AdoParameter[])
+  fullName.vb: AdoHelper.AdoHelperExtensions.Parameters(Of T)(AdoHelper.QueryInfo(Of T), AdoHelper.AdoParameter())
+  nameWithType: AdoHelperExtensions.Parameters<T>(QueryInfo<T>, AdoParameter[])
+  nameWithType.vb: AdoHelperExtensions.Parameters(Of T)(QueryInfo(Of T), AdoParameter())
+- uid: AdoHelper.AdoHelperExtensions.Transaction*
+  name: Transaction
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Transaction_
+  commentId: Overload:AdoHelper.AdoHelperExtensions.Transaction
+  isSpec: "True"
+  fullName: AdoHelper.AdoHelperExtensions.Transaction
+  nameWithType: AdoHelperExtensions.Transaction
+- uid: AdoHelper.AdoHelperExtensions.Transaction``1(AdoHelper.QueryInfo{``0},System.Data.IDbTransaction)
+  name: Transaction<T>(QueryInfo<T>, IDbTransaction)
+  href: api/AdoHelper.AdoHelperExtensions.html#AdoHelper_AdoHelperExtensions_Transaction__1_AdoHelper_QueryInfo___0__System_Data_IDbTransaction_
+  commentId: M:AdoHelper.AdoHelperExtensions.Transaction``1(AdoHelper.QueryInfo{``0},System.Data.IDbTransaction)
+  name.vb: Transaction(Of T)(QueryInfo(Of T), IDbTransaction)
+  fullName: AdoHelper.AdoHelperExtensions.Transaction<T>(AdoHelper.QueryInfo<T>, System.Data.IDbTransaction)
+  fullName.vb: AdoHelper.AdoHelperExtensions.Transaction(Of T)(AdoHelper.QueryInfo(Of T), System.Data.IDbTransaction)
+  nameWithType: AdoHelperExtensions.Transaction<T>(QueryInfo<T>, IDbTransaction)
+  nameWithType.vb: AdoHelperExtensions.Transaction(Of T)(QueryInfo(Of T), IDbTransaction)
+- uid: AdoHelper.AdoParameter
+  name: AdoParameter
+  href: api/AdoHelper.AdoParameter.html
+  commentId: T:AdoHelper.AdoParameter
+  fullName: AdoHelper.AdoParameter
+  nameWithType: AdoParameter
+- uid: AdoHelper.AdoParameter.#ctor(System.String,System.Object)
+  name: AdoParameter(String, Object)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter__ctor_System_String_System_Object_
+  commentId: M:AdoHelper.AdoParameter.#ctor(System.String,System.Object)
+  fullName: AdoHelper.AdoParameter.AdoParameter(System.String, System.Object)
+  nameWithType: AdoParameter.AdoParameter(String, Object)
+- uid: AdoHelper.AdoParameter.#ctor*
+  name: AdoParameter
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter__ctor_
+  commentId: Overload:AdoHelper.AdoParameter.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.AdoParameter
+  nameWithType: AdoParameter.AdoParameter
+- uid: AdoHelper.AdoParameter.Name
+  name: Name
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Name
+  commentId: P:AdoHelper.AdoParameter.Name
+  fullName: AdoHelper.AdoParameter.Name
+  nameWithType: AdoParameter.Name
+- uid: AdoHelper.AdoParameter.Name*
+  name: Name
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Name_
+  commentId: Overload:AdoHelper.AdoParameter.Name
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.Name
+  nameWithType: AdoParameter.Name
+- uid: AdoHelper.AdoParameter.op_Implicit(System.Data.Common.DbParameter)~AdoHelper.AdoParameter
+  name: Implicit(DbParameter to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_Data_Common_DbParameter__AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.Data.Common.DbParameter)~AdoHelper.AdoParameter
+  name.vb: Widening(DbParameter to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.Data.Common.DbParameter to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.Data.Common.DbParameter to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit(DbParameter to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening(DbParameter to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit(System.Tuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name: Implicit(Tuple<String, Object> to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_Tuple_System_String_System_Object___AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.Tuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name.vb: Widening(Tuple(Of String, Object) to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.Tuple<System.String, System.Object> to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.Tuple(Of System.String, System.Object) to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit(Tuple<String, Object> to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening(Tuple(Of String, Object) to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit(System.ValueTuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name: Implicit((String name, Object value) to AdoParameter)
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_System_ValueTuple_System_String_System_Object___AdoHelper_AdoParameter
+  commentId: M:AdoHelper.AdoParameter.op_Implicit(System.ValueTuple{System.String,System.Object})~AdoHelper.AdoParameter
+  name.vb: Widening((name As String, value As Object) to AdoParameter)
+  fullName: AdoHelper.AdoParameter.Implicit(System.ValueTuple<System.String, System.Object> to AdoHelper.AdoParameter)
+  fullName.vb: AdoHelper.AdoParameter.Widening(System.ValueTuple(Of System.String, System.Object) to AdoHelper.AdoParameter)
+  nameWithType: AdoParameter.Implicit((String name, Object value) to AdoParameter)
+  nameWithType.vb: AdoParameter.Widening((name As String, value As Object) to AdoParameter)
+- uid: AdoHelper.AdoParameter.op_Implicit*
+  name: Implicit
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_op_Implicit_
+  commentId: Overload:AdoHelper.AdoParameter.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: AdoHelper.AdoParameter.Implicit
+  fullName.vb: AdoHelper.AdoParameter.Widening
+  nameWithType: AdoParameter.Implicit
+  nameWithType.vb: AdoParameter.Widening
+- uid: AdoHelper.AdoParameter.Value
+  name: Value
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Value
+  commentId: P:AdoHelper.AdoParameter.Value
+  fullName: AdoHelper.AdoParameter.Value
+  nameWithType: AdoParameter.Value
+- uid: AdoHelper.AdoParameter.Value*
+  name: Value
+  href: api/AdoHelper.AdoParameter.html#AdoHelper_AdoParameter_Value_
+  commentId: Overload:AdoHelper.AdoParameter.Value
+  isSpec: "True"
+  fullName: AdoHelper.AdoParameter.Value
+  nameWithType: AdoParameter.Value
+- uid: AdoHelper.Exceptions
+  name: AdoHelper.Exceptions
+  href: api/AdoHelper.Exceptions.html
+  commentId: N:AdoHelper.Exceptions
+  fullName: AdoHelper.Exceptions
+  nameWithType: AdoHelper.Exceptions
+- uid: AdoHelper.Exceptions.AdoHelperException
+  name: AdoHelperException
+  href: api/AdoHelper.Exceptions.AdoHelperException.html
+  commentId: T:AdoHelper.Exceptions.AdoHelperException
+  fullName: AdoHelper.Exceptions.AdoHelperException
+  nameWithType: AdoHelperException
+- uid: AdoHelper.Exceptions.AdoHelperException.#ctor(System.String)
+  name: AdoHelperException(String)
+  href: api/AdoHelper.Exceptions.AdoHelperException.html#AdoHelper_Exceptions_AdoHelperException__ctor_System_String_
+  commentId: M:AdoHelper.Exceptions.AdoHelperException.#ctor(System.String)
+  fullName: AdoHelper.Exceptions.AdoHelperException.AdoHelperException(System.String)
+  nameWithType: AdoHelperException.AdoHelperException(String)
+- uid: AdoHelper.Exceptions.AdoHelperException.#ctor*
+  name: AdoHelperException
+  href: api/AdoHelper.Exceptions.AdoHelperException.html#AdoHelper_Exceptions_AdoHelperException__ctor_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperException.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperException.AdoHelperException
+  nameWithType: AdoHelperException.AdoHelperException
+- uid: AdoHelper.Exceptions.AdoHelperMappingException
+  name: AdoHelperMappingException
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html
+  commentId: T:AdoHelper.Exceptions.AdoHelperMappingException
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException
+  nameWithType: AdoHelperMappingException
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.#ctor(System.String,System.Type,System.String,System.Type)
+  name: AdoHelperMappingException(String, Type, String, Type)
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException__ctor_System_String_System_Type_System_String_System_Type_
+  commentId: M:AdoHelper.Exceptions.AdoHelperMappingException.#ctor(System.String,System.Type,System.String,System.Type)
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.AdoHelperMappingException(System.String, System.Type, System.String, System.Type)
+  nameWithType: AdoHelperMappingException.AdoHelperMappingException(String, Type, String, Type)
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.#ctor*
+  name: AdoHelperMappingException
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException__ctor_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperMappingException.#ctor
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.AdoHelperMappingException
+  nameWithType: AdoHelperMappingException.AdoHelperMappingException
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName
+  name: MappedFieldName
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_MappedFieldName
+  commentId: P:AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName
+  nameWithType: AdoHelperMappingException.MappedFieldName
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName*
+  name: MappedFieldName
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_MappedFieldName_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldName
+  nameWithType: AdoHelperMappingException.MappedFieldName
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType
+  name: MappedFieldType
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_MappedFieldType
+  commentId: P:AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType
+  nameWithType: AdoHelperMappingException.MappedFieldType
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType*
+  name: MappedFieldType
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_MappedFieldType_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.MappedFieldType
+  nameWithType: AdoHelperMappingException.MappedFieldType
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName
+  name: ReaderFieldName
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_ReaderFieldName
+  commentId: P:AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName
+  nameWithType: AdoHelperMappingException.ReaderFieldName
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName*
+  name: ReaderFieldName
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_ReaderFieldName_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldName
+  nameWithType: AdoHelperMappingException.ReaderFieldName
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType
+  name: ReaderFieldType
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_ReaderFieldType
+  commentId: P:AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType
+  nameWithType: AdoHelperMappingException.ReaderFieldType
+- uid: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType*
+  name: ReaderFieldType
+  href: api/AdoHelper.Exceptions.AdoHelperMappingException.html#AdoHelper_Exceptions_AdoHelperMappingException_ReaderFieldType_
+  commentId: Overload:AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType
+  isSpec: "True"
+  fullName: AdoHelper.Exceptions.AdoHelperMappingException.ReaderFieldType
+  nameWithType: AdoHelperMappingException.ReaderFieldType
+- uid: AdoHelper.FieldAttribute
+  name: FieldAttribute
+  href: api/AdoHelper.FieldAttribute.html
+  commentId: T:AdoHelper.FieldAttribute
+  fullName: AdoHelper.FieldAttribute
+  nameWithType: FieldAttribute
+- uid: AdoHelper.FieldAttribute.Name
+  name: Name
+  href: api/AdoHelper.FieldAttribute.html#AdoHelper_FieldAttribute_Name
+  commentId: P:AdoHelper.FieldAttribute.Name
+  fullName: AdoHelper.FieldAttribute.Name
+  nameWithType: FieldAttribute.Name
+- uid: AdoHelper.FieldAttribute.Name*
+  name: Name
+  href: api/AdoHelper.FieldAttribute.html#AdoHelper_FieldAttribute_Name_
+  commentId: Overload:AdoHelper.FieldAttribute.Name
+  isSpec: "True"
+  fullName: AdoHelper.FieldAttribute.Name
+  nameWithType: FieldAttribute.Name
+- uid: AdoHelper.MappingInfo
+  name: MappingInfo
+  href: api/AdoHelper.MappingInfo.html
+  commentId: T:AdoHelper.MappingInfo
+  fullName: AdoHelper.MappingInfo
+  nameWithType: MappingInfo
+- uid: AdoHelper.MappingInfo.DbFieldName
+  name: DbFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_DbFieldName
+  commentId: P:AdoHelper.MappingInfo.DbFieldName
+  fullName: AdoHelper.MappingInfo.DbFieldName
+  nameWithType: MappingInfo.DbFieldName
+- uid: AdoHelper.MappingInfo.DbFieldName*
+  name: DbFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_DbFieldName_
+  commentId: Overload:AdoHelper.MappingInfo.DbFieldName
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.DbFieldName
+  nameWithType: MappingInfo.DbFieldName
+- uid: AdoHelper.MappingInfo.FieldType
+  name: MappingInfo.FieldType
+  href: api/AdoHelper.MappingInfo.FieldType.html
+  commentId: T:AdoHelper.MappingInfo.FieldType
+  fullName: AdoHelper.MappingInfo.FieldType
+  nameWithType: MappingInfo.FieldType
+- uid: AdoHelper.MappingInfo.FieldType.CollectionItem
+  name: CollectionItem
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_CollectionItem
+  commentId: F:AdoHelper.MappingInfo.FieldType.CollectionItem
+  fullName: AdoHelper.MappingInfo.FieldType.CollectionItem
+  nameWithType: MappingInfo.FieldType.CollectionItem
+- uid: AdoHelper.MappingInfo.FieldType.Field
+  name: Field
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_Field
+  commentId: F:AdoHelper.MappingInfo.FieldType.Field
+  fullName: AdoHelper.MappingInfo.FieldType.Field
+  nameWithType: MappingInfo.FieldType.Field
+- uid: AdoHelper.MappingInfo.FieldType.Property
+  name: Property
+  href: api/AdoHelper.MappingInfo.FieldType.html#AdoHelper_MappingInfo_FieldType_Property
+  commentId: F:AdoHelper.MappingInfo.FieldType.Property
+  fullName: AdoHelper.MappingInfo.FieldType.Property
+  nameWithType: MappingInfo.FieldType.Property
+- uid: AdoHelper.MappingInfo.FullType
+  name: FullType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_FullType
+  commentId: P:AdoHelper.MappingInfo.FullType
+  fullName: AdoHelper.MappingInfo.FullType
+  nameWithType: MappingInfo.FullType
+- uid: AdoHelper.MappingInfo.FullType*
+  name: FullType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_FullType_
+  commentId: Overload:AdoHelper.MappingInfo.FullType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.FullType
+  nameWithType: MappingInfo.FullType
+- uid: AdoHelper.MappingInfo.InnerType
+  name: InnerType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_InnerType
+  commentId: P:AdoHelper.MappingInfo.InnerType
+  fullName: AdoHelper.MappingInfo.InnerType
+  nameWithType: MappingInfo.InnerType
+- uid: AdoHelper.MappingInfo.InnerType*
+  name: InnerType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_InnerType_
+  commentId: Overload:AdoHelper.MappingInfo.InnerType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.InnerType
+  nameWithType: MappingInfo.InnerType
+- uid: AdoHelper.MappingInfo.IsNullable
+  name: IsNullable
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_IsNullable
+  commentId: P:AdoHelper.MappingInfo.IsNullable
+  fullName: AdoHelper.MappingInfo.IsNullable
+  nameWithType: MappingInfo.IsNullable
+- uid: AdoHelper.MappingInfo.IsNullable*
+  name: IsNullable
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_IsNullable_
+  commentId: Overload:AdoHelper.MappingInfo.IsNullable
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.IsNullable
+  nameWithType: MappingInfo.IsNullable
+- uid: AdoHelper.MappingInfo.MapFieldName
+  name: MapFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldName
+  commentId: P:AdoHelper.MappingInfo.MapFieldName
+  fullName: AdoHelper.MappingInfo.MapFieldName
+  nameWithType: MappingInfo.MapFieldName
+- uid: AdoHelper.MappingInfo.MapFieldName*
+  name: MapFieldName
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldName_
+  commentId: Overload:AdoHelper.MappingInfo.MapFieldName
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.MapFieldName
+  nameWithType: MappingInfo.MapFieldName
+- uid: AdoHelper.MappingInfo.MapFieldType
+  name: MapFieldType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldType
+  commentId: P:AdoHelper.MappingInfo.MapFieldType
+  fullName: AdoHelper.MappingInfo.MapFieldType
+  nameWithType: MappingInfo.MapFieldType
+- uid: AdoHelper.MappingInfo.MapFieldType*
+  name: MapFieldType
+  href: api/AdoHelper.MappingInfo.html#AdoHelper_MappingInfo_MapFieldType_
+  commentId: Overload:AdoHelper.MappingInfo.MapFieldType
+  isSpec: "True"
+  fullName: AdoHelper.MappingInfo.MapFieldType
+  nameWithType: MappingInfo.MapFieldType
+- uid: AdoHelper.NonMappedAttribute
+  name: NonMappedAttribute
+  href: api/AdoHelper.NonMappedAttribute.html
+  commentId: T:AdoHelper.NonMappedAttribute
+  fullName: AdoHelper.NonMappedAttribute
+  nameWithType: NonMappedAttribute
+- uid: AdoHelper.ObjectCreator
+  name: ObjectCreator
+  href: api/AdoHelper.ObjectCreator.html
+  commentId: T:AdoHelper.ObjectCreator
+  fullName: AdoHelper.ObjectCreator
+  nameWithType: ObjectCreator
+- uid: AdoHelper.ObjectCreator.Create*
+  name: Create
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create_
+  commentId: Overload:AdoHelper.ObjectCreator.Create
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.Create
+  nameWithType: ObjectCreator.Create
+- uid: AdoHelper.ObjectCreator.Create``1
+  name: Create<T>()
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create__1
+  commentId: M:AdoHelper.ObjectCreator.Create``1
+  name.vb: Create(Of T)()
+  fullName: AdoHelper.ObjectCreator.Create<T>()
+  fullName.vb: AdoHelper.ObjectCreator.Create(Of T)()
+  nameWithType: ObjectCreator.Create<T>()
+  nameWithType.vb: ObjectCreator.Create(Of T)()
+- uid: AdoHelper.ObjectCreator.Create``1(System.Collections.Generic.List{System.Object})
+  name: Create<T>(List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_Create__1_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.Create``1(System.Collections.Generic.List{System.Object})
+  name.vb: Create(Of T)(List(Of Object))
+  fullName: AdoHelper.ObjectCreator.Create<T>(System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.Create(Of T)(System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.Create<T>(List<Object>)
+  nameWithType.vb: ObjectCreator.Create(Of T)(List(Of Object))
+- uid: AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  name: CreateEnumerable(Type)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable_System_Type_
+  commentId: M:AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable(System.Type)
+  nameWithType: ObjectCreator.CreateEnumerable(Type)
+- uid: AdoHelper.ObjectCreator.CreateEnumerable*
+  name: CreateEnumerable
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable_
+  commentId: Overload:AdoHelper.ObjectCreator.CreateEnumerable
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable
+  nameWithType: ObjectCreator.CreateEnumerable
+- uid: AdoHelper.ObjectCreator.CreateEnumerable``1
+  name: CreateEnumerable<T>()
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateEnumerable__1
+  commentId: M:AdoHelper.ObjectCreator.CreateEnumerable``1
+  name.vb: CreateEnumerable(Of T)()
+  fullName: AdoHelper.ObjectCreator.CreateEnumerable<T>()
+  fullName.vb: AdoHelper.ObjectCreator.CreateEnumerable(Of T)()
+  nameWithType: ObjectCreator.CreateEnumerable<T>()
+  nameWithType.vb: ObjectCreator.CreateEnumerable(Of T)()
+- uid: AdoHelper.ObjectCreator.CreateTuple(System.Type,System.Collections.Generic.List{System.Object})
+  name: CreateTuple(Type, List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple_System_Type_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.CreateTuple(System.Type,System.Collections.Generic.List{System.Object})
+  name.vb: CreateTuple(Type, List(Of Object))
+  fullName: AdoHelper.ObjectCreator.CreateTuple(System.Type, System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.CreateTuple(System.Type, System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.CreateTuple(Type, List<Object>)
+  nameWithType.vb: ObjectCreator.CreateTuple(Type, List(Of Object))
+- uid: AdoHelper.ObjectCreator.CreateTuple*
+  name: CreateTuple
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple_
+  commentId: Overload:AdoHelper.ObjectCreator.CreateTuple
+  isSpec: "True"
+  fullName: AdoHelper.ObjectCreator.CreateTuple
+  nameWithType: ObjectCreator.CreateTuple
+- uid: AdoHelper.ObjectCreator.CreateTuple``1(System.Collections.Generic.List{System.Object})
+  name: CreateTuple<T>(List<Object>)
+  href: api/AdoHelper.ObjectCreator.html#AdoHelper_ObjectCreator_CreateTuple__1_System_Collections_Generic_List_System_Object__
+  commentId: M:AdoHelper.ObjectCreator.CreateTuple``1(System.Collections.Generic.List{System.Object})
+  name.vb: CreateTuple(Of T)(List(Of Object))
+  fullName: AdoHelper.ObjectCreator.CreateTuple<T>(System.Collections.Generic.List<System.Object>)
+  fullName.vb: AdoHelper.ObjectCreator.CreateTuple(Of T)(System.Collections.Generic.List(Of System.Object))
+  nameWithType: ObjectCreator.CreateTuple<T>(List<Object>)
+  nameWithType.vb: ObjectCreator.CreateTuple(Of T)(List(Of Object))
+- uid: AdoHelper.QueryInfo`1
+  name: QueryInfo<T>
+  href: api/AdoHelper.QueryInfo-1.html
+  commentId: T:AdoHelper.QueryInfo`1
+  name.vb: QueryInfo(Of T)
+  fullName: AdoHelper.QueryInfo<T>
+  fullName.vb: AdoHelper.QueryInfo(Of T)
+  nameWithType: QueryInfo<T>
+  nameWithType.vb: QueryInfo(Of T)
+- uid: AdoHelper.QueryInfo`1.Command
+  name: Command
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Command
+  commentId: P:AdoHelper.QueryInfo`1.Command
+  fullName: AdoHelper.QueryInfo<T>.Command
+  fullName.vb: AdoHelper.QueryInfo(Of T).Command
+  nameWithType: QueryInfo<T>.Command
+  nameWithType.vb: QueryInfo(Of T).Command
+- uid: AdoHelper.QueryInfo`1.Command*
+  name: Command
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Command_
+  commentId: Overload:AdoHelper.QueryInfo`1.Command
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Command
+  fullName.vb: AdoHelper.QueryInfo(Of T).Command
+  nameWithType: QueryInfo<T>.Command
+  nameWithType.vb: QueryInfo(Of T).Command
+- uid: AdoHelper.QueryInfo`1.Connection
+  name: Connection
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Connection
+  commentId: P:AdoHelper.QueryInfo`1.Connection
+  fullName: AdoHelper.QueryInfo<T>.Connection
+  fullName.vb: AdoHelper.QueryInfo(Of T).Connection
+  nameWithType: QueryInfo<T>.Connection
+  nameWithType.vb: QueryInfo(Of T).Connection
+- uid: AdoHelper.QueryInfo`1.Connection*
+  name: Connection
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Connection_
+  commentId: Overload:AdoHelper.QueryInfo`1.Connection
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Connection
+  fullName.vb: AdoHelper.QueryInfo(Of T).Connection
+  nameWithType: QueryInfo<T>.Connection
+  nameWithType.vb: QueryInfo(Of T).Connection
+- uid: AdoHelper.QueryInfo`1.ModelEntityType
+  name: QueryInfo<T>.ModelEntityType
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html
+  commentId: T:AdoHelper.QueryInfo`1.ModelEntityType
+  name.vb: QueryInfo(Of T).ModelEntityType
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType
+  nameWithType: QueryInfo<T>.ModelEntityType
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Collection
+  name: Collection
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Collection
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Collection
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Collection
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Collection
+  nameWithType: QueryInfo<T>.ModelEntityType.Collection
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Collection
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Dynamic
+  name: Dynamic
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Dynamic
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Dynamic
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Dynamic
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Dynamic
+  nameWithType: QueryInfo<T>.ModelEntityType.Dynamic
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Dynamic
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Object
+  name: Object
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Object
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Object
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Object
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Object
+  nameWithType: QueryInfo<T>.ModelEntityType.Object
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Object
+- uid: AdoHelper.QueryInfo`1.ModelEntityType.Tuple
+  name: Tuple
+  href: api/AdoHelper.QueryInfo-1.ModelEntityType.html#AdoHelper_QueryInfo_1_ModelEntityType_Tuple
+  commentId: F:AdoHelper.QueryInfo`1.ModelEntityType.Tuple
+  fullName: AdoHelper.QueryInfo<T>.ModelEntityType.Tuple
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelEntityType.Tuple
+  nameWithType: QueryInfo<T>.ModelEntityType.Tuple
+  nameWithType.vb: QueryInfo(Of T).ModelEntityType.Tuple
+- uid: AdoHelper.QueryInfo`1.ModelStructureTable
+  name: ModelStructureTable
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelStructureTable
+  commentId: P:AdoHelper.QueryInfo`1.ModelStructureTable
+  fullName: AdoHelper.QueryInfo<T>.ModelStructureTable
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelStructureTable
+  nameWithType: QueryInfo<T>.ModelStructureTable
+  nameWithType.vb: QueryInfo(Of T).ModelStructureTable
+- uid: AdoHelper.QueryInfo`1.ModelStructureTable*
+  name: ModelStructureTable
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelStructureTable_
+  commentId: Overload:AdoHelper.QueryInfo`1.ModelStructureTable
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.ModelStructureTable
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelStructureTable
+  nameWithType: QueryInfo<T>.ModelStructureTable
+  nameWithType.vb: QueryInfo(Of T).ModelStructureTable
+- uid: AdoHelper.QueryInfo`1.ModelType
+  name: ModelType
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelType
+  commentId: P:AdoHelper.QueryInfo`1.ModelType
+  fullName: AdoHelper.QueryInfo<T>.ModelType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelType
+  nameWithType: QueryInfo<T>.ModelType
+  nameWithType.vb: QueryInfo(Of T).ModelType
+- uid: AdoHelper.QueryInfo`1.ModelType*
+  name: ModelType
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_ModelType_
+  commentId: Overload:AdoHelper.QueryInfo`1.ModelType
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.ModelType
+  fullName.vb: AdoHelper.QueryInfo(Of T).ModelType
+  nameWithType: QueryInfo<T>.ModelType
+  nameWithType.vb: QueryInfo(Of T).ModelType
+- uid: AdoHelper.QueryInfo`1.QueryInfoParameters
+  name: QueryInfoParameters
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_QueryInfoParameters
+  commentId: P:AdoHelper.QueryInfo`1.QueryInfoParameters
+  fullName: AdoHelper.QueryInfo<T>.QueryInfoParameters
+  fullName.vb: AdoHelper.QueryInfo(Of T).QueryInfoParameters
+  nameWithType: QueryInfo<T>.QueryInfoParameters
+  nameWithType.vb: QueryInfo(Of T).QueryInfoParameters
+- uid: AdoHelper.QueryInfo`1.QueryInfoParameters*
+  name: QueryInfoParameters
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_QueryInfoParameters_
+  commentId: Overload:AdoHelper.QueryInfo`1.QueryInfoParameters
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.QueryInfoParameters
+  fullName.vb: AdoHelper.QueryInfo(Of T).QueryInfoParameters
+  nameWithType: QueryInfo<T>.QueryInfoParameters
+  nameWithType.vb: QueryInfo(Of T).QueryInfoParameters
+- uid: AdoHelper.QueryInfo`1.Transaction
+  name: Transaction
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Transaction
+  commentId: P:AdoHelper.QueryInfo`1.Transaction
+  fullName: AdoHelper.QueryInfo<T>.Transaction
+  fullName.vb: AdoHelper.QueryInfo(Of T).Transaction
+  nameWithType: QueryInfo<T>.Transaction
+  nameWithType.vb: QueryInfo(Of T).Transaction
+- uid: AdoHelper.QueryInfo`1.Transaction*
+  name: Transaction
+  href: api/AdoHelper.QueryInfo-1.html#AdoHelper_QueryInfo_1_Transaction_
+  commentId: Overload:AdoHelper.QueryInfo`1.Transaction
+  isSpec: "True"
+  fullName: AdoHelper.QueryInfo<T>.Transaction
+  fullName.vb: AdoHelper.QueryInfo(Of T).Transaction
+  nameWithType: QueryInfo<T>.Transaction
+  nameWithType.vb: QueryInfo(Of T).Transaction
+- uid: AdoHelper.TupleParsing
+  name: AdoHelper.TupleParsing
+  href: api/AdoHelper.TupleParsing.html
+  commentId: N:AdoHelper.TupleParsing
+  fullName: AdoHelper.TupleParsing
+  nameWithType: AdoHelper.TupleParsing
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions
+  name: TupleAccessExtensions
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html
+  commentId: T:AdoHelper.TupleParsing.TupleAccessExtensions
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions
+  nameWithType: TupleAccessExtensions
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count*
+  name: Count
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.Count
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count
+  nameWithType: TupleAccessExtensions.Count
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``1(System.Tuple{``0})
+  name: Count<T>(Tuple<T>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__1_System_Tuple___0__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``1(System.Tuple{``0})
+  name.vb: Count(Of T)(Tuple(Of T))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T>(System.Tuple<T>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T)(System.Tuple(Of T))
+  nameWithType: TupleAccessExtensions.Count<T>(Tuple<T>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T)(Tuple(Of T))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``1(System.ValueTuple{``0})
+  name: Count<T>((T))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__1_System_ValueTuple___0__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``1(System.ValueTuple{``0})
+  name.vb: Count(Of T)((T))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T>(System.ValueTuple<T>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T)(System.ValueTuple(Of T))
+  nameWithType: TupleAccessExtensions.Count<T>((T))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T)((T))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``2(System.Tuple{``0,``1})
+  name: Count<T1, T2>(Tuple<T1, T2>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__2_System_Tuple___0___1__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``2(System.Tuple{``0,``1})
+  name.vb: Count(Of T1, T2)(Tuple(Of T1, T2))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2>(System.Tuple<T1, T2>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2)(System.Tuple(Of T1, T2))
+  nameWithType: TupleAccessExtensions.Count<T1, T2>(Tuple<T1, T2>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2)(Tuple(Of T1, T2))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``2(System.ValueTuple{``0,``1})
+  name: Count<T1, T2>((T1, T2))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__2_System_ValueTuple___0___1__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``2(System.ValueTuple{``0,``1})
+  name.vb: Count(Of T1, T2)((T1, T2))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2>(System.ValueTuple<T1, T2>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2)(System.ValueTuple(Of T1, T2))
+  nameWithType: TupleAccessExtensions.Count<T1, T2>((T1, T2))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2)((T1, T2))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``3(System.Tuple{``0,``1,``2})
+  name: Count<T1, T2, T3>(Tuple<T1, T2, T3>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__3_System_Tuple___0___1___2__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``3(System.Tuple{``0,``1,``2})
+  name.vb: Count(Of T1, T2, T3)(Tuple(Of T1, T2, T3))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3>(System.Tuple<T1, T2, T3>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3)(System.Tuple(Of T1, T2, T3))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3>(Tuple<T1, T2, T3>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3)(Tuple(Of T1, T2, T3))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``3(System.ValueTuple{``0,``1,``2})
+  name: Count<T1, T2, T3>((T1, T2, T3))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__3_System_ValueTuple___0___1___2__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``3(System.ValueTuple{``0,``1,``2})
+  name.vb: Count(Of T1, T2, T3)((T1, T2, T3))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3>(System.ValueTuple<T1, T2, T3>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3)(System.ValueTuple(Of T1, T2, T3))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3>((T1, T2, T3))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3)((T1, T2, T3))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``4(System.Tuple{``0,``1,``2,``3})
+  name: Count<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__4_System_Tuple___0___1___2___3__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``4(System.Tuple{``0,``1,``2,``3})
+  name.vb: Count(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4>(System.Tuple<T1, T2, T3, T4>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4)(System.Tuple(Of T1, T2, T3, T4))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``4(System.ValueTuple{``0,``1,``2,``3})
+  name: Count<T1, T2, T3, T4>((T1, T2, T3, T4))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__4_System_ValueTuple___0___1___2___3__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``4(System.ValueTuple{``0,``1,``2,``3})
+  name.vb: Count(Of T1, T2, T3, T4)((T1, T2, T3, T4))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4>(System.ValueTuple<T1, T2, T3, T4>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4)(System.ValueTuple(Of T1, T2, T3, T4))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4>((T1, T2, T3, T4))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4)((T1, T2, T3, T4))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``5(System.Tuple{``0,``1,``2,``3,``4})
+  name: Count<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__5_System_Tuple___0___1___2___3___4__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``5(System.Tuple{``0,``1,``2,``3,``4})
+  name.vb: Count(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5>(System.Tuple<T1, T2, T3, T4, T5>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5)(System.Tuple(Of T1, T2, T3, T4, T5))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``5(System.ValueTuple{``0,``1,``2,``3,``4})
+  name: Count<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__5_System_ValueTuple___0___1___2___3___4__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``5(System.ValueTuple{``0,``1,``2,``3,``4})
+  name.vb: Count(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5>(System.ValueTuple<T1, T2, T3, T4, T5>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5)(System.ValueTuple(Of T1, T2, T3, T4, T5))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``6(System.Tuple{``0,``1,``2,``3,``4,``5})
+  name: Count<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__6_System_Tuple___0___1___2___3___4___5__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``6(System.Tuple{``0,``1,``2,``3,``4,``5})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6>(System.Tuple<T1, T2, T3, T4, T5, T6>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6)(System.Tuple(Of T1, T2, T3, T4, T5, T6))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``6(System.ValueTuple{``0,``1,``2,``3,``4,``5})
+  name: Count<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__6_System_ValueTuple___0___1___2___3___4___5__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``6(System.ValueTuple{``0,``1,``2,``3,``4,``5})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6>(System.ValueTuple<T1, T2, T3, T4, T5, T6>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6})
+  name: Count<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__7_System_Tuple___0___1___2___3___4___5___6__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7>(System.Tuple<T1, T2, T3, T4, T5, T6, T7>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6})
+  name: Count<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7))
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__7_System_ValueTuple___0___1___2___3___4___5___6__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7))
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7})
+  name: Count<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__8_System_Tuple___0___1___2___3___4___5___6___7__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7, TRest>(System.Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Count``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7})
+  name: Count<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Count__8_System_ValueTuple___0___1___2___3___4___5___6___7__
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Count``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7})
+  name.vb: Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7, TRest>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+  nameWithType: TupleAccessExtensions.Count<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>)
+  nameWithType.vb: TupleAccessExtensions.Count(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest))
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get*
+  name: Get
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.Get
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get
+  nameWithType: TupleAccessExtensions.Get
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``1(System.Tuple{``0},System.Int32)
+  name: Get<T>(Tuple<T>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__1_System_Tuple___0__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``1(System.Tuple{``0},System.Int32)
+  name.vb: Get(Of T)(Tuple(Of T), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T>(System.Tuple<T>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T)(System.Tuple(Of T), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T>(Tuple<T>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T)(Tuple(Of T), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``1(System.ValueTuple{``0},System.Int32)
+  name: Get<T>((T), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__1_System_ValueTuple___0__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``1(System.ValueTuple{``0},System.Int32)
+  name.vb: Get(Of T)((T), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T>(System.ValueTuple<T>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T)(System.ValueTuple(Of T), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T>((T), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T)((T), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``2(System.Tuple{``0,``1},System.Int32)
+  name: Get<T1, T2>(Tuple<T1, T2>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__2_System_Tuple___0___1__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``2(System.Tuple{``0,``1},System.Int32)
+  name.vb: Get(Of T1, T2)(Tuple(Of T1, T2), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2>(System.Tuple<T1, T2>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2)(System.Tuple(Of T1, T2), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2>(Tuple<T1, T2>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2)(Tuple(Of T1, T2), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``2(System.ValueTuple{``0,``1},System.Int32)
+  name: Get<T1, T2>((T1, T2), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__2_System_ValueTuple___0___1__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``2(System.ValueTuple{``0,``1},System.Int32)
+  name.vb: Get(Of T1, T2)((T1, T2), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2>(System.ValueTuple<T1, T2>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2)(System.ValueTuple(Of T1, T2), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2>((T1, T2), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2)((T1, T2), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``3(System.Tuple{``0,``1,``2},System.Int32)
+  name: Get<T1, T2, T3>(Tuple<T1, T2, T3>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__3_System_Tuple___0___1___2__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``3(System.Tuple{``0,``1,``2},System.Int32)
+  name.vb: Get(Of T1, T2, T3)(Tuple(Of T1, T2, T3), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3>(System.Tuple<T1, T2, T3>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3)(System.Tuple(Of T1, T2, T3), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3>(Tuple<T1, T2, T3>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3)(Tuple(Of T1, T2, T3), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``3(System.ValueTuple{``0,``1,``2},System.Int32)
+  name: Get<T1, T2, T3>((T1, T2, T3), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__3_System_ValueTuple___0___1___2__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``3(System.ValueTuple{``0,``1,``2},System.Int32)
+  name.vb: Get(Of T1, T2, T3)((T1, T2, T3), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3>(System.ValueTuple<T1, T2, T3>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3)(System.ValueTuple(Of T1, T2, T3), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3>((T1, T2, T3), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3)((T1, T2, T3), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``4(System.Tuple{``0,``1,``2,``3},System.Int32)
+  name: Get<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__4_System_Tuple___0___1___2___3__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``4(System.Tuple{``0,``1,``2,``3},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4>(System.Tuple<T1, T2, T3, T4>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4)(System.Tuple(Of T1, T2, T3, T4), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``4(System.ValueTuple{``0,``1,``2,``3},System.Int32)
+  name: Get<T1, T2, T3, T4>((T1, T2, T3, T4), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__4_System_ValueTuple___0___1___2___3__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``4(System.ValueTuple{``0,``1,``2,``3},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4)((T1, T2, T3, T4), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4>(System.ValueTuple<T1, T2, T3, T4>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4)(System.ValueTuple(Of T1, T2, T3, T4), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4>((T1, T2, T3, T4), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4)((T1, T2, T3, T4), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``5(System.Tuple{``0,``1,``2,``3,``4},System.Int32)
+  name: Get<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__5_System_Tuple___0___1___2___3___4__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``5(System.Tuple{``0,``1,``2,``3,``4},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5>(System.Tuple<T1, T2, T3, T4, T5>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5)(System.Tuple(Of T1, T2, T3, T4, T5), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``5(System.ValueTuple{``0,``1,``2,``3,``4},System.Int32)
+  name: Get<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__5_System_ValueTuple___0___1___2___3___4__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``5(System.ValueTuple{``0,``1,``2,``3,``4},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5>(System.ValueTuple<T1, T2, T3, T4, T5>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5)(System.ValueTuple(Of T1, T2, T3, T4, T5), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``6(System.Tuple{``0,``1,``2,``3,``4,``5},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__6_System_Tuple___0___1___2___3___4___5__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``6(System.Tuple{``0,``1,``2,``3,``4,``5},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6>(System.Tuple<T1, T2, T3, T4, T5, T6>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6)(System.Tuple(Of T1, T2, T3, T4, T5, T6), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``6(System.ValueTuple{``0,``1,``2,``3,``4,``5},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__6_System_ValueTuple___0___1___2___3___4___5__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``6(System.ValueTuple{``0,``1,``2,``3,``4,``5},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6>(System.ValueTuple<T1, T2, T3, T4, T5, T6>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__7_System_Tuple___0___1___2___3___4___5___6__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7>(System.Tuple<T1, T2, T3, T4, T5, T6, T7>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7), Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__7_System_ValueTuple___0___1___2___3___4___5___6__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7), Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__8_System_Tuple___0___1___2___3___4___5___6___7__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7, TRest>(System.Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Get``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32)
+  name: Get<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Get__8_System_ValueTuple___0___1___2___3___4___5___6___7__System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Get``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32)
+  name.vb: Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7, TRest>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, System.Int32)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), System.Int32)
+  nameWithType: TupleAccessExtensions.Get<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32)
+  nameWithType.vb: TupleAccessExtensions.Get(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType(System.Type,System.Int32)
+  name: GetTupleItemType(Type, Int32)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_GetTupleItemType_System_Type_System_Int32_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType(System.Type,System.Int32)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType(System.Type, System.Int32)
+  nameWithType: TupleAccessExtensions.GetTupleItemType(Type, Int32)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType*
+  name: GetTupleItemType
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_GetTupleItemType_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.GetTupleItemType
+  nameWithType: TupleAccessExtensions.GetTupleItemType
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple(System.Type)
+  name: IsTuple(Type)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_IsTuple_System_Type_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple(System.Type)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple(System.Type)
+  nameWithType: TupleAccessExtensions.IsTuple(Type)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple*
+  name: IsTuple
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_IsTuple_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.IsTuple
+  nameWithType: TupleAccessExtensions.IsTuple
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple(System.Type)
+  name: IsValueTuple(Type)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_IsValueTuple_System_Type_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple(System.Type)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple(System.Type)
+  nameWithType: TupleAccessExtensions.IsValueTuple(Type)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple*
+  name: IsValueTuple
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_IsValueTuple_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.IsValueTuple
+  nameWithType: TupleAccessExtensions.IsValueTuple
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set*
+  name: Set
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.Set
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set
+  nameWithType: TupleAccessExtensions.Set
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``1(System.Tuple{``0},System.Int32,System.Object)
+  name: Set<T>(Tuple<T>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__1_System_Tuple___0__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``1(System.Tuple{``0},System.Int32,System.Object)
+  name.vb: Set(Of T)(Tuple(Of T), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T>(System.Tuple<T>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T)(System.Tuple(Of T), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T>(Tuple<T>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T)(Tuple(Of T), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``1(System.ValueTuple{``0},System.Int32,System.Object)
+  name: Set<T>((T), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__1_System_ValueTuple___0__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``1(System.ValueTuple{``0},System.Int32,System.Object)
+  name.vb: Set(Of T)((T), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T>(System.ValueTuple<T>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T)(System.ValueTuple(Of T), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T>((T), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T)((T), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``2(System.Tuple{``0,``1},System.Int32,System.Object)
+  name: Set<T1, T2>(Tuple<T1, T2>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__2_System_Tuple___0___1__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``2(System.Tuple{``0,``1},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2)(Tuple(Of T1, T2), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2>(System.Tuple<T1, T2>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2)(System.Tuple(Of T1, T2), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2>(Tuple<T1, T2>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2)(Tuple(Of T1, T2), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``2(System.ValueTuple{``0,``1},System.Int32,System.Object)
+  name: Set<T1, T2>((T1, T2), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__2_System_ValueTuple___0___1__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``2(System.ValueTuple{``0,``1},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2)((T1, T2), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2>(System.ValueTuple<T1, T2>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2)(System.ValueTuple(Of T1, T2), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2>((T1, T2), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2)((T1, T2), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``3(System.Tuple{``0,``1,``2},System.Int32,System.Object)
+  name: Set<T1, T2, T3>(Tuple<T1, T2, T3>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__3_System_Tuple___0___1___2__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``3(System.Tuple{``0,``1,``2},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3)(Tuple(Of T1, T2, T3), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3>(System.Tuple<T1, T2, T3>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3)(System.Tuple(Of T1, T2, T3), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3>(Tuple<T1, T2, T3>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3)(Tuple(Of T1, T2, T3), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``3(System.ValueTuple{``0,``1,``2},System.Int32,System.Object)
+  name: Set<T1, T2, T3>((T1, T2, T3), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__3_System_ValueTuple___0___1___2__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``3(System.ValueTuple{``0,``1,``2},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3)((T1, T2, T3), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3>(System.ValueTuple<T1, T2, T3>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3)(System.ValueTuple(Of T1, T2, T3), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3>((T1, T2, T3), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3)((T1, T2, T3), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``4(System.Tuple{``0,``1,``2,``3},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__4_System_Tuple___0___1___2___3__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``4(System.Tuple{``0,``1,``2,``3},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4>(System.Tuple<T1, T2, T3, T4>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4)(System.Tuple(Of T1, T2, T3, T4), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4>(Tuple<T1, T2, T3, T4>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4)(Tuple(Of T1, T2, T3, T4), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``4(System.ValueTuple{``0,``1,``2,``3},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4>((T1, T2, T3, T4), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__4_System_ValueTuple___0___1___2___3__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``4(System.ValueTuple{``0,``1,``2,``3},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4)((T1, T2, T3, T4), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4>(System.ValueTuple<T1, T2, T3, T4>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4)(System.ValueTuple(Of T1, T2, T3, T4), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4>((T1, T2, T3, T4), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4)((T1, T2, T3, T4), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``5(System.Tuple{``0,``1,``2,``3,``4},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__5_System_Tuple___0___1___2___3___4__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``5(System.Tuple{``0,``1,``2,``3,``4},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5>(System.Tuple<T1, T2, T3, T4, T5>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5)(System.Tuple(Of T1, T2, T3, T4, T5), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5>(Tuple<T1, T2, T3, T4, T5>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5)(Tuple(Of T1, T2, T3, T4, T5), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``5(System.ValueTuple{``0,``1,``2,``3,``4},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__5_System_ValueTuple___0___1___2___3___4__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``5(System.ValueTuple{``0,``1,``2,``3,``4},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5>(System.ValueTuple<T1, T2, T3, T4, T5>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5)(System.ValueTuple(Of T1, T2, T3, T4, T5), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5>((T1, T2, T3, T4, T5), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5)((T1, T2, T3, T4, T5), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``6(System.Tuple{``0,``1,``2,``3,``4,``5},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__6_System_Tuple___0___1___2___3___4___5__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``6(System.Tuple{``0,``1,``2,``3,``4,``5},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6>(System.Tuple<T1, T2, T3, T4, T5, T6>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6)(System.Tuple(Of T1, T2, T3, T4, T5, T6), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6>(Tuple<T1, T2, T3, T4, T5, T6>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6)(Tuple(Of T1, T2, T3, T4, T5, T6), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``6(System.ValueTuple{``0,``1,``2,``3,``4,``5},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__6_System_ValueTuple___0___1___2___3___4___5__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``6(System.ValueTuple{``0,``1,``2,``3,``4,``5},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6>(System.ValueTuple<T1, T2, T3, T4, T5, T6>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6>((T1, T2, T3, T4, T5, T6), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6)((T1, T2, T3, T4, T5, T6), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__7_System_Tuple___0___1___2___3___4___5___6__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``7(System.Tuple{``0,``1,``2,``3,``4,``5,``6},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7>(System.Tuple<T1, T2, T3, T4, T5, T6, T7>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7>(Tuple<T1, T2, T3, T4, T5, T6, T7>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7)(Tuple(Of T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__7_System_ValueTuple___0___1___2___3___4___5___6__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``7(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7>((T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7)((T1, T2, T3, T4, T5, T6, T7), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__8_System_Tuple___0___1___2___3___4___5___6___7__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``8(System.Tuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7, TRest>(System.Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7, TRest>(Tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(Tuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.Set``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32,System.Object)
+  name: Set<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32, Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_Set__8_System_ValueTuple___0___1___2___3___4___5___6___7__System_Int32_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.Set``8(System.ValueTuple{``0,``1,``2,``3,``4,``5,``6,``7},System.Int32,System.Object)
+  name.vb: Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32, Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7, TRest>(System.ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, System.Int32, System.Object)
+  fullName.vb: AdoHelper.TupleParsing.TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(System.ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), System.Int32, System.Object)
+  nameWithType: TupleAccessExtensions.Set<T1, T2, T3, T4, T5, T6, T7, TRest>(ValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>, Int32, Object)
+  nameWithType.vb: TupleAccessExtensions.Set(Of T1, T2, T3, T4, T5, T6, T7, TRest)(ValueTuple(Of T1, T2, T3, T4, T5, T6, T7, TRest), Int32, Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Object)
+  name: TupleItemCount(Object)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_TupleItemCount_System_Object_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Object)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Object)
+  nameWithType: TupleAccessExtensions.TupleItemCount(Object)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Type)
+  name: TupleItemCount(Type)
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_TupleItemCount_System_Type_
+  commentId: M:AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Type)
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount(System.Type)
+  nameWithType: TupleAccessExtensions.TupleItemCount(Type)
+- uid: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount*
+  name: TupleItemCount
+  href: api/AdoHelper.TupleParsing.TupleAccessExtensions.html#AdoHelper_TupleParsing_TupleAccessExtensions_TupleItemCount_
+  commentId: Overload:AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount
+  isSpec: "True"
+  fullName: AdoHelper.TupleParsing.TupleAccessExtensions.TupleItemCount
+  nameWithType: TupleAccessExtensions.TupleItemCount
