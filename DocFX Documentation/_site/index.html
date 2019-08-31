@@ -8,7 +8,7 @@
     <title>AdoHelper </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="AdoHelper ">
-    <meta name="generator" content="docfx 2.43.2.0">
+    <meta name="generator" content="docfx 2.44.0.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -62,16 +62,23 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="adohelper">AdoHelper</h1>
 
-<p><a href="https://travis-ci.org/DevEvolution/AdoHelper"><img src="https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master" alt="Build Status"></a> <br>
+<hr>
+<p><a href="https://ci.appveyor.com/project/DevEvolution/adohelper"><img src="https://ci.appveyor.com/api/projects/status/mgsnra0d12xiycrl?svg=true" alt="Build status"></a>
+<a href="https://travis-ci.org/DevEvolution/AdoHelper"><img src="https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master" alt="Build Status"></a> <br>
 <strong>AdoHelper</strong>  – a small ORM (<em>objective-relational mapping</em>), built on top of ADO.NET technology and making its use smarter.
 <img src="https://i.ibb.co/j4HDHTX/ADO-Helper.png" alt="AdoHelper"></p>
 <h2 id="download-links">Download links</h2>
 <ul>
-<li><a href="https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0">Nuget-package</a></li>
-<li><a href="https://yadi.sk/d/uK6gsNHz2Y2mTw">Dowload dll file</a></li>
+<li><a href="https://www.nuget.org/packages/DevEvolution.AdoHelper/1.2.0">Nuget-package</a></li>
+<li><a href="https://yadi.sk/d/EtkvuG6Vkt-XiQ">Dowload dll file</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
 <p>To install a project, simply download the nuget package by running the <code>Install-Package DevEvolution.AdoHelper</code> command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.</p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="CHANGELOG.md">Changelog</a></li>
+<li><a href="https://devevolution.github.io/AdoHelper/api/index.html">Api reference</a></li>
+</ul>
 <h2 id="features">Features</h2>
 <p>Automatic mapping query results to a collection of instances of the specified type:</p>
 <pre><code class="lang-csharp">public  class  SimpleTestEntity
@@ -86,7 +93,7 @@ IEnumerable&lt;SimpleTestEntity&gt; entities = new AdoHelper&lt;SimpleTestEntity
 	.Query(&quot;SELECT * FROM TestTable&quot;)
 	.ExecuteReader();
 </code></pre>
-<p>The displayed type can be a class, structure, tuple (<code>System.Tuple</code>) or (<code>System.ValueTuple</code>) as well as a generic collection (<code>IEnumerable&lt;&gt;</code>) or a list (<code>List&lt;&gt;</code>). Mapping is made on public properties, available for writing (<code>set;</code>) and public fields.</p>
+<p>The displayed type can be a class, structure, tuple (<code>System.Tuple</code>) or (<code>System.ValueTuple</code>) or <code>dynamic</code> type as well as a generic collection (<code>IEnumerable&lt;&gt;</code>) or a list (<code>List&lt;&gt;</code>). Mapping is made on public properties, available for writing (<code>set;</code>) and public fields.</p>
 <pre><code class="lang-csharp">public class ClassEntity 
 {
      public int Id {get; set;}
@@ -124,16 +131,22 @@ var enumerableEntity = new AdoHelper&lt;IEnumerable&lt;string&gt;&gt;(_connectio
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
+var dynamicEntity = new AdoHelper&lt;dynamic&gt;(_connection)
+     .Query(&quot;SELECT * FROM TestTable&quot;)
+     .ExecuteReader().First();
+
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
 Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
+Assert.AreEqual(tupleEntity.Item2, dynamicEntity.Text);
 </code></pre>
 <h2 id="usage-instruction">Usage instruction</h2>
 <p>The query to the database (DB) is as follows:</p>
-<pre><code class="lang-csharp">[var  Return value] = new  AdoHelper&lt;Return value type&gt;(DB connection object)
+<pre><code class="lang-csharp">[var  Return value] = [await] new  AdoHelper&lt;Return value type&gt;(DB connection object)
 [.Parameters(Params)]
 [.Transaction(Transaction object)]
-.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader()
+.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader() ||
+.ExecuteNonQueryAsync([cancellation token]) || .ExecuteScalarAsync([cancellation token]) || .ExecuteReaderAsync([cancellation token])
 </code></pre>
 <ul>
 <li><p><strong><code>Return value</code></strong> is the value that will be returned as a result of the query. Depending on the type of request, it can be a collection of objects, a single value, and the value may not be returned at all.
@@ -160,9 +173,9 @@ Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
 </ul>
 <p>The result of the query (<code>return value</code>) may be as follows:</p>
 <ul>
-<li>A collection of rows of the resulting table in the form <code>IEnumerable&lt;T&gt;</code>. To get this return value, you must use the <code>ExecuteReader()</code> command.</li>
-<li>A single value in the form of object of type <code>T</code>. To get a single value, you must run the final command <code>ExecuteScalar()</code>.</li>
-<li>Do not return value. For this, there is the <code>ExecuteNonQuery()</code> method.</li>
+<li>A collection of rows of the resulting table in the form <code>IEnumerable&lt;T&gt;</code>. To get this return value, you must use the <code>ExecuteReader()</code> or <code>ExecuteReaderAsync()</code>  command.</li>
+<li>A single value in the form of object of type <code>T</code>. To get a single value, you must run the final command <code>ExecuteScalar()</code> or <code>ExecuteScalarAsync()</code>.</li>
+<li>Do not return value. For this, there are the <code>ExecuteNonQuery()</code> and <code>ExecuteNonQueryAsync()</code> methods.</li>
 </ul>
 <h2 id="mapped-objects">Mapped objects</h2>
 <p>AdoHelper can independently match the names of class / structure members and columns of the resulting table, and the order of the columns does not matter. The comparison is not case sensitive.
@@ -207,6 +220,20 @@ An example of such a class:</p>
 <pre><code class="lang-csharp">var entities = new AdoHelper&lt;Tuple&lt;int, string, int&gt;&gt;(_connection)
                 .Query(&quot;SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’&quot;)
                 .ExecuteReader();
+</code></pre>
+<p>It is also possible to use the <code>dynamic</code> type as the return value. In this case, the result will be an object of type <code>ExpandoObject</code>.
+** Note: ** Element names are stored in the register in which they were returned from the database query.
+Example:</p>
+<pre><code class="lang-csharp">FbConnection connection = new FbConnection(...);
+connection.Open();
+var entity = new AdoHelper&lt;dynamic&gt;(connection)
+                .Query(&quot;SELECT * FROM TestTable&quot;)
+                .ExecuteReader().First();
+...
+Assert.AreEqual(&quot;Hello&quot;, entity.TEXTFIELD);
+Assert.AreEqual(123.123, entity.FLOATFIELD, 10e-5);
+Assert.AreEqual(123, entity.NUMERICFIELD);
+Assert.AreEqual(123, entity.INTEGERFIELD);
 </code></pre>
 <h2 id="license">License</h2>
 <p>The project is published under the license <a href="LICENSE.md">MIT</a> and is supplied as is, without any guarantees.</p>
