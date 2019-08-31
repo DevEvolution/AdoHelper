@@ -8,8 +8,8 @@
 **AdoHelper**  – небольшая ORM (_объектно-реляционное отображение_), построенная поверх технологии ADO.NET  и упрощающая ее использование.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Файлы
- - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0)
- - [Скачать dll-файл](https://yadi.sk/d/uK6gsNHz2Y2mTw)
+ - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.2.0)
+ - [Скачать dll-файл](https://yadi.sk/d/EtkvuG6Vkt-XiQ)
 ## Установка
 Для установки в проект достаточно скачать nuget пакет, выполнив в Nuget packet manager команду `Install-Package  DevEvolution.AdoHelper` 
 или установить зависимости вручную, добавив dll файл в графу зависимостей проекта в VisualStudio.
@@ -31,7 +31,7 @@ IEnumerable<SimpleTestEntity> entities = new AdoHelper<SimpleTestEntity>(_connec
 	.Query("SELECT * FROM TestTable")
 	.ExecuteReader();
 ``` 
-Отображаемый тип может быть классом, структурой, кортежем (`System.Tuple`) или (`System.ValueTuple`), а также обобщенной  коллекцией (`IEnumerable<>`) или списком (`List<>`). Отображение производится по публичным свойствам, доступным для записи (`set;`) и полям.
+Отображаемый тип может быть классом, структурой, кортежем (`System.Tuple`) или (`System.ValueTuple`), типом `dynamic`, а также обобщенной  коллекцией (`IEnumerable<>`) или списком (`List<>`). Отображение производится по публичным свойствам, доступным для записи (`set;`) и полям.
 ```csharp
 public class ClassEntity 
 {
@@ -70,18 +70,24 @@ var enumerableEntity = new AdoHelper<IEnumerable<string>>(_connection)
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
+var dynamicEntity = new AdoHelper<dynamic>(_connection)
+     .Query("SELECT * FROM TestTable")
+     .ExecuteReader().First();
+
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
 Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
+Assert.AreEqual(tupleEntity.Item2, dynamicEntity.Text);
 ```
 ## Инструкция по применению
 Запрос к базе данных (БД) выглядит следующим образом:
 
 ```csharp
-[var  возвращаемое значение] = new  AdoHelper<тип возвращаемого значения>(объект подключения к  БД)
+[var  возвращаемое значение] = [await] new  AdoHelper<тип возвращаемого значения>(объект подключения к  БД)
 [.Parameters(параметры)]
 [.Transaction(объект транзакции)]
-.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader()
+.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader() ||
+.ExecuteNonQueryAsync([токен отмены]) || .ExecuteScalarAsync([токен отмены]) || .ExecuteReaderAsync([токен отмены])
 ```
 - **`Возвращаемое значение`** – значение, которое будет возвращено в качестве результата выполнения запроса. В зависимости от типа запроса может быть коллекцией объектов, одиночным значением, а также значение может не возвращаться вовсе.
 **Важно!** Количество элементов, указанных в *ValueTuple*  или *Tuple* возвращаемого значения, порядок объявления и тип элемента должны совпадать с количеством столбцов и очередностью элементов в результирующей таблице запроса.
@@ -105,9 +111,9 @@ var entity = new AdoHelper<SimpleTestEntity>(_connection)
 - **`Объект транзакции`** – объект  типа `IDbTransaction` (например, `SqlTransaction`).
 
 Результат запроса (`возвращаемое значение`) может быть следующим:
-- Коллекция строк результирующей таблицы в виде `IEnumerable<T>`. Для получения такого возвращаемого значения необходимо воспользоваться командой `ExecuteReader()`.
-- Одиночное значение в виде объекта типа `T`. Чтобы получить одиночное значение, необходимо выполнить завершающую команду `ExecuteScalar()`.
-- Не возвращать значение. Для этого существует метод `ExecuteNonQuery()`.
+- Коллекция строк результирующей таблицы в виде `IEnumerable<T>`. Для получения такого возвращаемого значения необходимо воспользоваться командой `ExecuteReader()` или `ExecuteReaderAsync()`.
+- Одиночное значение в виде объекта типа `T`. Чтобы получить одиночное значение, необходимо выполнить завершающую команду `ExecuteScalar()` или `ExecuteScalarAsync()`.
+- Не возвращать значение. Для этого существуют методы `ExecuteNonQuery()` и `ExecuteNonQueryAsync()`.
 
 ## Сопоставляемые объекты
 AdoHelper  умеет самостоятельно сопоставлять имена членов класса/структуры и столбцов результирующей таблицы, причем порядок столбцов не имеет значения. При сопоставлении не учитывается регистр.
@@ -163,6 +169,21 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
 IEnumerable<IEnumerable<string>> entities = new AdoHelper<IEnumerable<string>>(_connection)
                 .Query("SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’")
                 .ExecuteReader();
+```
+Также есть возможность использовать тип `dynamic` в качестве возвращаемого значения. В этом случае результатом будет объект типа `ExpandoObject`. 
+**Примечание.** Имена элементов сохраняются в том регистре, в котором они были возвращены из запроса к базе данных.
+Пример:
+```csharp
+FbConnection connection = new FbConnection(...);
+connection.Open();
+var entity = new AdoHelper<dynamic>(connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader().First();
+...
+Assert.AreEqual("Hello", entity.TEXTFIELD);
+Assert.AreEqual(123.123, entity.FLOATFIELD, 10e-5);
+Assert.AreEqual(123, entity.NUMERICFIELD);
+Assert.AreEqual(123, entity.INTEGERFIELD);
 ```
 
 ## Лицензия
