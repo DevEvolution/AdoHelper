@@ -165,7 +165,7 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
                 .ExecuteReader();
 ```
 It is also possible to use the `dynamic` type as the return value. In this case, the result will be an object of type `ExpandoObject`.
-** Note: ** Element names are stored in the register in which they were returned from the database query.
+**Note: ** Element names are stored in the register in which they were returned from the database query.
 Example:
 ```csharp
 FbConnection connection = new FbConnection(...);
