@@ -1,13 +1,18 @@
 
 # AdoHelper
+---
+[![Build status](https://ci.appveyor.com/api/projects/status/mgsnra0d12xiycrl?svg=true)](https://ci.appveyor.com/project/DevEvolution/adohelper)
 [![Build Status](https://travis-ci.org/DevEvolution/AdoHelper.svg?branch=master)](https://travis-ci.org/DevEvolution/AdoHelper) <br/>
 **AdoHelper**  – a small ORM (_objective-relational mapping_), built on top of ADO.NET technology and making its use smarter.
 ![AdoHelper](https://i.ibb.co/j4HDHTX/ADO-Helper.png)
 ## Download links
- - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.1.0)
- - [Dowload dll file](https://yadi.sk/d/uK6gsNHz2Y2mTw)
+ - [Nuget-package](https://www.nuget.org/packages/DevEvolution.AdoHelper/1.2.0)
+ - [Dowload dll file](https://yadi.sk/d/EtkvuG6Vkt-XiQ)
 ## Installation
 To install a project, simply download the nuget package by running the `Install-Package DevEvolution.AdoHelper` command in the Nuget packet manager or install dependencies manually by adding the dll file in the project dependency column in VisualStudio.
+## Documentation
+ - [Changelog](CHANGELOG.md)
+ - [Api reference](https://devevolution.github.io/AdoHelper/api/index.html)
 ## Features
 Automatic mapping query results to a collection of instances of the specified type:
 ```csharp
@@ -23,7 +28,7 @@ IEnumerable<SimpleTestEntity> entities = new AdoHelper<SimpleTestEntity>(_connec
 	.Query("SELECT * FROM TestTable")
 	.ExecuteReader();
 ``` 
-The displayed type can be a class, structure, tuple (`System.Tuple`) or (`System.ValueTuple`) as well as a generic collection (`IEnumerable<>`) or a list (`List<>`). Mapping is made on public properties, available for writing (`set;`) and public fields.
+The displayed type can be a class, structure, tuple (`System.Tuple`) or (`System.ValueTuple`) or `dynamic` type as well as a generic collection (`IEnumerable<>`) or a list (`List<>`). Mapping is made on public properties, available for writing (`set;`) and public fields.
 ```csharp
 public class ClassEntity 
 {
@@ -62,17 +67,23 @@ var enumerableEntity = new AdoHelper<IEnumerable<string>>(_connection)
      .Parameters((“@id”, 1))
      .ExecuteReader().First();
 
+var dynamicEntity = new AdoHelper<dynamic>(_connection)
+     .Query("SELECT * FROM TestTable")
+     .ExecuteReader().First();
+
 Assert.AreEqual(classEntity.text, structEntity.Text);
 Assert.AreEqual(structEntity.Text, valueTupleEntity.text);
 Assert.AreEqual(valueTupleEntity.text, tupleEntity.Item2);
+Assert.AreEqual(tupleEntity.Item2, dynamicEntity.Text);
 ```
 ## Usage instruction
 The query to the database (DB) is as follows:
 ```csharp
-[var  Return value] = new  AdoHelper<Return value type>(DB connection object)
+[var  Return value] = [await] new  AdoHelper<Return value type>(DB connection object)
 [.Parameters(Params)]
 [.Transaction(Transaction object)]
-.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader()
+.ExecuteNonQuery() || .ExecuteScalar() || .ExecuteReader() ||
+.ExecuteNonQueryAsync([cancellation token]) || .ExecuteScalarAsync([cancellation token]) || .ExecuteReaderAsync([cancellation token])
 ```
 
 - **`Return value`** is the value that will be returned as a result of the query. Depending on the type of request, it can be a collection of objects, a single value, and the value may not be returned at all.
@@ -97,9 +108,9 @@ var entity = new AdoHelper<SimpleTestEntity>(_connection)
 - **`Transaction object`** is an object of type `IDbTransaction` (for example, `SqlTransaction`).
 
 The result of the query (`return value`) may be as follows:
-- A collection of rows of the resulting table in the form `IEnumerable<T>`. To get this return value, you must use the `ExecuteReader()` command.
-- A single value in the form of object of type `T`. To get a single value, you must run the final command `ExecuteScalar()`.
-- Do not return value. For this, there is the `ExecuteNonQuery()` method.
+- A collection of rows of the resulting table in the form `IEnumerable<T>`. To get this return value, you must use the `ExecuteReader()` or `ExecuteReaderAsync()`  command.
+- A single value in the form of object of type `T`. To get a single value, you must run the final command `ExecuteScalar()` or `ExecuteScalarAsync()`.
+- Do not return value. For this, there are the `ExecuteNonQuery()` and `ExecuteNonQueryAsync()` methods.
 
 ## Mapped objects
 AdoHelper can independently match the names of class / structure members and columns of the resulting table, and the order of the columns does not matter. The comparison is not case sensitive.
@@ -150,5 +161,21 @@ var entities = new AdoHelper<Tuple<int, string, int>>(_connection)
                 .Query("SELECT current_id, category_name, next_id FROM categories WHERE category LIKE ‘TMP’")
                 .ExecuteReader();
 ```
+It is also possible to use the `dynamic` type as the return value. In this case, the result will be an object of type `ExpandoObject`.
+** Note: ** Element names are stored in the register in which they were returned from the database query.
+Example:
+```csharp
+FbConnection connection = new FbConnection(...);
+connection.Open();
+var entity = new AdoHelper<dynamic>(connection)
+                .Query("SELECT * FROM TestTable")
+                .ExecuteReader().First();
+...
+Assert.AreEqual("Hello", entity.TEXTFIELD);
+Assert.AreEqual(123.123, entity.FLOATFIELD, 10e-5);
+Assert.AreEqual(123, entity.NUMERICFIELD);
+Assert.AreEqual(123, entity.INTEGERFIELD);
+```
+
 ## License
 The project is published under the license [MIT](LICENSE.md) and is supplied as is, without any guarantees.
