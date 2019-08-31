@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F13FB04D-F62D-4B77-A3E7-D53233491340}"
 	ProjectSection(SolutionItems) = preProject
 		.travis.yml = .travis.yml
+		action.yml = action.yml
 		CHANGELOG-RU.md = CHANGELOG-RU.md
 		CHANGELOG.md = CHANGELOG.md
 		LICENSE.md = LICENSE.md
